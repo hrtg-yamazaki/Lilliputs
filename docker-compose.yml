@@ -5,7 +5,7 @@ services:
         build: ./code
         restart: always
         command: >
-            php artisan serve --host 0.0.0.0 --port 8000
+            php-fpm
         working_dir: /code
         ports: 
             - 8000:8000
@@ -15,3 +15,14 @@ services:
             - ./code:/code
             - ./code/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
             - ./code/php.ini:/usr/local/etc/php/php.ini
+    nginx:
+        container_name: larast_nginx
+        image: nginx:1.19
+        restart: always
+        ports:
+            - 8080:80
+        volumes:
+            - ./nginx/conf.d:/etc/nginx/conf.d
+            - ./code/public:/public
+        depends_on:
+            - php
