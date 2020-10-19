@@ -16,7 +16,7 @@ services:
             - ./code/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
             - ./code/php.ini:/usr/local/etc/php/php.ini
     nginx:
-        container_name: larast_nginx
+        container_name: lilliputs_nginx
         image: nginx:1.19
         restart: always
         ports:
@@ -26,3 +26,19 @@ services:
             - ./code/public:/public
         depends_on:
             - php
+    db:
+        container_name: lilliputs_db
+        image: mysql:5.7
+        restart: always
+        environment: 
+            MYSQL_DATABASE: $DB_DATABASE_LIL
+            MYSQL_USER: $DB_USERNAME_LIL
+            MYSQL_PASSWORD: $DB_PASSWORD_LIL
+            MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD_LIL
+            MYSQL_TCP_PORT: 3306
+            TZ: 'Asia/Tokyo'
+        volumes: 
+            - ./mysql/data:/var/lib/mysql/
+            - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+        ports: 
+            - 3306:3306
