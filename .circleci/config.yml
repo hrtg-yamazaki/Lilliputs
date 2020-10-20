@@ -36,6 +36,12 @@ jobs:
             working_directory: code
             command: composer install -n --prefer-dist
 
+        - run:
+            working_directory: code
+            command: |
+                echo ${ENV_FILE_TEST} >> base64env_test.txt
+                base64 -d base64env_test.txt >> .env.testing
+
         - save_cache:
             key: v1-dependencies-{{ checksum "code/composer.json" }}
             paths:
