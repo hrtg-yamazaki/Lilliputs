@@ -10,6 +10,8 @@
     </head>
     <body>
 
+        @include("shared.header")
+
         @yield("content")
 
     </body>

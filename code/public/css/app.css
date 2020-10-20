@@ -152,6 +152,7 @@ legend {
 * {
   box-sizing: border-box;
   font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  letter-spacing: 2px;
 }
 
 html,
@@ -169,6 +170,7 @@ body {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:hover {
@@ -185,7 +187,46 @@ label {
 }
 
 .sample {
-  color: #252c47;
+  color: #49578b;
   font-size: 24px;
+}
+
+.header {
+  height: 60px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px;
+}
+
+.header__box {
+  width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.header__box__left {
+  width: 50%;
+  padding: 10px 20px;
+  float: left;
+}
+
+.header__box__right {
+  width: 50%;
+  padding: 10px 20px;
+  float: right;
+  text-align: right;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #49578b;
+  line-height: 40px;
+}
+
+.header-link {
+  font-size: 14px;
+  color: #49578b;
+  line-height: 40px;
+  padding-left: 5px;
 }
 

@@ -1,10 +1,14 @@
 
 // *** 変数・mixin *** //
 
+
+$darkpurple: rgb(73, 87, 139);
+$lightpurple:  rgb(172, 188, 255);
+
+$default-border: 1px solid $lightpurple;
 $default-back: #f0f0ef;
 $default-shadow: rgba(0, 0, 0, 0.5) 0px 2px 4px;
-$default-border: 1px solid lightgray;
-$darkpurple: rgb(37, 44, 71);
+
 $gray-back: #dfdfdf;
 
 
@@ -13,6 +17,7 @@ $gray-back: #dfdfdf;
 *{
   box-sizing: border-box;
   font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  letter-spacing: 2px;
 }
 
 html, body{
@@ -29,6 +34,7 @@ html, body{
 
 a{
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:hover{
