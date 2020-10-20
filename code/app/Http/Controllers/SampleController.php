@@ -15,9 +15,10 @@ class SampleController extends Controller
     public function __invoke(Request $request)
     {
         $message = "Hello, ".env("APP_NAME", "Laravel")."!";
+        $user = \Auth::user();
 
         return view("sample", [
-            "message" => $message
+            "message" => $message, "user" => $user
         ]);
     }
 }
