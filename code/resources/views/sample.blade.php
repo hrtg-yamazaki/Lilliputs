@@ -1,12 +1,26 @@
 @extends('layout')
 
 
+@section("top-wrapper")
+
+    <div class="top-wrapper">
+    </div>
+
+@endsection
+
+
 @section('content')
 
-    <h1 class="sample">{{ $message }}</h1>
+    <div class="content">
+        <div class="content__box">
 
-    @auth
-        <p>{{ $user->name }}</p>
-    @endauth
+            <h1 class="sample">{{ $message }}</h1>
+
+            @auth
+                <p>{{ $user->name }}</p>
+            @endauth
+
+        </div>
+    </div>
 
 @endsection

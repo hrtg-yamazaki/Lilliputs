@@ -10,9 +10,22 @@
     </head>
     <body>
 
+
         @include("shared.header")
 
-        @yield("content")
+        <div class="container">
+
+            @yield("top-wrapper")
+
+            <div class="main-contents">
+                <div class="main-contents__box">
+
+                    @yield("content")
+
+                </div>
+            </div>
+
+        </div>
 
     </body>
 </html>
