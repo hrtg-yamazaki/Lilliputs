@@ -4,7 +4,10 @@
 @section("top-wrapper")
 
     <div class="top-wrapper">
-        <div class="smoke">
+        <div class="top-wrapper__box">
+            <h1 class="top-wrapper__box__text">
+                Leave dishes to Luck.
+            </h1>
         </div>
     </div>
 

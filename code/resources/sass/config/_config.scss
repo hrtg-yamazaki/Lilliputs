@@ -21,7 +21,12 @@ $gray-back: #dfdfdf;
   letter-spacing: 2px;
 }
 
-html, body{
+html {
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
   width: 100%;
   height: 100%;
   -webkit-text-size-adjust: 100%;
@@ -51,21 +56,6 @@ h1, h2, h3, h4, p, label{
     min-height: calc(100% - 200px);
     // 120 = header + footer
     background-color: white;
-}
-
-.top-wrapper{
-    width: 100%;
-    height: 320px;
-    background-color: darkgray;
-    background-image: url("images/lilliputs_top2.jpg");
-    background-size: cover;
-}
-
-.smoke{
-    width: 100%;
-    height: 100%;
-    background-color: silver;
-    opacity: 0.3;
 }
 
 .main-contents{
