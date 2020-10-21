@@ -196,6 +196,15 @@ label {
   width: 100%;
   height: 320px;
   background-color: darkgray;
+  background-image: url(/images/lilliputs_top2.jpg?3ef3de8909944c198eff1076dc63554f);
+  background-size: cover;
+}
+
+.smoke {
+  width: 100%;
+  height: 100%;
+  background-color: silver;
+  opacity: 0.3;
 }
 
 .main-contents {
@@ -217,7 +226,7 @@ label {
 }
 
 .sample {
-  color: #49578b;
+  color: #5064b4;
 }
 
 .header {
@@ -250,13 +259,13 @@ label {
 .header-title {
   font-size: 24px;
   font-weight: bold;
-  color: #49578b;
+  color: #5064b4;
   line-height: 40px;
 }
 
 .header-link {
   font-size: 14px;
-  color: #49578b;
+  color: #5064b4;
   line-height: 40px;
   padding-left: 5px;
 }
@@ -264,7 +273,7 @@ label {
 .navi-bar {
   width: 100%;
   height: 40px;
-  background-color: #49578b;
+  background-color: #5064b4;
   position: relative;
   z-index: 8;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px;
@@ -297,13 +306,13 @@ label {
   height: 100%;
   display: inline-block;
   color: whitesmoke;
-  border: 1px solid #49578b;
+  border: 1px solid #5064b4;
 }
 
 .navi-list__content__link:hover {
   background-color: steelblue;
   color: whitesmoke;
-  border: 1px solid #8d99c4;
+  border: 1px solid #788cbe;
 }
 
 .content-center {
@@ -313,7 +322,7 @@ label {
 .footer {
   width: 100%;
   height: 100px;
-  background-color: #bec8dc;
+  background-color: #b4c8e6;
 }
 
 .footer__box {
@@ -326,7 +335,7 @@ label {
 .footer-content {
   width: 100%;
   height: 100%;
-  border-top: 1px solid #8d99c4;
+  border-top: 1px solid #788cbe;
 }
 
 .footer-content__left {
@@ -338,7 +347,7 @@ label {
 }
 
 .footer-content__left__link {
-  color: #49578b;
+  color: #5064b4;
   font-size: 12px;
 }
 
@@ -352,7 +361,7 @@ label {
 }
 
 .footer-content__right__link {
-  color: #49578b;
+  color: #5064b4;
   font-size: 12px;
 }
 

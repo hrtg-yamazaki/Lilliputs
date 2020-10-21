@@ -4,6 +4,8 @@
 @section("top-wrapper")
 
     <div class="top-wrapper">
+        <div class="smoke">
+        </div>
     </div>
 
 @endsection
