@@ -12,6 +12,7 @@
 
 
         @include("shared.header")
+        @include("shared.navi_bar")
 
         <div class="container">
 
