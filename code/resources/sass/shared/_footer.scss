@@ -1,0 +1,41 @@
+
+.footer{
+    width: 100%;
+    height: 100px;
+    background-color: $purpleback;
+    &__box{
+        max-width: 960px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 40px 10px 10px 10px;
+    }
+}
+
+.footer-content{
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid $lightpurple;
+    &__left{
+        width: 60%;
+        height: 100%;
+        padding: 5px 10px 24px;
+        float: left;
+        line-height: 20px;
+        &__link{
+            color: $darkpurple;
+            font-size: 12px;
+        }
+    }
+    &__right{
+        width: 40%;
+        height: 100%;
+        padding: 5px 10px 24px;
+        float: right;
+        line-height: 20px;
+        text-align: right;
+        &__link{
+            color: $darkpurple;
+            font-size: 12px;
+        }
+    }
+}

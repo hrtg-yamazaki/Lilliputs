@@ -10,7 +10,25 @@
     </head>
     <body>
 
-        @yield("content")
+
+        @include("shared.header")
+        @include("shared.navi_bar")
+
+        <div class="container">
+
+            @yield("top-wrapper")
+
+            <div class="main-contents">
+                <div class="main-contents__box">
+
+                    @yield("content")
+
+                </div>
+            </div>
+
+        </div>
+
+        @include("shared.footer")
 
     </body>
 </html>
