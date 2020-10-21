@@ -47,7 +47,7 @@ h1, h2, h3, h4, p, label{
 
 .container{
     width: 100%;
-    min-height: calc(100% - 120px);
+    min-height: calc(100% - 160px);
     // 120 = header + footer
     background-color: white;
 }
@@ -69,8 +69,8 @@ h1, h2, h3, h4, p, label{
 }
 
 .content{
-    background-color: white;
+    min-height: 280px;
     width: 100%;
-    min-height: 480px;
+    background-color: white;
     box-shadow: $default-shadow;
 }
