@@ -3,7 +3,8 @@
 
 
 $darkpurple: rgb(73, 87, 139);
-$lightpurple:  rgb(152, 161, 194);
+$lightpurple:  rgb(141, 153, 196);
+$purpleback: rgb(190, 200, 220);
 
 $default-border: 1px solid $lightpurple;
 $default-back: #f0f0ef;
@@ -47,7 +48,7 @@ h1, h2, h3, h4, p, label{
 
 .container{
     width: 100%;
-    min-height: calc(100% - 160px);
+    min-height: calc(100% - 200px);
     // 120 = header + footer
     background-color: white;
 }
@@ -69,7 +70,7 @@ h1, h2, h3, h4, p, label{
 }
 
 .content{
-    min-height: 280px;
+    min-height: 960px;
     width: 100%;
     background-color: white;
     box-shadow: $default-shadow;
