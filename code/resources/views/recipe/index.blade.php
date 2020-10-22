@@ -19,7 +19,15 @@
     <div class="content">
         <div class="content__box">
 
-            <h1 class="sample">{{ $message }}</h1>
+            <ul>
+                @foreach($recipes as $recipe)
+                    <li>
+                        <a href={{ route('root') }}>
+                            {{ $recipe->title }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
 
             @auth
                 <p>{{ $user->name }}</p>
