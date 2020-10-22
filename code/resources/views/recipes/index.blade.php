@@ -22,7 +22,7 @@
             <ul>
                 @foreach($recipes as $recipe)
                     <li>
-                        <a href={{ route('root') }}>
+                        <a href={{ route('recipes.show', ['recipe' => $recipe]) }}>
                             {{ $recipe->title }}
                         </a>
                     </li>

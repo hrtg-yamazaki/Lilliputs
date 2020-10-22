@@ -17,7 +17,7 @@ class RecipeController extends Controller
         $recipes = Recipe::all();
         $user = \Auth::user();
 
-        return view("recipe.index", [
+        return view("recipes.index", [
             "recipes" => $recipes, "user" => $user
         ]);
     }
@@ -51,7 +51,9 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
-        //
+        return view("recipes.show", [
+            "recipe" => $recipe
+        ]);
     }
 
     /**
