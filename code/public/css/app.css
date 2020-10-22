@@ -155,11 +155,7 @@ legend {
   letter-spacing: 2px;
 }
 
-html {
-  width: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
+html,
 body {
   width: 100%;
   height: 100%;
@@ -378,6 +374,7 @@ label {
 .index-section {
   width: 100%;
   padding: 40px 0 0;
+  min-height: 320px;
 }
 
 .index-section__box {
@@ -409,8 +406,8 @@ label {
 
 .recipe-panel {
   width: 25%;
-  height: 240px;
-  padding: 4px 10px;
+  height: 280px;
+  padding: 10px;
 }
 
 .recipe-panel__inner {
@@ -423,5 +420,37 @@ label {
 
 .recipe-panel__inner:hover {
   border: 1px solid #788cbe;
+}
+
+.panel-image {
+  width: 100%;
+  height: 200px;
+  background-color: silver;
+}
+
+.no-image {
+  color: whitesmoke;
+  line-height: 200px;
+  text-align: center;
+}
+
+.panel-info {
+  padding: 0 8px;
+  height: calc(100% - 200px);
+}
+
+.panel-info__title {
+  height: calc(100% - 20px);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.panel-info__property {
+  height: 20px;
+  line-height: 20px;
+  text-align: right;
+  font-size: 10px;
+  color: #333;
+  border-top: 1px solid silver;
 }
 

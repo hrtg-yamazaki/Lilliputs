@@ -25,13 +25,13 @@
                 </h1>
                 <div class="index-section__box__content">
                     <ul class="recipe-list">
-                        @foreach($recipes as $recipe)
-                            <li class="recipe-panel">
-                                <a href={{ route('recipes.show', ['recipe' => $recipe]) }} class="recipe-panel__inner">
-                                    {{ $recipe->title }}
-                                </a>
-                            </li>
-                        @endforeach
+                        @if ($recipes)
+                            @foreach($recipes as $recipe)
+
+                                @include("shared.recipe_panel")
+
+                            @endforeach
+                        @endif
                     </ul>
                 </div>
             </div>
