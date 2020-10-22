@@ -14,7 +14,12 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        //
+        $message = "Hello, ".env("APP_NAME", "Laravel")."!";
+        $user = \Auth::user();
+
+        return view("recipe.index", [
+            "message" => $message, "user" => $user
+        ]);
     }
 
     /**

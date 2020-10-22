@@ -9,7 +9,7 @@
             </li>{{--
         --}}<li class="navi-list__content content-center">
                 <a href="#" class="navi-list__content__link">
-                    ダイス
+                    ルーレット
                 </a>
             </li>{{--
         --}}<li class="navi-list__content">
