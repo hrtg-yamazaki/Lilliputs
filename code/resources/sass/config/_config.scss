@@ -55,22 +55,14 @@ h1, h2, h3, h4, p, label{
     width: 100%;
     min-height: calc(100% - 200px);
     // 120 = header + footer
-    background-color: white;
+    background-color: whitesmoke;
 }
 
 .main-contents{
     max-width: 960px;
     margin: 0 auto;
-    background-color: whitesmoke;
     &__box{
         width: 100%;
-        padding: 10px;
+        padding: 0 20px;
     }
-}
-
-.content{
-    min-height: 960px;
-    width: 100%;
-    background-color: white;
-    box-shadow: $default-shadow;
 }
