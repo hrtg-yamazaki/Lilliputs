@@ -1,0 +1,47 @@
+
+.recipe-panel{
+    width: 25%;
+    height: 280px;
+    padding: 10px;
+    &__inner{
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        background-color: white;
+        border: 1px solid $purpleback;
+    }
+    &__inner:hover{
+        border: 1px solid $lightpurple;
+    }
+}
+
+.panel-image{
+    width: 100%;
+    height: 200px;
+    background-color: silver;
+}
+
+.no-image{
+    color: whitesmoke;
+    line-height: 200px;
+    text-align: center;
+}
+
+.panel-info{
+    padding: 0 8px;
+    height: calc(100% - 200px);
+    &__title{
+        height: calc(100% - 20px);
+        font-size: 12px;
+        font-weight: bold;
+        overflow: hidden;
+    }
+    &__property{
+        height: 20px;
+        line-height: 20px;
+        text-align: right;
+        font-size: 10px;
+        color: #333;
+        border-top: 1px solid silver;
+    }
+}

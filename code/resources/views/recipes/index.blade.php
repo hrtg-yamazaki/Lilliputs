@@ -37,6 +37,44 @@
             </div>
         </div>
 
+        <div class="index-section border-top">
+            <div class="index-section__box">
+                <h1 class="index-section__box__head right-head">
+                    ご利用について
+                </h1>
+                <div class="index-section__box__content">
+                    <div class="site-about-list">
+                        <ul class="site-about-list__box">
+                            <li class="site-about">
+                                <h3 class="site-about__head">
+                                    1. レシピの閲覧と検索
+                                </h3>
+                                <p class="site-about__content">
+                                    &nbsp;投稿されているレシピはどれでも自由に閲覧できます。名前やカテゴリによる検索も可能です。
+                                </p>
+                            </li>
+                            <li class="site-about">
+                                <h3 class="site-about__head">
+                                    2. ルーレットによるレシピ提案
+                                </h3>
+                                <p class="site-about__content">
+                                    &nbsp;ランダムに提案される「主材料」と「調理方法」の組み合わせで、メニュー決めをサポートします。
+                                </p>
+                            </li>
+                            <li class="site-about">
+                                <h3 class="site-about__head">
+                                    3. レシピの投稿
+                                </h3>
+                                <p class="site-about__content">
+                                    &nbsp;もちろん、ユーザー登録をすればレシピの投稿もできます。自分向けのメモとしても！
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         @auth
             <p>{{ $user->name }}</p>
         @endauth
