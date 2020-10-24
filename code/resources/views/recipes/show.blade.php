@@ -30,6 +30,56 @@
             </div>
         </div>
 
+        <div class="show-section section-wheel">
+            <div class="show-section__box">
+                <div class="ingredients">
+                    <h2 class="ingredients__head">
+                        必要なもの
+                    </h2>
+                    <div class="ingredients__content">
+                        <ul class="ingredient-list">
+                            <li class="ingredient">
+                                <div class="ingredient__box clearfix">
+                                    <p class="ingredient__box__name">材料名</p>
+                                    <p class="ingredient__box__amount">数量</p>
+                                </div>
+                            </li>
+                            <li class="ingredient">
+                                <div class="ingredient__box clearfix">
+                                    <p class="ingredient__box__name">材料名</p>
+                                    <p class="ingredient__box__amount">数量</p>
+                                </div>
+                            </li>
+                            <li class="ingredient">
+                                <div class="ingredient__box clearfix">
+                                    <p class="ingredient__box__name">材料名</p>
+                                    <p class="ingredient__box__amount">数量</p>
+                                </div>
+                            </li>
+                            <li class="ingredient">
+                                <div class="ingredient__box clearfix">
+                                    <p class="ingredient__box__name">材料名</p>
+                                    <p class="ingredient__box__amount">数量</p>
+                                </div>
+                            </li>
+                            <li class="ingredient">
+                                <div class="ingredient__box clearfix">
+                                    <p class="ingredient__box__name">材料名</p>
+                                    <p class="ingredient__box__amount">数量</p>
+                                </div>
+                            </li>
+                            <li class="ingredient">
+                                <div class="ingredient__box clearfix">
+                                    <p class="ingredient__box__name">材料名</p>
+                                    <p class="ingredient__box__amount">数量</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 @endsection

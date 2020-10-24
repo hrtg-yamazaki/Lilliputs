@@ -39,14 +39,14 @@
 .show-category{
     padding: 0 10px 40px;
     font-size: 14px;
-    color: rgb(85, 85, 85);
+    color: $pencil;
     text-align: right;
 }
 
 .show-description{
     padding: 24px 10px;
     font-size: 14px;
-    color: rgb(137, 137, 137);
+    color: $pencil;
     letter-spacing: 4px;
 }
 
@@ -57,4 +57,49 @@
     text-align: center;
     background-color: silver;
     color: white;
+}
+
+.ingredients{
+    width: 100%;
+    padding: 10px;
+    &__head{
+        width: 50%;
+        padding: 0 10px;
+        border-bottom: 1px solid $purpleback;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    &__content{
+        padding: 20px;
+        min-height: 80px;
+        color: $pencil;
+    }
+}
+
+.ingredient-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ingredient{
+    width: 50%;
+    padding: 4px 20px;
+    &__box{
+        border-bottom: 1px solid $purpleback;
+        &__name{
+            float: left;
+            width: 70%;
+            color: $pencil;
+            font-size: 14px;
+            padding-left: 8px;
+        }
+        &__amount{
+            float: right;
+            width: 30%;
+            color: $pencil;
+            font-size: 14px;
+            text-align: right;
+            padding-right: 8px;
+        }
+    }
 }

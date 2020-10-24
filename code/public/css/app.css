@@ -556,7 +556,7 @@ label {
 .show-description {
   padding: 24px 10px;
   font-size: 14px;
-  color: #898989;
+  color: #555555;
   letter-spacing: 4px;
 }
 
@@ -567,5 +567,55 @@ label {
   text-align: center;
   background-color: silver;
   color: white;
+}
+
+.ingredients {
+  width: 100%;
+  padding: 10px;
+}
+
+.ingredients__head {
+  width: 50%;
+  padding: 0 10px;
+  border-bottom: 1px solid #b4c8e6;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.ingredients__content {
+  padding: 20px;
+  min-height: 80px;
+  color: #555555;
+}
+
+.ingredient-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ingredient {
+  width: 50%;
+  padding: 4px 20px;
+}
+
+.ingredient__box {
+  border-bottom: 1px solid #b4c8e6;
+}
+
+.ingredient__box__name {
+  float: left;
+  width: 70%;
+  color: #555555;
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+.ingredient__box__amount {
+  float: right;
+  width: 30%;
+  color: #555555;
+  font-size: 14px;
+  text-align: right;
+  padding-right: 8px;
 }
 
