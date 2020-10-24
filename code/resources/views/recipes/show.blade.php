@@ -58,32 +58,32 @@
                     <h2 class="ways__head">
                         作り方
                     </h2>
-                    <div class="ways__content">
-                        <div class="way-to-cook clearfix">
+                    <ul class="ways__content">
+                        <li class="way-to-cook clearfix">
                             <h3 class="way-number">1. </h3>
                             <h4 class="way-text">
                                 調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。
                             </h4>
-                        </div>
-                        <div class="way-to-cook clearfix">
+                        </li>
+                        <li class="way-to-cook clearfix">
                             <h3 class="way-number">2. </h3>
                             <h4 class="way-text">
                                 調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。
                             </h4>
-                        </div>
-                        <div class="way-to-cook clearfix">
+                        </li>
+                        <li class="way-to-cook clearfix">
                             <h3 class="way-number">3. </h3>
                             <h4 class="way-text">
                                 調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。
                             </h4>
-                        </div>
-                        <div class="way-to-cook clearfix">
+                        </li>
+                        <li class="way-to-cook clearfix">
                             <h3 class="way-number">4. </h3>
                             <h4 class="way-text">
                                 調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。
                             </h4>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

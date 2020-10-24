@@ -47,7 +47,10 @@
                         <ul class="site-about-list__box">
                             <li class="site-about">
                                 <h3 class="site-about__head">
-                                    1. レシピの閲覧と検索
+                                    <span class="site-about__head__number">
+                                        1.&nbsp;
+                                    </span>
+                                    レシピの閲覧と検索
                                 </h3>
                                 <p class="site-about__content">
                                     &nbsp;投稿されているレシピはどれでも自由に閲覧できます。名前やカテゴリによる検索も可能です。
@@ -55,7 +58,10 @@
                             </li>
                             <li class="site-about">
                                 <h3 class="site-about__head">
-                                    2. ルーレットによるレシピ提案
+                                    <span class="site-about__head__number">
+                                        2.&nbsp;
+                                    </span>
+                                    ルーレットによるレシピ提案
                                 </h3>
                                 <p class="site-about__content">
                                     &nbsp;ランダムに提案される「主材料」と「調理方法」の組み合わせで、メニュー決めをサポートします。
@@ -63,7 +69,10 @@
                             </li>
                             <li class="site-about">
                                 <h3 class="site-about__head">
-                                    3. レシピの投稿
+                                    <span class="site-about__head__number">
+                                        3.&nbsp;
+                                    </span>
+                                    レシピの投稿
                                 </h3>
                                 <p class="site-about__content">
                                     &nbsp;もちろん、ユーザー登録をすればレシピの投稿もできます。自分向けのメモとしても！
@@ -74,10 +83,6 @@
                 </div>
             </div>
         </div>
-
-        @auth
-            <p>{{ $user->name }}</p>
-        @endauth
 
     </div>
 
