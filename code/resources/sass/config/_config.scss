@@ -61,3 +61,15 @@ h1, h2, h3, h4, p, label{
         padding: 0 20px;
     }
 }
+
+.half-border{
+    width: 75%;
+    margin: 0 auto;
+    font-size: 0;
+    height: 1px;
+    border-top: 1px solid $purpleback;
+}
+
+.section-wheel{
+    margin-top: 40px;
+}
