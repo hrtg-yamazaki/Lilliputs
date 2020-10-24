@@ -188,7 +188,7 @@ label {
 
 .container {
   width: 100%;
-  min-height: calc(100% - 200px);
+  min-height: calc(100% - 160px);
   background-color: whitesmoke;
 }
 
@@ -198,6 +198,16 @@ label {
 }
 
 .main-contents__box {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.single-main {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.single-main__box {
   width: 100%;
   padding: 0 20px;
 }
@@ -664,5 +674,18 @@ label {
   padding-top: 10px;
   padding-left: 40px;
   line-height: 24px;
+}
+
+.form-section {
+  padding: 40px 10px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.recipe-form {
+  padding: 10px;
+  border: 1px solid #b4c8e6;
+  border-radius: 4px;
+  background-color: white;
 }
 

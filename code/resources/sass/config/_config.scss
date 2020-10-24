@@ -49,13 +49,22 @@ h1, h2, h3, h4, p, label{
 
 .container{
     width: 100%;
-    min-height: calc(100% - 200px);
+    min-height: calc(100% - 160px);
     // 120 = header + footer
     background-color: whitesmoke;
 }
 
 .main-contents{
     max-width: 960px;
+    margin: 0 auto;
+    &__box{
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+.single-main{
+    max-width: 700px;
     margin: 0 auto;
     &__box{
         width: 100%;
