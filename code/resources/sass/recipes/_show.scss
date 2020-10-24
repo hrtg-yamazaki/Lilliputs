@@ -59,7 +59,8 @@
     color: white;
 }
 
-.ingredients{
+
+.ingredients, .ways{
     width: 100%;
     padding: 10px;
     &__head{
@@ -103,4 +104,39 @@
             padding-right: 8px;
         }
     }
+}
+
+.site-about{
+    width: 100%;
+    padding: 16px 0;
+    &__head{
+        max-width: 360px;
+        padding: 4px 0 4px 10px;
+        font-size: 16px;
+        font-weight: bold;
+        border-bottom: 1px solid $purpleback;
+    }
+    &__content{
+        padding: 8px 0;
+        font-size: 12px;
+    }
+}
+
+.way-to-cook{
+    padding-top: 16px;
+}
+
+.way-number{
+    font-size: 24px;
+    font-weight: bold;
+    color: $lightpurple;
+    display: block;
+    float: left;
+}
+
+.way-text{
+    font-size: 14px;
+    padding-top: 10px;
+    padding-left: 40px;
+    line-height: 24px;
 }
