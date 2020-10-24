@@ -513,7 +513,7 @@ label {
 .show-section {
   width: 100%;
   border: 1px solid #b4c8e6;
-  border-radius: 8px;
+  border-radius: 4px;
   background-color: white;
 }
 
@@ -580,6 +580,7 @@ label {
   border-bottom: 1px solid #b4c8e6;
   font-size: 24px;
   font-weight: bold;
+  color: #555555;
 }
 
 .ingredients__content {

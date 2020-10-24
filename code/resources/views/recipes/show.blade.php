@@ -38,47 +38,21 @@
                     </h2>
                     <div class="ingredients__content">
                         <ul class="ingredient-list">
-                            <li class="ingredient">
-                                <div class="ingredient__box clearfix">
-                                    <p class="ingredient__box__name">材料名</p>
-                                    <p class="ingredient__box__amount">数量</p>
-                                </div>
-                            </li>
-                            <li class="ingredient">
-                                <div class="ingredient__box clearfix">
-                                    <p class="ingredient__box__name">材料名</p>
-                                    <p class="ingredient__box__amount">数量</p>
-                                </div>
-                            </li>
-                            <li class="ingredient">
-                                <div class="ingredient__box clearfix">
-                                    <p class="ingredient__box__name">材料名</p>
-                                    <p class="ingredient__box__amount">数量</p>
-                                </div>
-                            </li>
-                            <li class="ingredient">
-                                <div class="ingredient__box clearfix">
-                                    <p class="ingredient__box__name">材料名</p>
-                                    <p class="ingredient__box__amount">数量</p>
-                                </div>
-                            </li>
-                            <li class="ingredient">
-                                <div class="ingredient__box clearfix">
-                                    <p class="ingredient__box__name">材料名</p>
-                                    <p class="ingredient__box__amount">数量</p>
-                                </div>
-                            </li>
-                            <li class="ingredient">
-                                <div class="ingredient__box clearfix">
-                                    <p class="ingredient__box__name">材料名</p>
-                                    <p class="ingredient__box__amount">数量</p>
-                                </div>
-                            </li>
+
+                            @include("shared.ingredient")
+                            @include("shared.ingredient")
+                            @include("shared.ingredient")
+                            @include("shared.ingredient")
+                            @include("shared.ingredient")
+                            @include("shared.ingredient")
+
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+
+        
 
     </div>
 

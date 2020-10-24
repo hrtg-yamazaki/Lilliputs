@@ -6,7 +6,7 @@
 .show-section{
     width: 100%;
     border: 1px solid $purpleback;
-    border-radius: 8px;
+    border-radius: 4px;
     background-color: white;
     &__box{
         width: 100%;
@@ -68,6 +68,7 @@
         border-bottom: 1px solid $purpleback;
         font-size: 24px;
         font-weight: bold;
+        color: $pencil;
     }
     &__content{
         padding: 20px;
