@@ -17,7 +17,7 @@
                         <div class="show-title">
                             <h2 class="show-title__text">{{ $recipe->title }}</h2>
                             <div class="show-link">
-                                <a href="#" class="show-link__edit">
+                                <a href={{ route("recipes.edit", ['recipe' => $recipe]) }} class="show-link__edit">
                                     編集
                                 </a>
                                 <a href={{ route("recipes.destroy_confirm", ['recipe' => $recipe]) }} class="show-link__destroy">

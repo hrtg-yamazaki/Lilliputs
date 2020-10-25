@@ -31,10 +31,9 @@ class RecipeController extends Controller
     public function create()
     {
         $recipe = new Recipe();
-        $head = "新規投稿";
 
         return view("recipes.create", [
-            "recipe"=>$recipe, "head"=>$head
+            "recipe" => $recipe
         ]);
     }
 
@@ -52,6 +51,7 @@ class RecipeController extends Controller
         $recipe->description = $request->description;
 
         $recipe->save();
+
         return redirect()->route(
             "recipes.show", ["recipe"=> $recipe]
         );
@@ -78,7 +78,11 @@ class RecipeController extends Controller
      */
     public function edit(Recipe $recipe)
     {
-        //
+        $head = "レシピ 【 ".$recipe->title." 】 の 編集";
+
+        return view("recipes.edit", [
+            "recipe" => $recipe
+        ]);
     }
 
     /**
@@ -90,7 +94,14 @@ class RecipeController extends Controller
      */
     public function update(Request $request, Recipe $recipe)
     {
-        //
+        $recipe->title = $request->title;
+        $recipe->description = $request->description;
+
+        $recipe->save();
+
+        return redirect()->route(
+            "recipes.show", ["recipe"=> $recipe]
+        );
     }
 
     /**

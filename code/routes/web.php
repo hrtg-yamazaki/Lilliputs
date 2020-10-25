@@ -15,7 +15,5 @@ Route::get('/', "RecipeController@index")->name("root");
 
 Auth::routes();
 
-Route::resource('recipes', 'RecipeController', [
-    'only' => ['show', "create", "store", "destroy"]
-]);
+Route::resource('recipes', 'RecipeController');
 Route::get("/recipes/{recipe}/destroy", "RecipeController@destroy_confirm")->name("recipes.destroy_confirm");
