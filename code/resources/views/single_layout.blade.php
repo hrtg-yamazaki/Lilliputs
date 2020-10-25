@@ -13,15 +13,13 @@
 
         @include("shared.header")
 
-        <div class="container">
-            <div class="single-main">
-                <div class="single-main__box">
+            <div class="single-container">
+                <div class="single-main">
 
-                    @yield("content")
+                        @yield("content")
 
                 </div>
             </div>
-        </div>
 
         @include("shared.footer")
 

@@ -188,7 +188,7 @@ label {
 
 .container {
   width: 100%;
-  min-height: calc(100% - 160px);
+  min-height: calc(100% - 200px);
   background-color: whitesmoke;
 }
 
@@ -202,14 +202,17 @@ label {
   padding: 0 20px;
 }
 
-.single-main {
-  max-width: 700px;
-  margin: 0 auto;
+.single-container {
+  width: 100%;
+  min-height: calc(100% - 160px);
+  display: flex;
+  align-items: center;
+  background-color: whitesmoke;
 }
 
-.single-main__box {
-  width: 100%;
-  padding: 0 20px;
+.single-main {
+  width: 700px;
+  margin: 0 auto;
 }
 
 .half-border {
@@ -555,11 +558,23 @@ label {
 }
 
 .show-title {
+  border-bottom: 1px solid #b4c8e6;
+}
+
+.show-title__text {
   color: #555555;
   font-size: 24px;
   font-weight: bold;
-  border-bottom: 1px solid #b4c8e6;
   letter-spacing: 4px;
+}
+
+.show-link {
+  text-align: right;
+}
+
+.show-link__edit,
+.show-link__destroy {
+  font-size: 12px;
 }
 
 .show-category {
@@ -683,7 +698,7 @@ label {
 }
 
 .recipe-form {
-  padding: 10px;
+  padding: 19px;
   border: 1px solid #b4c8e6;
   border-radius: 4px;
   background-color: white;
@@ -702,5 +717,64 @@ label {
 .error {
   font-size: 12px;
   color: crimson;
+}
+
+.confirm-section {
+  height: 100%;
+  width: 100%;
+  padding: 40px 10px;
+  margin: 0 auto;
+}
+
+.confirm-form {
+  width: 100%;
+  padding: 19px;
+  background-color: white;
+  border: 1px solid #b4c8e6;
+}
+
+.confirm-form__box {
+  width: 100%;
+}
+
+.confirm-form__box__head {
+  width: 100%;
+  padding-bottom: 8px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 1px solid #b4c8e6;
+}
+
+.confirm-form__box__content {
+  width: 100%;
+  padding: 20px;
+}
+
+.confirm-message {
+  width: 100%;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+.confirm-message__title {
+  font-size: 16px;
+  color: #5064b4;
+  font-weight: bold;
+}
+
+.destroy-form {
+  width: 100%;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.destroy-form__button {
+  padding: 4px 20px;
+  background-color: #5064b4;
+  border: 1px solid silver;
+  cursor: pointer;
+  color: whitesmoke;
+  -webkit-appearance: none;
 }
 

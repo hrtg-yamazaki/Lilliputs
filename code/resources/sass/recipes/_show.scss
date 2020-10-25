@@ -29,11 +29,20 @@
 }
 
 .show-title{
-    color: rgb(85, 85, 85);
-    font-size: 24px;
-    font-weight: bold;
     border-bottom: 1px solid $purpleback;
-    letter-spacing: 4px;
+    &__text{
+        color: rgb(85, 85, 85);
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 4px;
+    }
+}
+
+.show-link{
+    text-align: right;
+    &__edit, &__destroy{
+        font-size: 12px;
+    }
 }
 
 .show-category{

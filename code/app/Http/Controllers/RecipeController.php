@@ -99,8 +99,17 @@ class RecipeController extends Controller
      * @param  \App\Recipe  $recipe
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Recipe $recipe)
+    public function destroy_confirm(Recipe $recipe)
     {
-        //
+        return view("recipes.destroy_confirm", [
+            "recipe" => $recipe
+        ]);
     }
+    public function destroy(Request $request, Recipe $recipe)
+    {
+        $recipe->delete();
+
+        return redirect()->route("root");
+    }
+
 }

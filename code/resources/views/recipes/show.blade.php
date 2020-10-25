@@ -14,9 +14,17 @@
                         </div>
                     </div>
                     <div class="show-head__right">
-                        <h2 class="show-title">
-                            {{ $recipe->title }}
-                        </h2>
+                        <div class="show-title">
+                            <h2 class="show-title__text">{{ $recipe->title }}</h2>
+                            <div class="show-link">
+                                <a href="#" class="show-link__edit">
+                                    編集
+                                </a>
+                                <a href={{ route("recipes.destroy_confirm", ['recipe' => $recipe]) }} class="show-link__destroy">
+                                    削除
+                                </a>
+                            </div>
+                        </div>
                         <p class="show-category">
                             Maingred × Method
                         </p>
