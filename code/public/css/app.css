@@ -155,11 +155,7 @@ legend {
   letter-spacing: 2px;
 }
 
-html {
-  width: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
+html,
 body {
   width: 100%;
   height: 100%;
@@ -193,60 +189,48 @@ label {
 .container {
   width: 100%;
   min-height: calc(100% - 200px);
-  background-color: white;
+  background-color: whitesmoke;
 }
 
 .main-contents {
   max-width: 960px;
   margin: 0 auto;
-  background-color: whitesmoke;
 }
 
 .main-contents__box {
   width: 100%;
-  padding: 10px;
+  padding: 0 20px;
 }
 
-.content {
-  min-height: 960px;
+.single-container {
   width: 100%;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px;
-}
-
-.sample {
-  color: #5064b4;
-}
-
-.top-wrapper {
-  width: 100%;
-  height: 320px;
-  background-color: darkgray;
-  background-image: url(/images/lilliputs_top2.jpg?3ef3de8909944c198eff1076dc63554f);
-  background-size: cover;
-}
-
-.top-wrapper__box {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(32, 32, 32, 0.6);
+  min-height: calc(100% - 160px);
   display: flex;
   align-items: center;
+  background-color: whitesmoke;
 }
 
-.top-wrapper__box__text {
-  max-width: 480px;
-  min-height: 50px;
+.single-main {
+  width: 700px;
   margin: 0 auto;
-  text-align: center;
-  font-size: 36px;
-  color: whitesmoke;
-  font-weight: bold;
+}
+
+.half-border {
+  width: 75%;
+  margin: 0 auto;
+  font-size: 0;
+  height: 1px;
+  border-top: 1px solid #b4c8e6;
+}
+
+.section-wheel {
+  margin-top: 40px;
 }
 
 .header {
   height: 60px;
   width: 100%;
+  background-color: whitesmoke;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px;
   position: relative;
   z-index: 16;
@@ -337,6 +321,7 @@ label {
 .footer {
   width: 100%;
   height: 100px;
+  border-top: 1px solid #788cbe;
   background-color: #b4c8e6;
 }
 
@@ -378,5 +363,424 @@ label {
 .footer-content__right__link {
   color: #5064b4;
   font-size: 12px;
+}
+
+.recipe-panel {
+  width: 25%;
+  height: 280px;
+  padding: 10px;
+}
+
+.recipe-panel__inner {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid #b4c8e6;
+}
+
+.recipe-panel__inner:hover {
+  border: 1px solid #788cbe;
+}
+
+.panel-image {
+  width: 100%;
+  height: 200px;
+  background-color: silver;
+}
+
+.no-image {
+  color: whitesmoke;
+  line-height: 200px;
+  text-align: center;
+}
+
+.panel-info {
+  padding: 0 8px;
+  height: calc(100% - 200px);
+}
+
+.panel-info__title {
+  height: calc(100% - 20px);
+  font-size: 12px;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.panel-info__property {
+  height: 20px;
+  line-height: 20px;
+  text-align: right;
+  font-size: 10px;
+  color: #333;
+  border-top: 1px solid silver;
+}
+
+.top-wrapper {
+  width: 100%;
+  height: 320px;
+  background-color: darkgray;
+  background-image: url(/images/lilliputs_top2.jpg?3ef3de8909944c198eff1076dc63554f);
+  background-size: cover;
+}
+
+.top-wrapper__box {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(32, 32, 32, 0.6);
+  display: flex;
+  align-items: center;
+}
+
+.top-wrapper__box__text {
+  max-width: 480px;
+  min-height: 50px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 36px;
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+.index-sections {
+  width: 100%;
+}
+
+.index-section {
+  width: 100%;
+  padding: 40px 0;
+  min-height: 320px;
+}
+
+.index-section__box {
+  background-color: whitesmoke;
+  padding: 10px 20px 20px;
+}
+
+.index-section__box__head {
+  width: 100%;
+  height: 50px;
+  padding-left: 10px;
+  border-bottom: 1px solid #788cbe;
+  color: #5064b4;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 50px;
+}
+
+.index-section__box__content {
+  width: 100%;
+  padding-top: 10px;
+}
+
+.border-top {
+  border-top: 1px solid #b4c8e6;
+}
+
+.right-head {
+  padding-left: 0;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.recipe-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.site-about-list {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.site-about-list__box {
+  width: 100%;
+  height: 100%;
+}
+
+.site-about {
+  width: 100%;
+  padding: 16px 0;
+}
+
+.site-about__head {
+  max-width: 360px;
+  padding: 4px 0 4px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #b4c8e6;
+}
+
+.site-about__head__number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #788cbe;
+}
+
+.site-about__content {
+  padding: 8px 0;
+  font-size: 12px;
+}
+
+.show-sections {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.show-section {
+  width: 100%;
+  border: 1px solid #b4c8e6;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.show-section__box {
+  width: 100%;
+  padding: 9px;
+}
+
+.show-head {
+  width: 100%;
+}
+
+.show-head__left {
+  width: 50%;
+  float: left;
+  padding: 10px;
+}
+
+.show-head__right {
+  width: 50%;
+  padding: 10px;
+  float: right;
+}
+
+.show-title {
+  border-bottom: 1px solid #b4c8e6;
+}
+
+.show-title__text {
+  color: #555555;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+.show-link {
+  text-align: right;
+}
+
+.show-link__edit,
+.show-link__destroy {
+  font-size: 12px;
+}
+
+.show-category {
+  padding: 0 10px 40px;
+  font-size: 14px;
+  color: #555555;
+  text-align: right;
+}
+
+.show-description {
+  padding: 24px 10px;
+  font-size: 14px;
+  color: #555555;
+  letter-spacing: 4px;
+}
+
+.show-no-image {
+  width: 100%;
+  height: 430px;
+  line-height: 430px;
+  text-align: center;
+  background-color: silver;
+  color: white;
+}
+
+.ingredients,
+.ways {
+  width: 100%;
+  padding: 10px;
+}
+
+.ingredients__head,
+.ways__head {
+  width: 50%;
+  padding: 0 10px;
+  border-bottom: 1px solid #b4c8e6;
+  font-size: 24px;
+  font-weight: bold;
+  color: #555555;
+}
+
+.ingredients__content,
+.ways__content {
+  padding: 20px;
+  min-height: 80px;
+  color: #555555;
+}
+
+.ingredient-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ingredient {
+  width: 50%;
+  padding: 4px 20px;
+}
+
+.ingredient__box {
+  border-bottom: 1px solid #b4c8e6;
+}
+
+.ingredient__box__name {
+  float: left;
+  width: 70%;
+  color: #555555;
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+.ingredient__box__amount {
+  float: right;
+  width: 30%;
+  color: #555555;
+  font-size: 14px;
+  text-align: right;
+  padding-right: 8px;
+}
+
+.site-about {
+  width: 100%;
+  padding: 16px 0;
+}
+
+.site-about__head {
+  max-width: 360px;
+  padding: 4px 0 4px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #b4c8e6;
+}
+
+.site-about__content {
+  padding: 8px 0;
+  font-size: 12px;
+}
+
+.way-to-cook {
+  padding-top: 16px;
+}
+
+.way-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #788cbe;
+  display: block;
+  float: left;
+}
+
+.way-text {
+  font-size: 14px;
+  padding-top: 10px;
+  padding-left: 40px;
+  line-height: 24px;
+}
+
+.form-section {
+  padding: 40px 10px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.recipe-form {
+  padding: 19px;
+  border: 1px solid #b4c8e6;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.form-recipe-title {
+  font-size: 20px;
+  color: #5064b4;
+  font-weight: bold;
+}
+
+.errors {
+  width: 100%;
+  padding: 10px;
+}
+
+.errors__box {
+  background-color: whitesmoke;
+  padding: 10px;
+}
+
+.error {
+  font-size: 12px;
+  color: crimson;
+}
+
+.confirm-section {
+  height: 100%;
+  width: 100%;
+  padding: 40px 10px;
+  margin: 0 auto;
+}
+
+.confirm-form {
+  width: 100%;
+  padding: 19px;
+  background-color: white;
+  border: 1px solid #b4c8e6;
+}
+
+.confirm-form__box {
+  width: 100%;
+}
+
+.confirm-form__box__head {
+  width: 100%;
+  padding-bottom: 8px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 1px solid #b4c8e6;
+}
+
+.confirm-form__box__content {
+  width: 100%;
+  padding: 20px;
+}
+
+.confirm-message {
+  width: 100%;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+.confirm-message__title {
+  font-size: 16px;
+  color: #5064b4;
+  font-weight: bold;
+}
+
+.destroy-form {
+  width: 100%;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.destroy-form__button {
+  padding: 4px 20px;
+  background-color: #5064b4;
+  border: 1px solid silver;
+  cursor: pointer;
+  color: whitesmoke;
+  -webkit-appearance: none;
 }
 

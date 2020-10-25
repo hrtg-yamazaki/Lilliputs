@@ -7,6 +7,16 @@ use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
+    /** */
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->artisan(
+            'migrate --env=testing --database=sqlite_testing --force'
+        );
+    }
+
     /**
      * A basic test example.
      *

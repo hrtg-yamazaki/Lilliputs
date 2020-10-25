@@ -11,10 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', "RecipeController@index")->name("root");
 
 Auth::routes();
 
-Route::get("/sample", "SampleController")->name("sample");
+Route::resource('recipes', 'RecipeController');
+Route::get("/recipes/{recipe}/destroy", "RecipeController@destroy_confirm")->name("recipes.destroy_confirm");

@@ -1,0 +1,33 @@
+
+.form-section{
+    padding: 40px 10px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.recipe-form{
+    padding: 19px;
+    border: 1px solid $purpleback;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.form-recipe-title{
+    font-size: 20px;
+    color: $darkpurple;
+    font-weight: bold;
+}
+
+.errors{
+    width: 100%;
+    padding: 10px;
+    &__box{
+        background-color: whitesmoke;
+        padding: 10px;
+    }
+}
+
+.error{
+    font-size: 12px;
+    color: crimson;
+}

@@ -1,8 +1,13 @@
 @import "config/reset";
 @import "config/config";
 
-@import "sample";
-
 @import "shared/header";
 @import "shared/navi_bar";
 @import "shared/footer";
+
+@import "shared/recipe_panel";
+
+@import "recipes/index";
+@import "recipes/show";
+@import "recipes/form";
+@import "recipes/confirm";
