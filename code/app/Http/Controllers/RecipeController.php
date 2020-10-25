@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Recipe;
 use Illuminate\Http\Request;
+use App\Http\Requests\RecipeSaveRequest;
 
 class RecipeController extends Controller
 {
@@ -43,7 +44,7 @@ class RecipeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RecipeSaveRequest $request)
     {
         $recipe = new Recipe();
 

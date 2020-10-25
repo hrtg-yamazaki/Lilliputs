@@ -689,3 +689,18 @@ label {
   background-color: white;
 }
 
+.errors {
+  width: 100%;
+  padding: 10px;
+}
+
+.errors__box {
+  background-color: whitesmoke;
+  padding: 10px;
+}
+
+.error {
+  font-size: 12px;
+  color: crimson;
+}
+

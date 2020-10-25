@@ -12,6 +12,9 @@
                 <div class="recipe-form__box__content">
                     {{ Form::open(["route" => "recipes.store"]) }}
                         {{ csrf_field() }}
+                        @if ($errors->any())
+                            @include("shared.errors")
+                        @endif
                         <div>
                             <p>{{ Form::label("title", "タイトル") }}</p>
                             <p>{{ Form::text("title", null) }}</p>
