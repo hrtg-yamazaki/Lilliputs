@@ -29,7 +29,12 @@ class RecipeController extends Controller
      */
     public function create()
     {
-        return view("recipes.create");
+        $recipe = new Recipe();
+        $head = "新規投稿";
+
+        return view("recipes.create", [
+            "recipe"=>$recipe, "head"=>$head
+        ]);
     }
 
     /**
@@ -40,7 +45,15 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $recipe = new Recipe();
+
+        $recipe->title = $request->title;
+        $recipe->description = $request->description;
+
+        $recipe->save();
+        return redirect()->route(
+            "recipes.show", ["recipe"=> $recipe]
+        );
     }
 
     /**
