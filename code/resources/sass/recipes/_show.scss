@@ -40,7 +40,7 @@
 
 .show-link{
     text-align: right;
-    &__edit, &__destroy{
+    &__edit, &__destroy, &__user{
         font-size: 12px;
     }
 }
@@ -48,7 +48,7 @@
 .show-category{
     padding: 0 10px 40px;
     font-size: 14px;
-    color: $pencil;
+    color: $darkpurple;
     text-align: right;
 }
 
