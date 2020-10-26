@@ -14,7 +14,7 @@ class AddUserIdToRecipes extends Migration
     public function up()
     {
         Schema::table('recipes', function (Blueprint $table) {
-            $table->integer("user_id");
+            $table->integer("user_id")->default(0);
         });
     }
 

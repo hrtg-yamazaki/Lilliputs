@@ -28,14 +28,14 @@
                                     @else
                                         @if($recipe->user_id)
                                             <p class="show-link__user">
-                                                投稿者：{{ $recipe->user->name }}
+                                                投稿者：{{ $recipe->user->name }} さん
                                             </p>
                                         @endif
                                     @endif
                                 @else
                                     @if($recipe->user_id)
                                         <p class="show-link__user">
-                                            投稿者：{{ $recipe->user->name }}
+                                            投稿者：{{ $recipe->user->name }} さん
                                         </p>
                                     @endif
                                 @endauth
