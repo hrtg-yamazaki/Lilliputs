@@ -25,7 +25,8 @@ class RecipeSaveRequest extends FormRequest
     {
         return [
             "title"       => ["required", "min:3", "max:64"],
-            "description" => ["required", "min:3", "max:512"]
+            "description" => ["required", "min:3", "max:512"],
+            "user_id"     => [],
         ];
     }
 

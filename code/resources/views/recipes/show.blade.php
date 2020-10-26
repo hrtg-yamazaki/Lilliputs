@@ -17,12 +17,28 @@
                         <div class="show-title">
                             <h2 class="show-title__text">{{ $recipe->title }}</h2>
                             <div class="show-link">
-                                <a href={{ route("recipes.edit", ['recipe' => $recipe]) }} class="show-link__edit">
-                                    編集
-                                </a>
-                                <a href={{ route("recipes.destroy_confirm", ['recipe' => $recipe]) }} class="show-link__destroy">
-                                    削除
-                                </a>
+                                @auth
+                                    @if($recipe->user_id == Auth::user()->id)
+                                        <a href={{ route("recipes.edit", ['recipe' => $recipe]) }} class="show-link__edit">
+                                            編集
+                                        </a>
+                                        <a href={{ route("recipes.destroy_confirm", ['recipe' => $recipe]) }} class="show-link__destroy">
+                                            削除
+                                        </a>
+                                    @else
+                                        @if($recipe->user_id)
+                                            <p class="show-link__user">
+                                                投稿者：{{ $recipe->user->name }}
+                                            </p>
+                                        @endif
+                                    @endif
+                                @else
+                                    @if($recipe->user_id)
+                                        <p class="show-link__user">
+                                            投稿者：{{ $recipe->user->name }}
+                                        </p>
+                                    @endif
+                                @endauth
                             </div>
                         </div>
                         <p class="show-category">

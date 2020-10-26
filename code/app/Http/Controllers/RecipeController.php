@@ -49,6 +49,7 @@ class RecipeController extends Controller
 
         $recipe->title = $request->title;
         $recipe->description = $request->description;
+        $recipe->user_id = \Auth::user()->id;
 
         $recipe->save();
 

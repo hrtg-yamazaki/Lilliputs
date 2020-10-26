@@ -577,7 +577,8 @@ label {
 }
 
 .show-link__edit,
-.show-link__destroy {
+.show-link__destroy,
+.show-link__user {
   font-size: 12px;
 }
 
