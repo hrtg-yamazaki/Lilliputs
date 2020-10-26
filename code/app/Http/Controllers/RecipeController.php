@@ -9,6 +9,13 @@ use App\Http\Requests\RecipeSaveRequest;
 class RecipeController extends Controller
 {
     /**
+     * about permission
+     */
+    public function __construct(){
+        $this->middleware("auth")->except(["index", "show"]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -79,7 +86,7 @@ class RecipeController extends Controller
      */
     public function edit(Recipe $recipe)
     {
-        $head = "レシピ 【 ".$recipe->title." 】 の 編集";
+        $this->checkAuth($recipe);
 
         return view("recipes.edit", [
             "recipe" => $recipe
@@ -95,6 +102,8 @@ class RecipeController extends Controller
      */
     public function update(Request $request, Recipe $recipe)
     {
+        $this->checkAuth($recipe);
+
         $recipe->title = $request->title;
         $recipe->description = $request->description;
 
@@ -113,15 +122,33 @@ class RecipeController extends Controller
      */
     public function destroy_confirm(Recipe $recipe)
     {
+        $this->checkAuth($recipe);
+
         return view("recipes.destroy_confirm", [
             "recipe" => $recipe
         ]);
     }
     public function destroy(Request $request, Recipe $recipe)
     {
+        $this->checkAuth($recipe);
+
         $recipe->delete();
 
         return redirect()->route("root");
+    }
+
+
+    /**
+     * private functions
+     */
+    private function checkAuth($recipe){
+        $user = \Auth::user();
+        if (!($user)) {
+            abort(403, "アクセス権限がありません");
+        }
+        if ( $recipe->user_id != $user->id ) {
+            abort(403, "アクセス権限がありません");
+        }
     }
 
 }
