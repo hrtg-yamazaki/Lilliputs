@@ -861,3 +861,10 @@ label {
   -webkit-appearance: none;
 }
 
+.invalid-feedback {
+  padding: 4px;
+  background-color: whitesmoke;
+  color: crimson;
+  font-size: 12px;
+}
+
