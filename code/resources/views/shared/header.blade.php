@@ -7,9 +7,17 @@
             </a>
         </div>
         <div class="header__box__right">
-            <a href="{{ route('login') }}" class="header-link">
-                ログイン
-            </a>
+            @auth
+                <span class="header-user-name">{{ Auth::user()->name }} さん</span>
+                <a href={{ route("logout_confirm") }} class="header-link">
+                    ログアウト
+                </a>
+                
+            @else
+                <a href="{{ route('login') }}" class="header-link">
+                    ログイン
+                </a>
+            @endauth
         </div>
     </div>
 </header>
