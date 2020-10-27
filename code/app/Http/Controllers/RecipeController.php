@@ -93,9 +93,12 @@ class RecipeController extends Controller
         $this->checkAuth($recipe);
 
         $ingredientFields = Ingredient::fieldsForEdit($recipe->ingredients);
+        $processFields = Process::fieldsForEdit($recipe->processes);
 
         return view("recipes.edit", [
-            "recipe" => $recipe, "ingredientFields" => $ingredientFields
+            "recipe" => $recipe,
+            "ingredientFields" => $ingredientFields,
+            "processFields" => $processFields
         ]);
     }
 
@@ -115,6 +118,7 @@ class RecipeController extends Controller
         $recipe->save();
 
         Ingredient::bulkUpdate($request->ingredients, $recipe);
+        Process::bulkUpdate($request->processes, $recipe);
 
         return redirect()->route(
             "recipes.show", ["recipe"=> $recipe]
