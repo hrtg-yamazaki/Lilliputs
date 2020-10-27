@@ -78,7 +78,7 @@
                         <p class="half-border">&nbsp;</p>
 
                         <div class="recipe-submit">
-                            {{ Form::submit('投稿する', ["class"=>"recipe-submit__button"]) }}
+                            {{ Form::submit('編集を完了する', ["class"=>"recipe-submit__button"]) }}
                         </div>
                     {{ Form::close() }}
                 </div>

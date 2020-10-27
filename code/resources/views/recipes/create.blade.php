@@ -60,8 +60,28 @@
 
                         <p class="half-border">&nbsp;</p>
 
+                        <div class="process-form">
+                            <h3 class="process-form__head">
+                                作り方
+                            </h3>
+                            <div class="process-form__content">
+                                @for($i = 0; $i < 5; $i ++)
+                                    <div class="process-field clearfix">
+                                        <h4 class="process-field__head">
+                                            {{ $i + 1 }}.
+                                        </h4>
+                                        <p class="process-field__input">
+                                            {{ Form::textarea("processes[".$i."][content]", null, ["class"=>"process-field__input__textarea"]) }}
+                                        </p>
+                                    </div>
+                                @endfor
+                            </div>
+                        </div>
+
+                        <p class="half-border">&nbsp;</p>
+
                         <div class="recipe-submit">
-                            {{ Form::submit('投稿する', ["class"=>"recipe-submit__button"]) }}
+                            {{ Form::submit('内容を確認し投稿する', ["class"=>"recipe-submit__button"]) }}
                         </div>
                     {{ Form::close() }}
                 </div>

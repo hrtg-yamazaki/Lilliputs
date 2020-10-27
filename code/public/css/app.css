@@ -879,6 +879,50 @@ label {
   background-color: steelblue;
 }
 
+.process-form {
+  width: 100%;
+  padding: 28px 20px;
+}
+
+.process-form__head {
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.process-form__content {
+  padding-bottom: 20px;
+}
+
+.process-field {
+  padding-top: 16px;
+}
+
+.process-field__head {
+  float: left;
+  width: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #788cbe;
+  font-weight: bold;
+}
+
+.process-field__input {
+  float: right;
+  width: calc(100% - 24px);
+  padding-left: 16px;
+}
+
+.process-field__input__textarea {
+  width: 100%;
+  height: 60px;
+  padding: 8px 12px;
+  border: 1px solid #788cbe;
+  border-radius: 4px;
+  font-size: 12px;
+  resize: none;
+}
+
 .confirm-section {
   height: 100%;
   width: 100%;
