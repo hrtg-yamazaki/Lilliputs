@@ -15,6 +15,10 @@ class Recipe extends Model
         return $this->hasMany("App\Ingredient");
     }
 
+    public function processes(){
+        return $this->hasMany("App\Process");
+    }
+
     protected static function boot() 
     {
         parent::boot();
