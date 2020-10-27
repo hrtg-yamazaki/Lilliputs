@@ -597,8 +597,14 @@ label {
 .show-category {
   padding: 0 10px 40px;
   font-size: 14px;
+  font-weight: bold;
   color: #5064b4;
   text-align: right;
+}
+
+.show-category__symbol {
+  color: #333;
+  font-weight: normal;
 }
 
 .show-description {

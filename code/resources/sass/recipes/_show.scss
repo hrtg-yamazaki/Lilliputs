@@ -48,8 +48,13 @@
 .show-category{
     padding: 0 10px 40px;
     font-size: 14px;
+    font-weight: bold;
     color: $darkpurple;
     text-align: right;
+    &__symbol{
+        color: #333;
+        font-weight: normal;
+    }
 }
 
 .show-description{

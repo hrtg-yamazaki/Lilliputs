@@ -42,7 +42,11 @@
                             </div>
                         </div>
                         <p class="show-category">
-                            Maingred × Method
+                            <span class="show-category__symbol">【</span>{{--
+                            --}}{{ $recipe->maingred->name }}{{--
+                            --}}<span class="show-category__symbol">】x【</span>{{--
+                            --}}{{ $recipe->method->name }}{{--
+                            --}}<span class="show-category__symbol">】</span>
                         </p>
                         <p class="half-border">&nbsp;</p>
                         <p class="show-description">
