@@ -75,35 +75,21 @@
 
         <div class="show-section section-wheel">
             <div class="show-section__box">
-                <div class="ways">
-                    <h2 class="ways__head">
+                <div class="processes">
+                    <h2 class="processes__head">
                         作り方
                     </h2>
-                    <ul class="ways__content">
-                        <li class="way-to-cook clearfix">
-                            <h3 class="way-number">1. </h3>
-                            <h4 class="way-text">
-                                調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。
-                            </h4>
-                        </li>
-                        <li class="way-to-cook clearfix">
-                            <h3 class="way-number">2. </h3>
-                            <h4 class="way-text">
-                                調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。
-                            </h4>
-                        </li>
-                        <li class="way-to-cook clearfix">
-                            <h3 class="way-number">3. </h3>
-                            <h4 class="way-text">
-                                調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。
-                            </h4>
-                        </li>
-                        <li class="way-to-cook clearfix">
-                            <h3 class="way-number">4. </h3>
-                            <h4 class="way-text">
-                                調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。調理手順のサンプル。
-                            </h4>
-                        </li>
+                    <ul class="processes__content">
+                        @foreach($recipe->processes as $i => $process)
+                            <li class="process clearfix">
+                                <h3 class="process-number">
+                                    {{ $i + 1 }}. 
+                                </h3>
+                                <h4 class="process-text">
+                                    {{ $process->content }}
+                                </h4>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
