@@ -23,6 +23,29 @@
                             <p>{{ Form::label("description", "レシピの簡単な紹介文") }}</p>
                             <p>{{ Form::textarea("description", null) }}</p>
                         </div>
+
+                        <div>
+                            <h3 class="clearfix">
+                                <p class="temp-left">
+                                    <label>食材</label>
+                                </p>
+                                <p class="temp-right">
+                                    <label>数量</label>
+                                </p>
+                            </h3>
+                            @for($i = 1; $i <= 5; $i ++)
+                                <div class="clearfix">
+                                    <p class="temp-left">
+                                        {{ Form::text("ingredients[".$i."][name]", null) }}
+                                    </p>
+                                    <p class="temp-right">
+                                        {{ Form::text("ingredients[".$i."][amount]", null) }}
+                                    </p>
+                                </div>
+                            @endfor
+                        </div>
+
+
                         <div>
                             {{ Form::submit('投稿する') }}
                         </div>

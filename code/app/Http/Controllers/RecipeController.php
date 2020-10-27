@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Recipe;
+use App\Ingredient;
 use Illuminate\Http\Request;
 use App\Http\Requests\RecipeSaveRequest;
 
@@ -57,8 +58,9 @@ class RecipeController extends Controller
         $recipe->title = $request->title;
         $recipe->description = $request->description;
         $recipe->user_id = \Auth::user()->id;
-
         $recipe->save();
+
+        Ingredient::bulkSave($request->ingredients, $recipe);
 
         return redirect()->route(
             "recipes.show", ["recipe"=> $recipe]
