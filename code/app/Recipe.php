@@ -15,4 +15,14 @@ class Recipe extends Model
         return $this->hasMany("App\Ingredient");
     }
 
+    protected static function boot() 
+    {
+        parent::boot();
+        static::deleting(function($recipe) {
+            foreach ($recipe->ingredients()->get() as $ingredient) {
+                $ingredient->delete();
+            }
+        });
+    }
+
 }

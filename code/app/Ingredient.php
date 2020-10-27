@@ -39,9 +39,13 @@ class Ingredient extends Model
         foreach($ingredients as $ingredient_params){
             if (isset($ingredient_params["id"])) {
                 $ingredient = self::find($ingredient_params["id"]);
-                $ingredient->name = $ingredient_params["name"];
-                $ingredient->amount = $ingredient_params["amount"];
-                $ingredient->update();
+                if ($ingredient_params["name"] && $ingredient_params["amount"]) {
+                    $ingredient->name = $ingredient_params["name"];
+                    $ingredient->amount = $ingredient_params["amount"];
+                    $ingredient->update();
+                } else {
+                    $ingredient->delete();
+                }
             } else {
                 if ($ingredient_params["name"] && $ingredient_params["amount"]) {
                     $ingredient = new Ingredient();
