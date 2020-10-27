@@ -63,12 +63,9 @@
                     <div class="ingredients__content">
                         <ul class="ingredient-list">
 
-                            @include("shared.ingredient")
-                            @include("shared.ingredient")
-                            @include("shared.ingredient")
-                            @include("shared.ingredient")
-                            @include("shared.ingredient")
-                            @include("shared.ingredient")
+                            @foreach($recipe->ingredients as $ingredient)
+                                @include("shared.ingredient")
+                            @endforeach
 
                         </ul>
                     </div>

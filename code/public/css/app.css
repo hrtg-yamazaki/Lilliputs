@@ -836,7 +836,8 @@ label {
 
 .ingredient-field__name__input {
   width: 100%;
-  padding: 4px 8px;
+  padding: 6px 8px;
+  font-size: 12px;
   border: 1px solid #788cbe;
   border-radius: 4px;
 }
@@ -849,7 +850,8 @@ label {
 
 .ingredient-field__amount__input {
   width: 100%;
-  padding: 4px 8px;
+  padding: 6px 8px;
+  font-size: 12px;
   border: 1px solid #788cbe;
   border-radius: 4px;
 }
