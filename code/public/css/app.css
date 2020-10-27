@@ -227,6 +227,18 @@ label {
   margin-top: 40px;
 }
 
+.temp-left {
+  float: left;
+  width: 60%;
+  padding: 5px 20px;
+}
+
+.temp-right {
+  float: right;
+  width: 40%;
+  padding: 5px 20px;
+}
+
 .header {
   height: 60px;
   width: 100%;
@@ -606,13 +618,13 @@ label {
 }
 
 .ingredients,
-.ways {
+.processes {
   width: 100%;
   padding: 10px;
 }
 
 .ingredients__head,
-.ways__head {
+.processes__head {
   width: 50%;
   padding: 0 10px;
   border-bottom: 1px solid #b4c8e6;
@@ -622,7 +634,7 @@ label {
 }
 
 .ingredients__content,
-.ways__content {
+.processes__content {
   padding: 20px;
   min-height: 80px;
   color: #555555;
@@ -677,11 +689,11 @@ label {
   font-size: 12px;
 }
 
-.way-to-cook {
+.process {
   padding-top: 16px;
 }
 
-.way-number {
+.process-number {
   font-size: 24px;
   font-weight: bold;
   color: #788cbe;
@@ -689,7 +701,7 @@ label {
   float: left;
 }
 
-.way-text {
+.process-text {
   font-size: 14px;
   padding-top: 10px;
   padding-left: 40px;
@@ -707,6 +719,22 @@ label {
   border: 1px solid #b4c8e6;
   border-radius: 4px;
   background-color: white;
+}
+
+.recipe-form__box {
+  width: 100%;
+}
+
+.recipe-form__box__head {
+  padding: 0 20px 10px 20px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid #b4c8e6;
+}
+
+.recipe-form__box__content {
+  padding: 10px;
 }
 
 .form-recipe-title {
@@ -728,6 +756,171 @@ label {
 .error {
   font-size: 12px;
   color: crimson;
+}
+
+.recipe-fields {
+  width: 100%;
+}
+
+.recipe-field {
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.recipe-field__label {
+  padding-bottom: 8px;
+}
+
+.recipe-field__label__text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.recipe-field__input {
+  width: 100%;
+}
+
+.recipe-field__input__textbox {
+  width: 100%;
+  font-size: 14px;
+  padding: 8px 12px;
+  border: 1px solid #788cbe;
+  border-radius: 4px;
+}
+
+.recipe-field__input__textarea {
+  width: 100%;
+  height: 160px;
+  font-size: 14px;
+  padding: 8px 12px;
+  border: 1px solid #788cbe;
+  border-radius: 4px;
+  resize: none;
+}
+
+.ingredient-form {
+  width: 100%;
+  padding: 28px 20px;
+}
+
+.ingredient-form__head {
+  padding-bottom: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.ingredient-form__secondhead {
+  font-size: 12px;
+}
+
+.ingredient-form__secondhead__name {
+  width: 60%;
+  padding-left: 6px;
+  float: left;
+}
+
+.ingredient-form__secondhead__amount {
+  width: 40%;
+  padding-left: 16px;
+  float: right;
+}
+
+.ingredient-field {
+  padding: 8px 0;
+}
+
+.ingredient-field__id {
+  display: none;
+}
+
+.ingredient-field__name {
+  width: 60%;
+  float: left;
+}
+
+.ingredient-field__name__input {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 12px;
+  border: 1px solid #788cbe;
+  border-radius: 4px;
+}
+
+.ingredient-field__amount {
+  width: 40%;
+  padding-left: 10px;
+  float: right;
+}
+
+.ingredient-field__amount__input {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 12px;
+  border: 1px solid #788cbe;
+  border-radius: 4px;
+}
+
+.recipe-submit {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.recipe-submit__button {
+  padding: 8px 20px;
+  background-color: #5064b4;
+  font-size: 14px;
+  color: whitesmoke;
+  border: 1px solid #5064b4;
+  -webkit-appearance: none;
+}
+
+.recipe-submit__button:hover {
+  background-color: steelblue;
+}
+
+.process-form {
+  width: 100%;
+  padding: 28px 20px;
+}
+
+.process-form__head {
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.process-form__content {
+  padding-bottom: 20px;
+}
+
+.process-field {
+  padding-top: 16px;
+}
+
+.process-field__head {
+  float: left;
+  width: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #788cbe;
+  font-weight: bold;
+}
+
+.process-field__input {
+  float: right;
+  width: calc(100% - 24px);
+  padding-left: 16px;
+}
+
+.process-field__input__textarea {
+  width: 100%;
+  height: 60px;
+  padding: 8px 12px;
+  border: 1px solid #788cbe;
+  border-radius: 4px;
+  font-size: 12px;
+  resize: none;
 }
 
 .confirm-section {
@@ -789,6 +982,10 @@ label {
   cursor: pointer;
   color: whitesmoke;
   -webkit-appearance: none;
+}
+
+.extra-padding {
+  padding-bottom: 30px;
 }
 
 .auth-section {

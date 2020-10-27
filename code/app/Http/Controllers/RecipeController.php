@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Recipe;
+use App\Ingredient;
+use App\Process;
 use Illuminate\Http\Request;
 use App\Http\Requests\RecipeSaveRequest;
 
@@ -57,8 +59,10 @@ class RecipeController extends Controller
         $recipe->title = $request->title;
         $recipe->description = $request->description;
         $recipe->user_id = \Auth::user()->id;
-
         $recipe->save();
+
+        Ingredient::bulkSave($request->ingredients, $recipe);
+        Process::bulkSave($request->processes, $recipe);
 
         return redirect()->route(
             "recipes.show", ["recipe"=> $recipe]
@@ -88,8 +92,13 @@ class RecipeController extends Controller
     {
         $this->checkAuth($recipe);
 
+        $ingredientFields = Ingredient::fieldsForEdit($recipe->ingredients);
+        $processFields = Process::fieldsForEdit($recipe->processes);
+
         return view("recipes.edit", [
-            "recipe" => $recipe
+            "recipe" => $recipe,
+            "ingredientFields" => $ingredientFields,
+            "processFields" => $processFields
         ]);
     }
 
@@ -106,8 +115,10 @@ class RecipeController extends Controller
 
         $recipe->title = $request->title;
         $recipe->description = $request->description;
-
         $recipe->save();
+
+        Ingredient::bulkUpdate($request->ingredients, $recipe);
+        Process::bulkUpdate($request->processes, $recipe);
 
         return redirect()->route(
             "recipes.show", ["recipe"=> $recipe]

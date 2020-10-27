@@ -11,4 +11,25 @@ class Recipe extends Model
         return $this->belongsTo("App\User");
     }
 
+    public function ingredients(){
+        return $this->hasMany("App\Ingredient");
+    }
+
+    public function processes(){
+        return $this->hasMany("App\Process");
+    }
+
+    protected static function boot() 
+    {
+        parent::boot();
+        static::deleting(function($recipe) {
+            foreach ($recipe->ingredients()->get() as $ingredient) {
+                $ingredient->delete();
+            }
+            foreach ($recipe->processes()->get() as $process) {
+                $process->delete();
+            }
+        });
+    }
+
 }
