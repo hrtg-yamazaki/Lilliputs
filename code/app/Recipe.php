@@ -26,6 +26,9 @@ class Recipe extends Model
             foreach ($recipe->ingredients()->get() as $ingredient) {
                 $ingredient->delete();
             }
+            foreach ($recipe->processes()->get() as $process) {
+                $process->delete();
+            }
         });
     }
 
