@@ -39,6 +39,15 @@
 
                         <p class="half-border">&nbsp;</p>
 
+                        <p>
+                            {{ Form::select("maingred_id", $maingreds, $recipe->maingred_id ) }}
+                        </p>
+                        <p>
+                            {{ Form::select("method_id", $methods, $recipe->method_id ) }}
+                        </p>
+
+                        <p class="half-border">&nbsp;</p>
+
                         <div class="ingredient-form">
                             <h3 class="ingredient-form__head">
                                 必要なもの

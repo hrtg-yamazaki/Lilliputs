@@ -15,6 +15,7 @@
                         @if ($errors->any())
                             @include("shared.errors")
                         @endif
+
                         <div class="recipe-field">
                             <p class="recipe-field__label">
                                 {{ Form::label("title", "レシピのタイトル", ["class"=>"recipe-field__label__text"]) }}
@@ -31,6 +32,15 @@
                                 {{ Form::textarea("description", null, ["class"=>"recipe-field__input__textarea"]) }}
                             </p>
                         </div>
+
+                        <p class="half-border">&nbsp;</p>
+
+                        <p>
+                            {{ Form::select("maingred_id", $maingreds ) }}
+                        </p>
+                        <p>
+                            {{ Form::select("method_id", $methods ) }}
+                        </p>
 
                         <p class="half-border">&nbsp;</p>
 
