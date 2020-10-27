@@ -90,8 +90,10 @@ class RecipeController extends Controller
     {
         $this->checkAuth($recipe);
 
+        $ingredientFields = Ingredient::fieldsForEdit($recipe->ingredients);
+
         return view("recipes.edit", [
-            "recipe" => $recipe
+            "recipe" => $recipe, "ingredientFields" => $ingredientFields
         ]);
     }
 
@@ -108,8 +110,9 @@ class RecipeController extends Controller
 
         $recipe->title = $request->title;
         $recipe->description = $request->description;
-
         $recipe->save();
+
+        Ingredient::bulkUpdate($request->ingredients, $recipe);
 
         return redirect()->route(
             "recipes.show", ["recipe"=> $recipe]

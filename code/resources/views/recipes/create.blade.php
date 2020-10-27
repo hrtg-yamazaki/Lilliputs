@@ -46,7 +46,7 @@
                                     <label>数量</label>
                                 </h4>
                             </div>
-                            @for($i = 1; $i <= 5; $i ++)
+                            @for($i = 0; $i < 10; $i ++)
                                 <div class="ingredient-field clearfix">
                                     <p class="ingredient-field__name">
                                         {{ Form::text("ingredients[".$i."][name]", null, ["class"=>"ingredient-field__name__input"]) }}

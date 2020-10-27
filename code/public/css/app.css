@@ -727,7 +727,7 @@ label {
 
 .recipe-form__box__head {
   padding: 0 20px 10px 20px;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   font-weight: bold;
   border-bottom: 1px solid #b4c8e6;
@@ -827,6 +827,10 @@ label {
 
 .ingredient-field {
   padding: 8px 0;
+}
+
+.ingredient-field__id {
+  display: none;
 }
 
 .ingredient-field__name {
