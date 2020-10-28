@@ -3,3 +3,5 @@
 .env
 
 mysql/data
+
+terraform.tfvars
