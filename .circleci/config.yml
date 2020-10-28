@@ -106,6 +106,31 @@ jobs:
                 command: |
                     docker push ${ECR_DOMAIN_NGINX}:$CIRCLE_SHA1
                     docker push ${ECR_DOMAIN_NGINX}:latest
+    update_ecs_task:
+        docker:
+            - image: circleci/python:3.7
+        steps:
+            - run:
+                command: |
+                    sudo pip install awscli
+            - run:
+                command: |
+                    wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
+                    mv jq-linux64 jq
+            - run:
+                command: |
+                    $(aws ecr get-login --no-include-email --region ap-northeast-1)
+            - run:
+                command: |
+                    aws ecs describe-task-definition --task-definition lilliputs | jq '.taskDefinition | { containerDefinitions: .containerDefinitions }' > task_def.json
+                    aws ecs register-task-definition \
+                            --family lilliputs \
+                            --cli-input-json file://task_def.json \
+                            --requires-compatibilities "FARGATE" \
+                            --network-mode "awsvpc" \
+                            --cpu 256 --memory 512 \
+                            --execution-role-arn ${EXECUTION_ROLE_ARN}
+                    aws ecs update-service --cluster lilliputs --service lilliputs --task-definition lilliputs
 
 
 workflows:
@@ -116,6 +141,14 @@ workflows:
             - build_image:
                 requires:
                     - build
+                filters:
+                    branches:
+                        only:
+                            - main
+                            - prd-setting
+            - update_ecs_task:
+                requires:
+                    - build_image
                 filters:
                     branches:
                         only:
