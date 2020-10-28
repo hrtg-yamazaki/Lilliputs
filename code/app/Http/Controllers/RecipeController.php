@@ -128,7 +128,7 @@ class RecipeController extends Controller
      * @param  \App\Recipe  $recipe
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Recipe $recipe)
+    public function update(RecipeSaveRequest $request, Recipe $recipe)
     {
         $this->checkAuth($recipe);
 
