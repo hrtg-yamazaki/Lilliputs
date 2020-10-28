@@ -10,7 +10,7 @@
                 {{ $recipe->title }}
             </p>
             <div class="panel-info__property">
-                maingred × method
+                {{ $recipe->maingred->name }} × {{ $recipe->method->name }}
             </div>
         </div>
     </a>

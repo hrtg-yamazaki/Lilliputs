@@ -24,23 +24,33 @@
                                 {{ Form::text("title", null, ["class"=>"recipe-field__input__textbox"]) }}
                             </p>
                         </div>
+
+                        <p class="half-border">&nbsp;</p>
+
+                        <div class="recipe-field">
+                            <p class="recipe-field__label">
+                                <label class="recipe-field__label__text">メイン食材 と 調理法</label>
+                            </p>
+                            <div class="recipe_field__input clearfix">
+                                <p class="half-field field-left">
+                                    {{ Form::select("maingred_id", $maingreds) }}
+                                </p>
+                                <p class="half-field field-right">
+                                    {{ Form::select("method_id", $methods) }}
+                                </p>
+                            </div>
+                        </div>
+
+                        <p class="half-border">&nbsp;</p>
+
                         <div class="recipe-field extra-padding">
                             <p class="recipe-field__label">
-                                {{ Form::label("description", "レシピの簡単な紹介文", ["class"=>"recipe-field__label__text"]) }}
+                                {{ Form::label("description", "レシピの説明", ["class"=>"recipe-field__label__text"]) }}
                             </p>
                             <p class="recipe-field__input">
                                 {{ Form::textarea("description", null, ["class"=>"recipe-field__input__textarea"]) }}
                             </p>
                         </div>
-
-                        <p class="half-border">&nbsp;</p>
-
-                        <p>
-                            {{ Form::select("maingred_id", $maingreds ) }}
-                        </p>
-                        <p>
-                            {{ Form::select("method_id", $methods ) }}
-                        </p>
 
                         <p class="half-border">&nbsp;</p>
 
