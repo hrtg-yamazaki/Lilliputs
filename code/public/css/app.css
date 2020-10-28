@@ -227,18 +227,6 @@ label {
   margin-top: 40px;
 }
 
-.temp-left {
-  float: left;
-  width: 60%;
-  padding: 5px 20px;
-}
-
-.temp-right {
-  float: right;
-  width: 40%;
-  padding: 5px 20px;
-}
-
 .header {
   height: 60px;
   width: 100%;
@@ -283,6 +271,12 @@ label {
 
 .header-user-name {
   font-size: 10px;
+}
+
+.header-user-name strong {
+  color: #5064b4;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .navi-bar {
@@ -428,7 +422,7 @@ label {
   line-height: 20px;
   text-align: right;
   font-size: 10px;
-  color: #333;
+  color: #5064b4;
   border-top: 1px solid silver;
 }
 
@@ -597,8 +591,14 @@ label {
 .show-category {
   padding: 0 10px 40px;
   font-size: 14px;
+  font-weight: bold;
   color: #5064b4;
   text-align: right;
+}
+
+.show-category__symbol {
+  color: #333;
+  font-weight: normal;
 }
 
 .show-description {
@@ -764,7 +764,7 @@ label {
 
 .recipe-field {
   width: 100%;
-  padding: 10px 20px;
+  padding: 20px;
 }
 
 .recipe-field__label {
@@ -796,6 +796,27 @@ label {
   border: 1px solid #788cbe;
   border-radius: 4px;
   resize: none;
+}
+
+.half-field {
+  width: 50%;
+  padding: 8px;
+}
+
+.half-field select {
+  width: 100%;
+  padding: 8px 16px;
+  font-size: 12px;
+  border: 1px solid #788cbe;
+  border-radius: 4px;
+}
+
+.field-left {
+  float: left;
+}
+
+.field-right {
+  float: right;
 }
 
 .ingredient-form {

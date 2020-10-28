@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Recipe;
 use App\Ingredient;
 use App\Process;
+use App\Maingred;
+use App\Method;
 use Illuminate\Http\Request;
 use App\Http\Requests\RecipeSaveRequest;
 
@@ -40,9 +42,13 @@ class RecipeController extends Controller
     public function create()
     {
         $recipe = new Recipe();
+        $maingreds = Maingred::all()->pluck("name", "id");
+        $methods = Method::all()->pluck("name", "id");
 
         return view("recipes.create", [
-            "recipe" => $recipe
+            "recipe"    => $recipe,
+            "maingreds" => $maingreds,
+            "methods"   => $methods
         ]);
     }
 
@@ -59,6 +65,8 @@ class RecipeController extends Controller
         $recipe->title = $request->title;
         $recipe->description = $request->description;
         $recipe->user_id = \Auth::user()->id;
+        $recipe->maingred_id = $request->maingred_id;
+        $recipe->method_id = $request->method_id;
         $recipe->save();
 
         Ingredient::bulkSave($request->ingredients, $recipe);
@@ -92,13 +100,18 @@ class RecipeController extends Controller
     {
         $this->checkAuth($recipe);
 
+        $maingreds = Maingred::all()->pluck("name", "id");
+        $methods = Method::all()->pluck("name", "id");
+
         $ingredientFields = Ingredient::fieldsForEdit($recipe->ingredients);
         $processFields = Process::fieldsForEdit($recipe->processes);
 
         return view("recipes.edit", [
-            "recipe" => $recipe,
+            "recipe"           => $recipe,
+            "maingreds"        => $maingreds,
+            "methods"          => $methods,
             "ingredientFields" => $ingredientFields,
-            "processFields" => $processFields
+            "processFields"    => $processFields
         ]);
     }
 
@@ -115,6 +128,8 @@ class RecipeController extends Controller
 
         $recipe->title = $request->title;
         $recipe->description = $request->description;
+        $recipe->maingred_id = $request->maingred_id;
+        $recipe->method_id = $request->method_id;
         $recipe->save();
 
         Ingredient::bulkUpdate($request->ingredients, $recipe);

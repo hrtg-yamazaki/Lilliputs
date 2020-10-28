@@ -8,7 +8,9 @@
         </div>
         <div class="header__box__right">
             @auth
-                <span class="header-user-name">{{ Auth::user()->name }} さん</span>
+                <span class="header-user-name">
+                    <strong>{{ Auth::user()->name }}</strong> さん
+                </span>
                 <a href={{ route("logout_confirm") }} class="header-link">
                     ログアウト
                 </a>

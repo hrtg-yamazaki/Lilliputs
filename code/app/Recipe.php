@@ -10,11 +10,16 @@ class Recipe extends Model
     public function user(){
         return $this->belongsTo("App\User");
     }
+    public function maingred(){
+        return $this->belongsTo("App\Maingred");
+    }
+    public function method(){
+        return $this->belongsTo("App\Method");
+    }
 
     public function ingredients(){
         return $this->hasMany("App\Ingredient");
     }
-
     public function processes(){
         return $this->hasMany("App\Process");
     }

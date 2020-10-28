@@ -40,4 +40,9 @@
 
 .header-user-name{
     font-size: 10px;
+    strong{
+        color: $darkpurple;
+        font-size: 12px;
+        font-weight: bold;
+    }
 }
