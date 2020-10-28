@@ -77,6 +77,15 @@
             border-radius: 4px;
             resize: none;
         }
+        &__attention{
+            padding: 0 0 10px 10px;
+            font-size: 10px;
+            color: $darkpurple;
+        }
+        &__image{
+            width: 100%;
+            font-size: 12px;
+        }
     }
 }
 

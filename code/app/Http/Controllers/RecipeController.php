@@ -68,8 +68,10 @@ class RecipeController extends Controller
         $recipe->maingred_id = $request->maingred_id;
         $recipe->method_id = $request->method_id;
 
-        $file = $request->file("image")->store("public");
-        $recipe->image = str_replace("public/", "", $file);
+        if($request->file("image")){
+            $file = $request->file("image")->store("public");
+            $recipe->image = str_replace("public/", "", $file);
+        }
 
         $recipe->save();
 
@@ -134,6 +136,12 @@ class RecipeController extends Controller
         $recipe->description = $request->description;
         $recipe->maingred_id = $request->maingred_id;
         $recipe->method_id = $request->method_id;
+
+        if($request->file("image")){
+            $file = $request->file("image")->store("public");
+            $recipe->image = str_replace("public/", "", $file);
+        }
+
         $recipe->save();
 
         Ingredient::bulkUpdate($request->ingredients, $recipe);

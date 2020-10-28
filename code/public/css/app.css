@@ -803,6 +803,17 @@ label {
   resize: none;
 }
 
+.recipe-field__input__attention {
+  padding: 0 0 10px 10px;
+  font-size: 10px;
+  color: #5064b4;
+}
+
+.recipe-field__input__image {
+  width: 100%;
+  font-size: 12px;
+}
+
 .half-field {
   width: 50%;
   padding: 8px;
