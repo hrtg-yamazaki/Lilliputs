@@ -3,7 +3,13 @@
 
     <a href={{ route('recipes.show', ['recipe' => $recipe]) }} class="recipe-panel__inner">
         <div class="panel-image">
-            <p class="no-image">no image</p>
+            @if(isset($recipe->image))
+                <img src={{ asset("uploads/".$recipe->image) }} width="200px" height="200px">
+            @else
+                <p class="no-image">
+                    No image
+                </p>
+            @endif
         </div>
         <div class="panel-info">
             <p class="panel-info__title">
