@@ -67,6 +67,12 @@ class RecipeController extends Controller
         $recipe->user_id = \Auth::user()->id;
         $recipe->maingred_id = $request->maingred_id;
         $recipe->method_id = $request->method_id;
+
+        if($request->file("image")){
+            $file = $request->file("image")->store("public");
+            $recipe->image = str_replace("public/", "", $file);
+        }
+
         $recipe->save();
 
         Ingredient::bulkSave($request->ingredients, $recipe);
@@ -122,7 +128,7 @@ class RecipeController extends Controller
      * @param  \App\Recipe  $recipe
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Recipe $recipe)
+    public function update(RecipeSaveRequest $request, Recipe $recipe)
     {
         $this->checkAuth($recipe);
 
@@ -130,6 +136,12 @@ class RecipeController extends Controller
         $recipe->description = $request->description;
         $recipe->maingred_id = $request->maingred_id;
         $recipe->method_id = $request->method_id;
+
+        if($request->file("image")){
+            $file = $request->file("image")->store("public");
+            $recipe->image = str_replace("public/", "", $file);
+        }
+
         $recipe->save();
 
         Ingredient::bulkUpdate($request->ingredients, $recipe);

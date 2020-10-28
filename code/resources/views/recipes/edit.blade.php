@@ -15,7 +15,7 @@
                     の編集
                 </h2>
                 <div class="recipe-form__box__content">
-                    {{ Form::open(["method"=>"patch", "route"=>["recipes.update", $recipe], "class"=>"recipe-fields"]) }}
+                    {{ Form::open(["method"=>"patch", "route"=>["recipes.update", $recipe], "files"=>"true", "class"=>"recipe-fields"]) }}
                         {{ csrf_field() }}
                         @if ($errors->any())
                             @include("shared.errors")
@@ -27,6 +27,22 @@
                             <p class="recipe-field__input">
                                 {{ Form::text("title", $recipe->title, ["class"=>"recipe-field__input__textbox"]) }}
                             </p>
+                        </div>
+
+                        <p class="half-border">&nbsp;</p>
+
+                        <div class="recipe-field">
+                            <p class="recipe-field__label">
+                                <label class="recipe-field__label__text">
+                                    料理の画像
+                                </label>
+                            </p>
+                            <div class="recipe-field__input">
+                                <p class="recipe-field__input__attention">
+                                    変更を希望する場合のみアップロードしてください
+                                </p>
+                                {{ Form::file("image", ["class"=>"recipe-field__input__image"]) }}
+                            </div>
                         </div>
 
                         <p class="half-border">&nbsp;</p>

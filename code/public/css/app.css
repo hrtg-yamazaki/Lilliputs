@@ -608,9 +608,14 @@ label {
   letter-spacing: 4px;
 }
 
-.show-no-image {
+.show-image {
   width: 100%;
   height: 430px;
+}
+
+.show-no-image {
+  width: 100%;
+  height: 100%;
   line-height: 430px;
   text-align: center;
   background-color: silver;
@@ -796,6 +801,17 @@ label {
   border: 1px solid #788cbe;
   border-radius: 4px;
   resize: none;
+}
+
+.recipe-field__input__attention {
+  padding: 0 0 10px 10px;
+  font-size: 10px;
+  color: #5064b4;
+}
+
+.recipe-field__input__image {
+  width: 100%;
+  font-size: 12px;
 }
 
 .half-field {

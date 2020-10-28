@@ -10,7 +10,7 @@
                     新規投稿
                 </h2>
                 <div class="recipe-form__box__content">
-                    {{ Form::open(["route" => "recipes.store", "class"=>"recipe-fields"]) }}
+                    {{ Form::open(["route" => "recipes.store", "files"=>"true", "class"=>"recipe-fields"]) }}
                         {{ csrf_field() }}
                         @if ($errors->any())
                             @include("shared.errors")
@@ -38,6 +38,17 @@
                                 <p class="half-field field-right">
                                     {{ Form::select("method_id", $methods) }}
                                 </p>
+                            </div>
+                        </div>
+
+                        <p class="half-border">&nbsp;</p>
+
+                        <div class="recipe-field">
+                            <p class="recipe-field__label">
+                                <label class="recipe-field__label__text">料理の画像</label>
+                            </p>
+                            <div class="recipe_field__input clearfix">
+                                {{ Form::file("image", ["class"=>"recipe_field__input__image"]) }}
                             </div>
                         </div>
 

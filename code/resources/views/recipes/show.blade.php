@@ -9,9 +9,9 @@
             <div class="show-section__box">
                 <div class="show-head clearfix">
                     <div class="show-head__left">
-                        <div class="show-no-image">
-                            No image
-                        </div>
+
+                        @include("shared.show_image")
+
                     </div>
                     <div class="show-head__right">
                         <div class="show-title">
