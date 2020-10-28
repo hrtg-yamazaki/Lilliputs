@@ -6,3 +6,4 @@ mysql/data
 
 terraform.tfvars
 .terraform
+task_definitions.json
