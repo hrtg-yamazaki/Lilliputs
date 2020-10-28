@@ -73,8 +73,51 @@ jobs:
         # - run: ./vendor/bin/codecept build
         # - run: ./vendor/bin/codecept run
 
+    build_image:
+        docker:
+            - image: docker:18.09.0
+        steps:
+            - checkout
+            - setup_remote_docker
+            - run:
+                command: |
+                    apk add --no-cache --update py-pip
+                    pip install awscli 
+            - run:
+                command: |
+                    $(aws ecr get-login --no-include-email --region ap-northeast-1)
+            - run:
+                working_directory: code
+                command: |
+                    echo ${ENV_FILE} >> base64env.txt
+                    base64 -d base64env.txt >> .env
+            - run:
+                working_directory: code
+                command: |
+                    docker build -t ${ECR_DOMAIN_PHP}:$CIRCLE_SHA1 -t ${ECR_DOMAIN_PHP}:latest .
+            - run:
+                command: |
+                    docker push ${ECR_DOMAIN_PHP}:$CIRCLE_SHA1
+                    docker push ${ECR_DOMAIN_PHP}:latest
+            - run:
+                command: |
+                    docker build -t ${ECR_DOMAIN_NGINX}:$CIRCLE_SHA1 -t ${ECR_DOMAIN_NGINX}:latest -f nginx/Dockerfile .
+            - run:
+                command: |
+                    docker push ${ECR_DOMAIN_NGINX}:$CIRCLE_SHA1
+                    docker push ${ECR_DOMAIN_NGINX}:latest
+
+
 workflows:
     version: 2
     test:
         jobs:
             - build
+            - build_image:
+                requires:
+                    - build
+                filters:
+                    branches:
+                        only:
+                            - main
+                            - prd-setting
