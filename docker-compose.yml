@@ -24,6 +24,7 @@ services:
         volumes:
             - ./nginx/conf.d:/etc/nginx/conf.d
             - ./code/public:/public
+            - ./code/storage/app/public:/public/uploads
         depends_on:
             - php
     db:

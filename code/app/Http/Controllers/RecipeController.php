@@ -67,6 +67,10 @@ class RecipeController extends Controller
         $recipe->user_id = \Auth::user()->id;
         $recipe->maingred_id = $request->maingred_id;
         $recipe->method_id = $request->method_id;
+
+        $file = $request->file("image")->store("public");
+        $recipe->image = str_replace("public/", "", $file);
+
         $recipe->save();
 
         Ingredient::bulkSave($request->ingredients, $recipe);
