@@ -7,3 +7,4 @@ mysql/data
 terraform.tfvars
 .terraform
 task_definitions.json
+task_migration.json
