@@ -36,4 +36,17 @@ class Recipe extends Model
             }
         });
     }
+
+    public static function saveImage($requestFile)
+    {
+        if(\App::environment("local")){
+            $fileName = $requestFile->store("public");
+            $imagePath = str_replace("public/", "", $fileName);
+        } else {
+            $fileName = Storage::disk('s3')->put('', $requestFile);
+            $imagePath = Storage::disk('s3')->url($fileName);
+        }
+        return $imagePath;
+    }
+
 }
