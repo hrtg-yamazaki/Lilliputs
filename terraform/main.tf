@@ -5,6 +5,7 @@ variable "db_user" {}
 variable "db_password" {}
 variable "app_key" {}
 variable "task_role" {}
+variable "domain" {}
 
 data "aws_caller_identity" "current" {}
 
