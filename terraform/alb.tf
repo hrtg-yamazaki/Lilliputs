@@ -49,7 +49,7 @@ resource "aws_lb_target_group" "lilliputs_http" {
     target_type = "ip"
 
     health_check {
-        port = 80
+        port = 443
         path = "/"
     }
 
