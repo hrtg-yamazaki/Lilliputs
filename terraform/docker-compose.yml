@@ -1,0 +1,15 @@
+# terraform実行専用
+version: "3"
+services:
+    terraform:
+        image: hashicorp/terraform:0.13.4
+        container_name: lilliputs_tf
+        stdin_open: true
+        tty: true
+        volumes:
+            - .:/terraform
+        working_dir: /terraform
+        entrypoint: ash
+        environment:
+            AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID_LP
+            AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY_LP

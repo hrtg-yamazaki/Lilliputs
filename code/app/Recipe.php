@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Storage;
 
 class Recipe extends Model
 {
@@ -36,4 +37,17 @@ class Recipe extends Model
             }
         });
     }
+
+    public static function saveImage($requestFile)
+    {
+        if(\App::environment("local")){
+            $fileName = $requestFile->store("public");
+            $imagePath = str_replace("public/", "", $fileName);
+        } else {
+            $fileName = Storage::disk('s3')->put('', $requestFile, "public");
+            $imagePath = Storage::disk('s3')->url($fileName);
+        }
+        return $imagePath;
+    }
+
 }

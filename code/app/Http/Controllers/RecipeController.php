@@ -69,8 +69,7 @@ class RecipeController extends Controller
         $recipe->method_id = $request->method_id;
 
         if($request->file("image")){
-            $file = $request->file("image")->store("public");
-            $recipe->image = str_replace("public/", "", $file);
+            $recipe->image = Recipe::saveImage($request->file("image"));
         }
 
         $recipe->save();
@@ -138,8 +137,7 @@ class RecipeController extends Controller
         $recipe->method_id = $request->method_id;
 
         if($request->file("image")){
-            $file = $request->file("image")->store("public");
-            $recipe->image = str_replace("public/", "", $file);
+            $recipe->image = Recipe::saveImage($request->file("image"));
         }
 
         $recipe->save();

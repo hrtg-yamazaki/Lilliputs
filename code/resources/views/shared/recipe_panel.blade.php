@@ -4,7 +4,11 @@
     <a href={{ route('recipes.show', ['recipe' => $recipe]) }} class="recipe-panel__inner">
         <div class="panel-image">
             @if(isset($recipe->image))
-                <img src={{ asset("uploads/".$recipe->image) }} width="200px" height="200px">
+                @if(App::environment("local"))
+                    <img src={{ asset("uploads/".$recipe->image) }} width="200px" height="200px">
+                @else
+                    <img src={{ url($recipe->image) }} width="200px" height="200px">
+                @endif
             @else
                 <p class="no-image">
                     No image
