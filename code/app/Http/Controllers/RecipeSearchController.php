@@ -11,7 +11,8 @@ class RecipeSearchController extends Controller
     /** 
      * 検索ページTOP
     */
-    public function top(){
+    public function top()
+    {
         $message = "検索ページTOP";
         return view("recipes.search.top", [
             "message"=> $message
@@ -21,10 +22,18 @@ class RecipeSearchController extends Controller
     /**
      * タイトル検索
      */
-    public function title(){
-        $recipes = Recipe::all();
+    public function title(Request $request)
+    {
+        $keyword = "";
+        $recipes = [];
+
+        if (isset($request->title)){
+            $keyword = $request->title;
+            $recipes = Recipe::where("title", "LIKE", "%{$keyword}%")->get();
+        }
+
         return view("recipes.search.title", [
-            "recipes"=>$recipes
+            "recipes"=>$recipes, "keyword"=>$keyword
         ]);
     }
 
