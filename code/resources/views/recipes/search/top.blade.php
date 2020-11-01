@@ -19,7 +19,7 @@
                         </a>
                     </li>
                     <li class="search-way">
-                        <a href="#" class="search-way__link">
+                        <a href={{ route("recipes.search.category") }} class="search-way__link">
                             メイン食材・調理方法で検索
                         </a>
                     </li>

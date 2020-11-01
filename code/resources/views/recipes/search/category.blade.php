@@ -8,14 +8,11 @@
         <div class="search-contents">
             <div class="search-contents__box">
                 <h2 class="search-contents__box__head">
-                    タイトル検索
+                    カテゴリ検索
                 </h2>
                 <div class="search-contents__box__content">
 
-                    {{ Form::open(["method"=>"get", "route" => "recipes.search.title", "class"=>"search-form"]) }}
-                        {{ Form::text("title", $keyword, ["class"=>"search-form__input", "placeholder"=>"キーワードを入力してください"]) }}
-                        {{ Form::submit("検索", ["class"=>"search-form__submit"]) }}
-                    {{ Form::close() }}
+                    {{--  --}}
 
                     <p class="half-border"></p>
 

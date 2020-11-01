@@ -37,4 +37,16 @@ class RecipeSearchController extends Controller
         ]);
     }
 
+    /**
+     * カテゴリ検索( メイン食材 × 調理方法 )
+     */
+    public function category(Request $request)
+    {
+        $recipes = [];
+
+        return view("recipes.search.category", [
+            "recipes"=>$recipes
+        ]);
+    }
+
 }
