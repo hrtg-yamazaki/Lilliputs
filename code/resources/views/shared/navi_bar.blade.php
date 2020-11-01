@@ -5,7 +5,7 @@
         <ul class="navi-list">
 
             <li class="navi-list__content">
-                <a href="#" class="navi-list__content__link">
+                <a href={{ route("recipes.search.top") }} class="navi-list__content__link">
                     検索
                 </a>
             </li>{{--

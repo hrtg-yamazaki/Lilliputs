@@ -18,3 +18,7 @@ Route::get("/logout_confirm", "ExtraAuthController@logout_confirm")->name("logou
 
 Route::resource('recipes', 'RecipeController');
 Route::get("/recipes/{recipe}/destroy", "RecipeController@destroy_confirm")->name("recipes.destroy_confirm");
+
+Route::group(['prefix' => 'recipes/search', 'as' => 'recipes.search.'], function () {
+    Route::get('/top','RecipeSearchController@top')->name('top');
+});
