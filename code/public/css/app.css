@@ -1025,6 +1025,57 @@ label {
   padding-bottom: 30px;
 }
 
+.search-contents {
+  width: 100%;
+  background-color: white;
+  border: 1px solid #788cbe;
+}
+
+.search-contents__box {
+  padding: 10px;
+}
+
+.search-contents__box__head {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px 0;
+  border-bottom: 1px solid #788cbe;
+}
+
+.search-contents__box__content {
+  padding: 10px;
+}
+
+.search-message {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.search-ways {
+  padding-bottom: 10px;
+}
+
+.search-way {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.search-way__link {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #788cbe;
+  border: 1px solid #5064b4;
+  color: whitesmoke;
+  font-size: 14px;
+}
+
+.search-way__link:hover {
+  background-color: steelblue;
+  color: whitesmoke;
+}
+
 .auth-section {
   padding: 40px 10px;
   max-width: 640px;
