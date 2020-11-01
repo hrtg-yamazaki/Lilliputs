@@ -1,10 +1,14 @@
+.search-wrapper{
+    width: 100%;
+    padding: 40px 0;
+}
 
 .search-contents{
     width: 100%;
     background-color: white;
     border: 1px solid $lightpurple;
     &__box{
-        padding: 10px;
+        padding: 9px;
         &__head{
             text-align: center;
             font-size: 24px;

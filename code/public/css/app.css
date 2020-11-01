@@ -1025,6 +1025,11 @@ label {
   padding-bottom: 30px;
 }
 
+.search-wrapper {
+  width: 100%;
+  padding: 40px 0;
+}
+
 .search-contents {
   width: 100%;
   background-color: white;
@@ -1032,7 +1037,7 @@ label {
 }
 
 .search-contents__box {
-  padding: 10px;
+  padding: 9px;
 }
 
 .search-contents__box__head {

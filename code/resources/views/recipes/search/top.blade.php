@@ -14,7 +14,7 @@
                 </p>
                 <ul class="search-ways">
                     <li class="search-way">
-                        <a href="#" class="search-way__link">
+                        <a href={{ route("recipes.search.title") }} class="search-way__link">
                             タイトルで検索
                         </a>
                     </li>

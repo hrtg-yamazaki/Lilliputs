@@ -21,4 +21,5 @@ Route::get("/recipes/{recipe}/destroy", "RecipeController@destroy_confirm")->nam
 
 Route::group(['prefix' => 'recipes/search', 'as' => 'recipes.search.'], function () {
     Route::get('/top','RecipeSearchController@top')->name('top');
+    Route::get('/title', 'RecipeSearchController@title')->name('title');
 });

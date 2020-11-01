@@ -18,4 +18,11 @@ class RecipeSearchController extends Controller
         ]);
     }
 
+    /**
+     * タイトル検索
+     */
+    public function title(){
+        return view("recipes.search.title");
+    }
+
 }
