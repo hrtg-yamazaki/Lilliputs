@@ -48,3 +48,35 @@
         color: whitesmoke;
     }
 }
+
+.search-form{
+    width: 300px;
+    padding: 24px 0;
+    margin: 0 auto;
+    &__input{
+        width: calc(100% - 80px);
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    &__submit{
+        padding: 8px 16px;
+        background-color: $lightpurple;
+        border: 1px solid $darkpurple;
+        color: whitesmoke;
+        font-size: 14px;
+        -webkit-appearance: none;
+    }
+    &__submit:hover{
+        background-color: steelblue;
+        color: white;
+    }
+}
+
+.search-result{
+    padding: 20px 0;
+    &__message{
+        padding: 10px 0;
+        text-align: center;
+        font-size: 14px;
+    }
+}

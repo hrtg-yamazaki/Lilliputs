@@ -22,7 +22,10 @@ class RecipeSearchController extends Controller
      * タイトル検索
      */
     public function title(){
-        return view("recipes.search.title");
+        $recipes = Recipe::all();
+        return view("recipes.search.title", [
+            "recipes"=>$recipes
+        ]);
     }
 
 }

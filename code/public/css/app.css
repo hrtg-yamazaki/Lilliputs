@@ -1081,6 +1081,42 @@ label {
   color: whitesmoke;
 }
 
+.search-form {
+  width: 300px;
+  padding: 24px 0;
+  margin: 0 auto;
+}
+
+.search-form__input {
+  width: calc(100% - 80px);
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.search-form__submit {
+  padding: 8px 16px;
+  background-color: #788cbe;
+  border: 1px solid #5064b4;
+  color: whitesmoke;
+  font-size: 14px;
+  -webkit-appearance: none;
+}
+
+.search-form__submit:hover {
+  background-color: steelblue;
+  color: white;
+}
+
+.search-result {
+  padding: 20px 0;
+}
+
+.search-result__message {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
 .auth-section {
   padding: 40px 10px;
   max-width: 640px;
