@@ -11,7 +11,7 @@
             </li>{{--
 
         --}}<li class="navi-list__content content-center">
-                <a href="#" class="navi-list__content__link">
+                <a href={{ route("roulette.ready") }} class="navi-list__content__link">
                     ルーレット
                 </a>
             </li>{{--
