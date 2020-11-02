@@ -1117,6 +1117,28 @@ label {
   font-size: 14px;
 }
 
+.category-field {
+  padding: 10px 0;
+}
+
+.category-field__label {
+  display: inline-block;
+  width: 80px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #5064b4;
+}
+
+.category-field__select {
+  display: inline-block;
+  width: calc(100% - 90px);
+  background-color: whitesmoke;
+  font-size: 14px;
+  padding: 8px 16px;
+  border: 1px solid #5064b4;
+  border-radius: 4px;
+}
+
 .auth-section {
   padding: 40px 10px;
   max-width: 640px;

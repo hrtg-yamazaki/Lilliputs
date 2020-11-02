@@ -80,3 +80,23 @@
         font-size: 14px;
     }
 }
+
+.category-field{
+    padding: 10px 0;
+    &__label{
+        display: inline-block;
+        width: 80px;
+        font-size: 14px;
+        font-weight: bold;
+        color: $darkpurple;
+    }
+    &__select{
+        display: inline-block;
+        width: calc(100% - 90px);
+        background-color: whitesmoke;
+        font-size: 14px;
+        padding: 8px 16px;
+        border: 1px solid $darkpurple;
+        border-radius: 4px;
+    }
+}

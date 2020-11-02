@@ -1991,6 +1991,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37671,6 +37677,7 @@ var render = function() {
     _c(
       "form",
       {
+        staticClass: "search-form",
         on: {
           submit: function($event) {
             $event.preventDefault()
@@ -37678,106 +37685,127 @@ var render = function() {
         }
       },
       [
-        _c(
-          "select",
-          {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.maingred,
-                expression: "maingred"
+        _c("div", { staticClass: "category-field" }, [
+          _c(
+            "label",
+            {
+              staticClass: "category-field__label",
+              attrs: { for: "maingred" }
+            },
+            [_vm._v("メイン食材")]
+          ),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.maingred,
+                  expression: "maingred"
+                }
+              ],
+              staticClass: "category-field__select",
+              on: {
+                change: [
+                  function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.maingred = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  },
+                  _vm.searchRecipesByCategory
+                ]
               }
-            ],
-            on: {
-              change: [
-                function($event) {
-                  var $$selectedVal = Array.prototype.filter
-                    .call($event.target.options, function(o) {
-                      return o.selected
-                    })
-                    .map(function(o) {
-                      var val = "_value" in o ? o._value : o.value
-                      return val
-                    })
-                  _vm.maingred = $event.target.multiple
-                    ? $$selectedVal
-                    : $$selectedVal[0]
+            },
+            _vm._l(_vm.maingredList, function(maingredOption) {
+              return _c(
+                "option",
+                {
+                  key: maingredOption.id,
+                  domProps: { value: maingredOption.id }
                 },
-                _vm.searchRecipesByCategory
-              ]
-            }
-          },
-          _vm._l(_vm.maingredList, function(maingredOption) {
-            return _c(
-              "option",
-              {
-                key: maingredOption.id,
-                domProps: { value: maingredOption.id }
-              },
-              [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(maingredOption.name) +
-                    "\n            "
-                )
-              ]
-            )
-          }),
-          0
-        ),
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(maingredOption.name) +
+                      "\n                "
+                  )
+                ]
+              )
+            }),
+            0
+          )
+        ]),
         _vm._v(" "),
-        _c(
-          "select",
-          {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.method,
-                expression: "method"
+        _c("div", { staticClass: "category-field" }, [
+          _c(
+            "label",
+            { staticClass: "category-field__label", attrs: { for: "method" } },
+            [_vm._v("調理方法")]
+          ),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.method,
+                  expression: "method"
+                }
+              ],
+              staticClass: "category-field__select",
+              on: {
+                change: [
+                  function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.method = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  },
+                  _vm.searchRecipesByCategory
+                ]
               }
-            ],
-            on: {
-              change: [
-                function($event) {
-                  var $$selectedVal = Array.prototype.filter
-                    .call($event.target.options, function(o) {
-                      return o.selected
-                    })
-                    .map(function(o) {
-                      var val = "_value" in o ? o._value : o.value
-                      return val
-                    })
-                  _vm.method = $event.target.multiple
-                    ? $$selectedVal
-                    : $$selectedVal[0]
-                },
-                _vm.searchRecipesByCategory
-              ]
-            }
-          },
-          _vm._l(_vm.methodList, function(methodOption) {
-            return _c(
-              "option",
-              { key: methodOption.id, domProps: { value: methodOption.id } },
-              [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(methodOption.name) +
-                    "\n            "
-                )
-              ]
-            )
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          { staticStyle: { display: "none" }, attrs: { type: "submit" } },
-          [_vm._v("検索")]
-        )
+            },
+            _vm._l(_vm.methodList, function(methodOption) {
+              return _c(
+                "option",
+                { key: methodOption.id, domProps: { value: methodOption.id } },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(methodOption.name) +
+                      "\n                "
+                  )
+                ]
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticStyle: { display: "none" }, attrs: { type: "submit" } },
+            [_vm._v("検索")]
+          )
+        ])
       ]
     ),
     _vm._v(" "),
@@ -50047,7 +50075,12 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-Vue.component('category-search', __webpack_require__(/*! ./components/CategorySearch.vue */ "./resources/js/components/CategorySearch.vue")["default"]);
+if (document.getElementsByClassName("category-search")[0]) {
+  Vue.component('category-search', __webpack_require__(/*! ./components/CategorySearch.vue */ "./resources/js/components/CategorySearch.vue")["default"]);
+  var categorySearch = new Vue({
+    el: '.category-search'
+  });
+}
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -50056,10 +50089,6 @@ Vue.component('category-search', __webpack_require__(/*! ./components/CategorySe
 // const app = new Vue({
 //     el: '#app',
 // });
-
-var categorySearch = new Vue({
-  el: '.category-search'
-});
 
 /***/ }),
 

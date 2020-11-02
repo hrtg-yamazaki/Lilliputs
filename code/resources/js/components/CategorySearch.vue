@@ -2,18 +2,24 @@
 
     <div class="category-search__box">
 
-        <form @submit.prevent>
-            <select v-model="maingred" v-on:change="searchRecipesByCategory">
-                <option v-for="maingredOption in maingredList" v-bind:value="maingredOption.id" v-bind:key="maingredOption.id">
-                    {{ maingredOption.name }}
-                </option>
-            </select>
-            <select v-model="method" v-on:change="searchRecipesByCategory">
-                <option v-for="methodOption in methodList" v-bind:value="methodOption.id" v-bind:key="methodOption.id">
-                    {{ methodOption.name }}
-                </option>
-            </select>
-            <button type="submit" style="display: none">検索</button>
+        <form @submit.prevent class="search-form">
+            <div class="category-field">
+                <label for="maingred" class="category-field__label">メイン食材</label>
+                <select v-model="maingred" v-on:change="searchRecipesByCategory" class="category-field__select">
+                    <option v-for="maingredOption in maingredList" v-bind:value="maingredOption.id" v-bind:key="maingredOption.id">
+                        {{ maingredOption.name }}
+                    </option>
+                </select>
+            </div>
+            <div class="category-field">
+                <label for="method" class="category-field__label">調理方法</label>
+                <select v-model="method" v-on:change="searchRecipesByCategory" class="category-field__select">
+                    <option v-for="methodOption in methodList" v-bind:value="methodOption.id" v-bind:key="methodOption.id">
+                        {{ methodOption.name }}
+                    </option>
+                </select>
+                <button type="submit" style="display: none">検索</button>
+            </div>
         </form>
 
         <p class="half-border"></p>
