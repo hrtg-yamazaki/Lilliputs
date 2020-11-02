@@ -12,26 +12,9 @@
                 </h2>
                 <div class="search-contents__box__content">
 
-                    {{--  --}}
-
-                    <p class="half-border"></p>
-
-                    @if($recipes)
-                        <div class="search-result">
-                            <p class="search-result__message">
-                                検索結果 ( {{ count($recipes) }} 件 )
-                            </p>
-                            <ul class="recipe-list">
-                                @if ($recipes)
-                                    @foreach($recipes as $recipe)
-        
-                                        @include("shared.recipe_panel")
-        
-                                    @endforeach
-                                @endif
-                            </ul>
-                        </div>
-                    @endif
+                    <div class="category-search">
+                        <category-search></category-search>
+                    </div>
 
                 </div>
             </div>

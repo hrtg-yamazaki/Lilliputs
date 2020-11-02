@@ -24,3 +24,5 @@ Route::group(['prefix' => 'recipes/search', 'as' => 'recipes.search.'], function
     Route::get('/title', 'RecipeSearchController@title')->name('title');
     Route::get('/category', 'RecipeSearchController@category')->name('category');
 });
+
+Route::get('/api/recipes/search/category', 'ApiController@categorySearch')->name("api.category_search");

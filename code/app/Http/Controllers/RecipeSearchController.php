@@ -42,11 +42,7 @@ class RecipeSearchController extends Controller
      */
     public function category(Request $request)
     {
-        $recipes = [];
-
-        return view("recipes.search.category", [
-            "recipes"=>$recipes
-        ]);
+        return view("recipes.search.category");
     }
 
 }
