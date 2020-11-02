@@ -26,7 +26,7 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        $recipes = Recipe::all();
+        $recipes = Recipe::latest()->limit(8)->get();
         $user = \Auth::user();
 
         return view("recipes.index", [
