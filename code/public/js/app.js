@@ -37970,21 +37970,19 @@ var staticRenderFns = [
           _c("div", { staticClass: "roulette-field" }, [
             _c("div", { staticClass: "roulette-panel" }, [
               _c("div", { staticClass: "roulette-panel__text" }, [
-                _c("i", { staticClass: "fas fa-carrot fa-5x" })
+                _c("i", { staticClass: "fas fa-question fa-5x" })
               ])
             ])
           ]),
           _vm._v(" "),
           _c("p", { staticClass: "roulette-symbol" }, [
-            _c("i", { staticClass: "fas fa-times" })
+            _c("i", { staticClass: "fas fa-times fa-2x" })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "roulette-field" }, [
             _c("div", { staticClass: "roulette-panel" }, [
               _c("div", { staticClass: "roulette-panel__text" }, [
-                _vm._v(
-                  "\n                        煮る・茹でる\n                    "
-                )
+                _c("i", { staticClass: "fas fa-question fa-5x" })
               ])
             ])
           ])
@@ -37996,7 +37994,7 @@ var staticRenderFns = [
           _c(
             "a",
             { staticClass: "roulette-button__link", attrs: { href: "#" } },
-            [_vm._v("\n                候補を見る\n            ")]
+            [_vm._v("\n                スタート\n            ")]
           )
         ])
       ])

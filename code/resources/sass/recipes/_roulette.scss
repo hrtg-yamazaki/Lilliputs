@@ -10,9 +10,9 @@
 .roulette-fields{
     width: 100%;
     padding: 10px 0;
-    max-width: 600px;
+    max-width: 520px;
     margin: 0 auto;
-    min-height: 260px;
+    min-height: 220px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -22,8 +22,8 @@
 }
 .roulette-panel{
     display: inline-block;
-    width: 240px;
-    height: 240px;
+    width: 200px;
+    height: 200px;
     background-color: $purpleback;
     border: 1px solid $darkpurple;
     border-radius: 4px;
@@ -32,9 +32,11 @@
         color: white;
         font-size: 24px;
         font-weight: bold;
-        line-height: 240px;
+        line-height: 200px;
+        height: 100%;
+        width: 100%;
         i{
-            line-height: 240px;
+            line-height: 200px;
         }
     }
 }
@@ -43,11 +45,9 @@
     display: inline-block;
     padding: 10px 0;
     text-align: center;
-    line-height: 240px;
-    width: calc(100% - 520px);
+    line-height: 200px;
+    width: calc(100% - 440px);
     i{
-        font-size: 24px;
-        font-weight: bold;
         color: $darkpurple;
     }
 }
