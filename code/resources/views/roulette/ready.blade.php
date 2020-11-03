@@ -3,23 +3,29 @@
 
 @section('content')
 
-    <div class="search-contents">
-        <div class="search-contents__box">
-            <h2 class="search-contents__box__head">
-                ルーレット
-            </h2>
-            <div class="search-contents__box__content">
+    <div class="search-wrapper-single">
 
-                <p class="search-message">
-                    今日は何をどうやって食べる<i class="fas fa-question"></i>
-                </p>
+        <div class="search-contents">
+            <div class="search-contents__box">
+                <h2 class="search-contents__box__head">
+                    ルーレット
+                </h2>
+                <div class="search-contents__box__content">
 
-                <div class="roulette">
-                    <recipe-roulette></recipe-roulette>
+                    <p class="search-message">
+                        今日は「何を」「どうやって」食べる？
+                    </p>
+
+                    <p class="half-border"></p>
+
+                    <div class="roulette">
+                        <recipe-roulette></recipe-roulette>
+                    </div>
+
                 </div>
-
             </div>
         </div>
+
     </div>
 
 @endsection

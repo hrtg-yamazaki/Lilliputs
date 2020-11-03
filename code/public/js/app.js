@@ -2100,6 +2100,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Roulette mounted.');
@@ -37936,7 +37966,39 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "recipe-roulette" }, [
       _c("div", { staticClass: "recipe-roulette__box" }, [
-        _c("h1", [_vm._v("Hello!")])
+        _c("div", { staticClass: "roulette-fields" }, [
+          _c("div", { staticClass: "roulette-field" }, [
+            _c("div", { staticClass: "roulette-panel" }, [
+              _c("div", { staticClass: "roulette-panel__text" }, [
+                _c("i", { staticClass: "fas fa-carrot fa-5x" })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "roulette-symbol" }, [
+            _c("i", { staticClass: "fas fa-times" })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "roulette-field" }, [
+            _c("div", { staticClass: "roulette-panel" }, [
+              _c("div", { staticClass: "roulette-panel__text" }, [
+                _vm._v(
+                  "\n                        煮る・茹でる\n                    "
+                )
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "half-border" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "roulette-button" }, [
+          _c(
+            "a",
+            { staticClass: "roulette-button__link", attrs: { href: "#" } },
+            [_vm._v("\n                候補を見る\n            ")]
+          )
+        ])
       ])
     ])
   }

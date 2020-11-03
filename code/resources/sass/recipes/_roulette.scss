@@ -1,0 +1,70 @@
+
+.recipe_roulette{
+    width: 100%;
+    &__box{
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.roulette-fields{
+    width: 100%;
+    padding: 10px 0;
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 260px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.roulette-field{
+    padding: 10px;
+}
+.roulette-panel{
+    display: inline-block;
+    width: 240px;
+    height: 240px;
+    background-color: $purpleback;
+    border: 1px solid $darkpurple;
+    border-radius: 4px;
+    text-align: center;
+    &__text{
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 240px;
+        i{
+            line-height: 240px;
+        }
+    }
+}
+
+.roulette-symbol{
+    display: inline-block;
+    padding: 10px 0;
+    text-align: center;
+    line-height: 240px;
+    width: calc(100% - 520px);
+    i{
+        font-size: 24px;
+        font-weight: bold;
+        color: $darkpurple;
+    }
+}
+
+.roulette-button{
+    width: 100%;
+    text-align: center;
+    padding: 20px 0 10px;
+    &__link{
+        display: inline-block;
+        padding: 8px 16px;
+        font-size: 14px;
+        color: whitesmoke;
+        background-color: $darkpurple; 
+    }
+    &__link:hover{
+        background-color: steelblue;
+        color: whitesmoke;
+    }
+}
