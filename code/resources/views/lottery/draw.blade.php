@@ -6,7 +6,7 @@
     <div class="search-contents">
         <div class="search-contents__box">
             <h2 class="search-contents__box__head">
-                ルーレット
+                くじ引き
             </h2>
             <div class="search-contents__box__content">
                 <p class="search-message">

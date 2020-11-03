@@ -11,8 +11,8 @@
             </li>{{--
 
         --}}<li class="navi-list__content content-center">
-                <a href={{ route("roulette.ready") }} class="navi-list__content__link">
-                    ルーレット
+                <a href={{ route("lottery.draw") }} class="navi-list__content__link">
+                    くじ引き
                 </a>
             </li>{{--
 

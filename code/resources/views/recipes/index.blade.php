@@ -61,7 +61,7 @@
                                     <span class="site-about__head__number">
                                         2.&nbsp;
                                     </span>
-                                    ルーレットによるレシピ提案
+                                    「くじ引き」によるレシピ提案
                                 </h3>
                                 <p class="site-about__content">
                                     &nbsp;ランダムに提案される「メイン食材」と「調理方法」の組み合わせで、メニュー決めをサポートします。
