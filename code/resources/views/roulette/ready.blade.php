@@ -11,7 +11,7 @@
             <div class="search-contents__box__content">
 
                 <p class="search-message">
-                    今日は何をどうやって食べる？
+                    今日は何をどうやって食べる<i class="fas fa-question"></i>
                 </p>
 
                 <div class="roulette">
