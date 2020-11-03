@@ -27,6 +27,13 @@ if (document.getElementsByClassName("category-search")[0]) {
     });
 }
 
+if (document.getElementsByClassName("roulette")[0]) {
+    Vue.component('recipe-roulette', require('./components/RecipeRoulette.vue').default);
+    const categorySearch = new Vue({
+        el: '.roulette',
+    });
+}
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
