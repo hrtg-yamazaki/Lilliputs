@@ -1144,6 +1144,10 @@ label {
   border-radius: 4px;
 }
 
+.search-head-small {
+  font-size: 14px;
+}
+
 .recipe_roulette {
   width: 100%;
 }

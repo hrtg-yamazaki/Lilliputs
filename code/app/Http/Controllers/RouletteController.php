@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Recipe;
+use App\Maingred;
+use App\Method;
 
 class RouletteController extends Controller
 {
@@ -20,12 +23,31 @@ class RouletteController extends Controller
      */
     public function result(Request $request)
     {
-        $maingred_id = $request->maingred_id;
-        $method_id = $request->method_id;
+        $recipes = [];
+        $maingred = new Maingred;
+        $method = new Method;
+
+        if (isset($request->maingred_id)){
+            $maingred = Maingred::find($request->maingred_id);
+            $query = Recipe::where("maingred_id", $maingred->id);
+        };
+        if (isset($request->method_id)){
+            $method = Method::find($request->method_id);
+            if (isset($maingred->id)){
+                $query = $query->where("method_id", $method->id);
+            } else {
+                $query = Recipe::where("method_id", $method->id);
+            }
+        };
+
+        if (isset($query)){
+            $recipes = $query->get();
+        };
 
         return view("roulette.result", [
-            "maingred_id" => $maingred_id,
-            "method_id"   => $method_id
+            "maingred" => $maingred,
+            "method"   => $method,
+            "recipes"  => $recipes
         ]);
     }
 
