@@ -29,6 +29,7 @@ Route::group(['prefix' => 'recipes/search', 'as' => 'recipes.search.'], function
 
 Route::group(['prefix' => 'recipes/roulette', 'as' => 'roulette.'], function () {
     Route::get('/ready', 'RouletteController@ready')->name('ready');
+    Route::get('/result', 'RouletteController@result')->name('result');
 });
 
 

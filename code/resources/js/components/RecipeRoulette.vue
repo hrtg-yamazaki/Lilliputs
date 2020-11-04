@@ -35,8 +35,10 @@
                 </a>
             </div>
 
-            <form class="roulette-form" v-bind:class="submitForm">
+            <form class="roulette-form" action="/recipes/roulette/result" v-bind:class="submitForm">
                 <p class="half-border"></p>
+                <input type="hidden" name="maingred_id" v-bind:value="maingredId">
+                <input type="hidden" name="method_id" v-bind:value="methodId">
                 <div class="roulette-submit">
                     <button type="submit" class="roulette-button">
                         レシピの候補を見る
@@ -84,7 +86,6 @@
 
                 this.maingredId = Math.round(Math.random() * 3) + 2;
                 this.methodId = Math.round(Math.random() * 3) + 2;
-                console.log(this.maingredId + " & " + this.methodId);
 
                 setTimeout(() => {
                     if (this.rouletteRunning === true) {

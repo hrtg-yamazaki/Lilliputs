@@ -2143,6 +2143,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2194,7 +2196,6 @@ __webpack_require__.r(__webpack_exports__);
       this.rouletteRunning = true;
       this.maingredId = Math.round(Math.random() * 3) + 2;
       this.methodId = Math.round(Math.random() * 3) + 2;
-      console.log(this.maingredId + " & " + this.methodId);
       setTimeout(function () {
         if (_this.rouletteRunning === true) {
           _this.startRoulette();
@@ -38099,11 +38100,29 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("form", { staticClass: "roulette-form", class: _vm.submitForm }, [
-        _c("p", { staticClass: "half-border" }),
-        _vm._v(" "),
-        _vm._m(1)
-      ])
+      _c(
+        "form",
+        {
+          staticClass: "roulette-form",
+          class: _vm.submitForm,
+          attrs: { action: "/recipes/roulette/result" }
+        },
+        [
+          _c("p", { staticClass: "half-border" }),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "hidden", name: "maingred_id" },
+            domProps: { value: _vm.maingredId }
+          }),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "hidden", name: "method_id" },
+            domProps: { value: _vm.methodId }
+          }),
+          _vm._v(" "),
+          _vm._m(1)
+        ]
+      )
     ])
   ])
 }

@@ -15,4 +15,18 @@ class RouletteController extends Controller
         return view("roulette.ready");
     }
 
+    /**
+     * ルーレット結果表示ページ
+     */
+    public function result(Request $request)
+    {
+        $maingred_id = $request->maingred_id;
+        $method_id = $request->method_id;
+
+        return view("roulette.result", [
+            "maingred_id" => $maingred_id,
+            "method_id"   => $method_id
+        ]);
+    }
+
 }
