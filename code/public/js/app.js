@@ -2083,6 +2083,149 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecipeRoulette.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RecipeRoulette.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      startString: "ルーレットを回す",
+      startButton: "",
+      stopButton: "js-hidden-button",
+      submitForm: "js-hidden-form",
+      maingredId: 0,
+      methodId: 0,
+      rouletteRunning: false,
+      maingredIcons: [{
+        id: 0,
+        name: "question"
+      }, {
+        id: 2,
+        name: "drumstick-bite"
+      }, {
+        id: 3,
+        name: "fish"
+      }, {
+        id: 4,
+        name: "carrot"
+      }, {
+        id: 5,
+        name: "egg"
+      }],
+      methodList: [{
+        id: 2,
+        name: "焼く・炒める"
+      }, {
+        id: 3,
+        name: "揚げる"
+      }, {
+        id: 4,
+        name: "煮る・茹でる"
+      }, {
+        id: 5,
+        name: "生"
+      }]
+    };
+  },
+  methods: {
+    startRoulette: function startRoulette() {
+      var _this = this;
+
+      this.startButton = "js-hidden-button";
+      this.stopButton = "";
+      this.submitForm = "js-hidden-form";
+      this.rouletteRunning = true;
+      this.maingredId = Math.round(Math.random() * 3) + 2;
+      this.methodId = Math.round(Math.random() * 3) + 2;
+      setTimeout(function () {
+        if (_this.rouletteRunning === true) {
+          _this.startRoulette();
+        }
+      }, 32);
+    },
+    stopRoulette: function stopRoulette() {
+      this.startString = "もう一度回す";
+      this.startButton = "";
+      this.stopButton = "js-hidden-button";
+      this.submitForm = "";
+      this.rouletteRunning = false;
+    },
+    getMaingredIcon: function getMaingredIcon(maingredId) {
+      var iconName = this.maingredIcons.find(function (m) {
+        return m.id === maingredId;
+      }).name;
+      return iconName;
+    },
+    getMethodName: function getMethodName(methodId) {
+      var methodName = this.methodList.find(function (m) {
+        return m.id === methodId;
+      }).name;
+      return methodName;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -37887,6 +38030,130 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecipeRoulette.vue?vue&type=template&id=7c0fd8cd&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RecipeRoulette.vue?vue&type=template&id=7c0fd8cd& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "recipe-roulette" }, [
+    _c("div", { staticClass: "recipe-roulette__box" }, [
+      _c("div", { staticClass: "roulette-fields" }, [
+        _c("div", { staticClass: "roulette-field" }, [
+          _c("div", { staticClass: "roulette-panel" }, [
+            _c("div", { staticClass: "roulette-panel__text" }, [
+              _c("i", {
+                staticClass: "fas fa-5x",
+                class: "fa-" + _vm.getMaingredIcon(_vm.maingredId)
+              })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "roulette-field" }, [
+          _c("div", { staticClass: "roulette-panel" }, [
+            _c("div", { staticClass: "roulette-panel__text" }, [
+              _vm.methodId === 0
+                ? _c("i", { staticClass: "fas fa-question fa-5x" })
+                : _c("span", [_vm._v(_vm._s(_vm.getMethodName(_vm.methodId)))])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "half-border" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "roulette-submit" }, [
+        _c(
+          "a",
+          {
+            staticClass: "roulette-button",
+            class: _vm.startButton,
+            on: { click: _vm.startRoulette }
+          },
+          [
+            _vm._v(
+              "\n                " + _vm._s(_vm.startString) + "\n            "
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "roulette-button",
+            class: _vm.stopButton,
+            on: { click: _vm.stopRoulette }
+          },
+          [_vm._v("\n                ルーレットを止める\n            ")]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "form",
+        {
+          staticClass: "roulette-form",
+          class: _vm.submitForm,
+          attrs: { action: "/recipes/roulette/result" }
+        },
+        [
+          _c("p", { staticClass: "half-border" }),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "hidden", name: "maingred_id" },
+            domProps: { value: _vm.maingredId }
+          }),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "hidden", name: "method_id" },
+            domProps: { value: _vm.methodId }
+          }),
+          _vm._v(" "),
+          _vm._m(1)
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "roulette-symbol" }, [
+      _c("i", { staticClass: "fas fa-times fa-2x" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "roulette-submit" }, [
+      _c(
+        "button",
+        { staticClass: "roulette-button", attrs: { type: "submit" } },
+        [_vm._v("\n                    レシピの候補を見る\n                ")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -50081,6 +50348,14 @@ if (document.getElementsByClassName("category-search")[0]) {
     el: '.category-search'
   });
 }
+
+if (document.getElementsByClassName("roulette")[0]) {
+  Vue.component('recipe-roulette', __webpack_require__(/*! ./components/RecipeRoulette.vue */ "./resources/js/components/RecipeRoulette.vue")["default"]);
+
+  var _categorySearch = new Vue({
+    el: '.roulette'
+  });
+}
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -50201,6 +50476,76 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CategorySearch_vue_vue_type_template_id_6c6a9f1e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CategorySearch_vue_vue_type_template_id_6c6a9f1e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/RecipeRoulette.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/RecipeRoulette.vue ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _RecipeRoulette_vue_vue_type_template_id_7c0fd8cd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RecipeRoulette.vue?vue&type=template&id=7c0fd8cd& */ "./resources/js/components/RecipeRoulette.vue?vue&type=template&id=7c0fd8cd&");
+/* harmony import */ var _RecipeRoulette_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RecipeRoulette.vue?vue&type=script&lang=js& */ "./resources/js/components/RecipeRoulette.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _RecipeRoulette_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _RecipeRoulette_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _RecipeRoulette_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _RecipeRoulette_vue_vue_type_template_id_7c0fd8cd___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _RecipeRoulette_vue_vue_type_template_id_7c0fd8cd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/RecipeRoulette.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/RecipeRoulette.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/RecipeRoulette.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecipeRoulette_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./RecipeRoulette.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecipeRoulette.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecipeRoulette_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/RecipeRoulette.vue?vue&type=template&id=7c0fd8cd&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/RecipeRoulette.vue?vue&type=template&id=7c0fd8cd& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecipeRoulette_vue_vue_type_template_id_7c0fd8cd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./RecipeRoulette.vue?vue&type=template&id=7c0fd8cd& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecipeRoulette.vue?vue&type=template&id=7c0fd8cd&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecipeRoulette_vue_vue_type_template_id_7c0fd8cd___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecipeRoulette_vue_vue_type_template_id_7c0fd8cd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

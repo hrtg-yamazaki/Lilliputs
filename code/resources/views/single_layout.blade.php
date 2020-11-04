@@ -8,6 +8,7 @@
         <meta name="description" content="「今日のメニューが決められない」人のためのレシピサイトです。">
         <meta property="og:title" content="Lilliputs">
         <link rel='stylesheet' href='{{ asset("css/app.css") }}'>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
         <script src='{{ asset("js/app.js") }}' defer></script>
     </head>
     <body>

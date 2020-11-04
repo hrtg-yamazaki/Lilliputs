@@ -3,6 +3,11 @@
     padding: 40px 0;
 }
 
+.search-wrapper-single{
+    width: 100%;
+    padding: 10px;
+}
+
 .search-contents{
     width: 100%;
     background-color: white;
@@ -99,4 +104,8 @@
         border: 1px solid $darkpurple;
         border-radius: 4px;
     }
+}
+
+.search-head-small{
+    font-size: 14px;
 }
