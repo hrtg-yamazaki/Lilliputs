@@ -620,6 +620,12 @@ label {
   height: 430px;
 }
 
+.show-image img {
+  min-width: 430px;
+  max-width: 100%;
+  height: 430px;
+}
+
 .show-no-image {
   width: 100%;
   height: 100%;
@@ -647,7 +653,7 @@ label {
 
 .ingredients__content,
 .processes__content {
-  padding: 20px;
+  padding: 24px 8px;
   min-height: 80px;
   color: #555555;
 }
@@ -659,7 +665,7 @@ label {
 
 .ingredient {
   width: 50%;
-  padding: 4px 20px;
+  padding: 8px 10px;
 }
 
 .ingredient__box {
@@ -667,16 +673,18 @@ label {
 }
 
 .ingredient__box__name {
-  float: left;
-  width: 70%;
+  display: inline-block;
+  width: 65%;
   color: #555555;
   font-size: 14px;
+  font-weight: bold;
   padding-left: 8px;
 }
 
 .ingredient__box__amount {
-  float: right;
-  width: 30%;
+  display: inline-block;
+  padding-left: 10px;
+  width: 35%;
   color: #555555;
   font-size: 14px;
   text-align: right;
@@ -1322,6 +1330,21 @@ label {
   .recipe-panel {
     width: 33.3333%;
   }
+
+  .show-image {
+    height: 300px;
+    text-align: center;
+  }
+
+  .show-image img {
+    min-width: 300px;
+    max-width: 100%;
+    height: 300px;
+  }
+
+  .ingredient__box__amount {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1336,13 +1359,31 @@ label {
   .footer-content__right {
     width: 50%;
   }
+
+  .show-image {
+    height: 180px;
+  }
+
+  .show-image img {
+    min-width: 180px;
+    max-width: 100%;
+    height: 180px;
+  }
+
+  .ingredients {
+    padding: 10px 0;
+  }
+
+  .ingredients__head {
+    width: 80%;
+  }
+
+  .ingredient {
+    width: 100%;
+  }
 }
 
 @media (max-width: 512px) {
-  .index-section__box {
-    padding: 0;
-  }
-
   .recipe-panel {
     width: 100%;
   }
@@ -1352,6 +1393,38 @@ label {
     height: 50%;
     width: 100%;
     padding: 5px 10px 0;
+  }
+
+  .top-wrapper__box__text {
+    font-size: 20px;
+  }
+
+  .index-section__box {
+    padding: 0;
+  }
+
+  .show-head__left,
+  .show-head__right {
+    float: none;
+    width: 100%;
+  }
+
+  .show-image {
+    height: 240px;
+  }
+
+  .show-image img {
+    min-width: 240px;
+    max-width: 100%;
+    height: 240px;
+  }
+
+  .ingredients__content {
+    padding: 24px 0;
+  }
+
+  .ingredient__box__name {
+    font-size: 12px;
   }
 }
 
