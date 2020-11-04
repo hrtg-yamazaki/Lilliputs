@@ -45,10 +45,12 @@
 
                         <div class="recipe-field">
                             <p class="recipe-field__label">
-                                <label class="recipe-field__label__text">料理の画像</label>
+                                <label class="recipe-field__label__text">
+                                    料理の画像
+                                </label>
                             </p>
                             <div class="recipe_field__input clearfix">
-                                {{ Form::file("image", ["class"=>"recipe_field__input__image"]) }}
+                                {{ Form::file("image", ["class"=>"recipe-field__input__image"]) }}
                             </div>
                         </div>
 

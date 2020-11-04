@@ -1383,6 +1383,12 @@ label {
   }
 }
 
+@media (max-width: 550px) {
+  .recipe-form {
+    padding: 19px 0;
+  }
+}
+
 @media (max-width: 512px) {
   .recipe-panel {
     width: 100%;
