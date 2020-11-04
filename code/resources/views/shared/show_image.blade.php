@@ -2,9 +2,9 @@
 
     @if(isset($recipe->image))
         @if(App::environment("local"))
-            <img src={{ asset("uploads/".$recipe->image) }} width="430px" height="430px">
+            <img src={{ asset("uploads/".$recipe->image) }}>
         @else
-            <img src={{ url($recipe->image) }} width="430px" height="430px">
+            <img src={{ url($recipe->image) }}>
         @endif
     @else
         <div class="show-no-image">

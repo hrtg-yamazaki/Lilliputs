@@ -1,0 +1,155 @@
+
+@media (max-width: 1024px) {
+
+    // 共通
+    .recipe-panel{
+        width: 33.3333%;
+    }
+
+    // recipes.show
+    .show-image{
+        height: 300px;
+        text-align: center;
+        img{
+            min-width: 300px;
+            max-width: 100%;
+            height: 300px;
+        }
+    }
+
+    .ingredient{
+        &__box{
+            &__amount{
+                font-size: 12px;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    // 共通
+    .recipe-panel{
+        width: 50%;
+    }
+
+    .footer-content{
+        &__left{
+            width: 50%;
+        }
+        &__right{
+            width: 50%;
+        }
+    }
+
+    // recipes.show
+    .show-image{
+        height: 180px;
+        img{
+            min-width: 180px;
+            max-width: 100%;
+            height: 180px;
+        }
+    }
+
+    .ingredients{
+        padding: 10px 0;
+        &__head{
+            width: 80%;
+        }
+    }
+
+    .ingredient{
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .recipe-form{
+        padding: 19px 0;
+    }
+
+}
+
+
+@media (max-width: 512px) {
+
+    // 共通
+    .recipe-panel{
+        width: 100%;
+    }
+
+    .footer-content{
+        &__left, &__right{
+            height: 50%;
+            width: 100%;
+            padding: 5px 10px 0;
+        }
+    }
+
+    .header-link{
+        font-size: 12px;
+    }
+
+    // トップページ関連
+    .top-wrapper__box__text{
+        font-size: 20px;
+    }
+
+    .index-section__box{
+        padding: 0;
+    }
+
+    // recipes.show
+    .show-head{
+        &__left, &__right{
+            float: none;
+            width: 100%;
+        }
+    }
+
+    .show-image{
+        height: 240px;
+        img{
+            min-width: 240px;
+            max-width: 100%;
+            height: 240px;
+        }
+    }
+
+    .ingredients{
+        &__content{
+            padding: 24px 0;
+        }
+    }
+
+    .ingredient{
+        &__box{
+            &__name{
+                font-size: 12px;
+            }
+        }
+    }
+
+    // ルーレット関連
+    .roulette-fields{
+        display: block;
+        flex-wrap: nowrap;
+    }
+
+    .roulette-field{
+        text-align: center;
+    }
+
+    .roulette-symbol{
+        width: 100%;
+        padding: 0;
+        line-height: normal;
+        text-align: center;
+    }
+
+}
