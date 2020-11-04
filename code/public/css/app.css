@@ -243,13 +243,13 @@ label {
 }
 
 .header__box__left {
-  width: 50%;
+  width: 40%;
   padding: 10px 20px;
   float: left;
 }
 
 .header__box__right {
-  width: 50%;
+  width: 60%;
   padding: 10px 20px;
   float: right;
   text-align: right;
@@ -1393,6 +1393,10 @@ label {
     height: 50%;
     width: 100%;
     padding: 5px 10px 0;
+  }
+
+  .header-link {
+    font-size: 12px;
   }
 
   .top-wrapper__box__text {
