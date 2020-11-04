@@ -1,3 +1,4 @@
+// RecipeRoulette.Vue用のCSS
 
 .recipe_roulette{
     width: 100%;
@@ -52,19 +53,30 @@
     }
 }
 
-.roulette-button{
+.roulette-submit{
     width: 100%;
     text-align: center;
     padding: 20px 0 10px;
-    &__link{
-        display: inline-block;
-        padding: 8px 16px;
-        font-size: 14px;
-        color: whitesmoke;
-        background-color: $darkpurple; 
-    }
-    &__link:hover{
-        background-color: steelblue;
-        color: whitesmoke;
-    }
+}
+
+.roulette-button{
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: whitesmoke;
+    background-color: $darkpurple; 
+    border: 1px solid $darkpurple;
+}
+.roulette-button:hover{
+    background-color: steelblue;
+    color: whitesmoke;
+}
+
+// bind class
+.js-hidden-button{
+    display: none;
+}
+
+.js-hidden-form{
+    display: none;
 }

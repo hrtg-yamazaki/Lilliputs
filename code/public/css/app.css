@@ -1202,23 +1202,32 @@ label {
   color: #5064b4;
 }
 
-.roulette-button {
+.roulette-submit {
   width: 100%;
   text-align: center;
   padding: 20px 0 10px;
 }
 
-.roulette-button__link {
+.roulette-button {
   display: inline-block;
   padding: 8px 16px;
   font-size: 14px;
   color: whitesmoke;
   background-color: #5064b4;
+  border: 1px solid #5064b4;
 }
 
-.roulette-button__link:hover {
+.roulette-button:hover {
   background-color: steelblue;
   color: whitesmoke;
+}
+
+.js-hidden-button {
+  display: none;
+}
+
+.js-hidden-form {
+  display: none;
 }
 
 .auth-section {
