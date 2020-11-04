@@ -397,6 +397,13 @@ label {
   width: 100%;
   height: 200px;
   background-color: silver;
+  text-align: center;
+}
+
+.panel-image img {
+  min-width: 200px;
+  max-width: 100%;
+  height: 100%;
 }
 
 .no-image {
@@ -1309,5 +1316,42 @@ label {
   background-color: whitesmoke;
   color: crimson;
   font-size: 12px;
+}
+
+@media (max-width: 1024px) {
+  .recipe-panel {
+    width: 33.3333%;
+  }
+}
+
+@media (max-width: 768px) {
+  .recipe-panel {
+    width: 50%;
+  }
+
+  .footer-content__left {
+    width: 50%;
+  }
+
+  .footer-content__right {
+    width: 50%;
+  }
+}
+
+@media (max-width: 512px) {
+  .index-section__box {
+    padding: 0;
+  }
+
+  .recipe-panel {
+    width: 100%;
+  }
+
+  .footer-content__left,
+  .footer-content__right {
+    height: 50%;
+    width: 100%;
+    padding: 5px 10px 0;
+  }
 }
 

@@ -1,0 +1,45 @@
+
+@media (max-width: 1024px) {
+
+    .recipe-panel{
+        width: 33.3333%;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .recipe-panel{
+        width: 50%;
+    }
+
+    .footer-content{
+        &__left{
+            width: 50%;
+        }
+        &__right{
+            width: 50%;
+        }
+    }
+
+}
+
+@media (max-width: 512px) {
+
+    .index-section__box{
+        padding: 0;
+    }
+
+    .recipe-panel{
+        width: 100%;
+    }
+
+    .footer-content{
+        &__left, &__right{
+            height: 50%;
+            width: 100%;
+            padding: 5px 10px 0;
+        }
+    }
+
+}

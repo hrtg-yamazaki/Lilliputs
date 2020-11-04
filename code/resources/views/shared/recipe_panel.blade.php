@@ -5,7 +5,7 @@
         <div class="panel-image">
             @if(isset($recipe->image))
                 @if(App::environment("local"))
-                    <img src={{ asset("uploads/".$recipe->image) }} width="200px" height="200px">
+                    <img src={{ asset("uploads/".$recipe->image) }}>
                 @else
                     <img src={{ url($recipe->image) }} width="200px" height="200px">
                 @endif
