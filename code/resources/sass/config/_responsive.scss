@@ -135,4 +135,21 @@
         }
     }
 
+    // ルーレット関連
+    .roulette-fields{
+        display: block;
+        flex-wrap: nowrap;
+    }
+
+    .roulette-field{
+        text-align: center;
+    }
+
+    .roulette-symbol{
+        width: 100%;
+        padding: 0;
+        line-height: normal;
+        text-align: center;
+    }
+
 }
