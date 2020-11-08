@@ -1405,6 +1405,10 @@ label {
     font-size: 12px;
   }
 
+  .header-user-name {
+    display: none;
+  }
+
   .top-wrapper__box__text {
     font-size: 20px;
   }
