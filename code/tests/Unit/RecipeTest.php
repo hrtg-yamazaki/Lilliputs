@@ -79,7 +79,7 @@ class RecipeTest extends TestCase
     public function testCreateRecipeWithUserId(){
         $recipe = self::createSampleRecipe();
 
-        $recipe->user_id = 1;
+        $recipe->user_id = 2;
         $recipe->save();
 
         $this->assertTrue(isset($recipe->id));
@@ -91,7 +91,7 @@ class RecipeTest extends TestCase
     public function testCreateRecipeWithMaingredId(){
         $recipe = self::createSampleRecipe();
 
-        $recipe->maingred_id = 1;
+        $recipe->maingred_id = 2;
         $recipe->save();
 
         $this->assertTrue(isset($recipe->id));
@@ -103,7 +103,7 @@ class RecipeTest extends TestCase
     public function testCreateRecipeWithMethodId(){
         $recipe = self::createSampleRecipe();
 
-        $recipe->method_id = 1;
+        $recipe->method_id = 2;
         $recipe->save();
 
         $this->assertTrue(isset($recipe->id));
