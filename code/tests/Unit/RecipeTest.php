@@ -8,6 +8,7 @@ use App\Recipe;
 
 class RecipeTest extends TestCase
 {
+
     /**
      * 事前マイグレート
      */
@@ -19,6 +20,7 @@ class RecipeTest extends TestCase
             'migrate --env=testing --database=sqlite_testing --force'
         );
     }
+
     /**
      * タイトル、説明文があれば登録できる
      */
@@ -34,8 +36,9 @@ class RecipeTest extends TestCase
 
         $this->assertSame($expected, $actual);
     }
+
     /**
-     * 全てのカラムが空では登録できない
+     * 全てのカラムがnullでは登録できない
      */
     public function testNotCreateRecipe()
     {
@@ -43,6 +46,42 @@ class RecipeTest extends TestCase
 
         $recipe = new Recipe();
         $recipe->save();
+    }
+
+    /**
+     * 説明文があってもタイトルがnullでは登録できない
+     */
+    public function testCreateRecipeWithoutTitle(){
+        $this->expectException(QueryException::class);
+
+        $recipe = self::createSampleRecipe();
+        $recipe->title = null;
+
+        $recipe->save();
+    }
+
+    /**
+     * タイトルがあっても説明文がnullでは登録できない
+     */
+    public function testCreateRecipeWithoutDescription(){
+        $this->expectException(QueryException::class);
+
+        $recipe = self::createSampleRecipe();
+        $recipe->description = null;
+
+        $recipe->save();
+    }
+
+    /**
+     * testCreateRecipeの結果に基づき、
+     * 同じ内容のRecipeモデルオブジェクトを生成する関数
+     */
+    private static function createSampleRecipe(){
+        $recipe = new Recipe();
+        $recipe->title = "サンプル";
+        $recipe->description = "サンプルレシピ";
+
+        return $recipe;
     }
 
 }
