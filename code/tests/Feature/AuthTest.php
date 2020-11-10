@@ -45,6 +45,20 @@ class AuthTest extends TestCase
         $this->assertAuthenticated();
     }
 
+    /** 
+     * ログアウトのテスト
+     */
+    public function testLogout()
+    {
+        $user = self::createSampleUser();
+        $this->actingAs($user)
+            ->withSession(["user_id" => $user->id])
+            ->get("/");
+
+        $this->post("/logout");
+        $this->assertGuest();
+    }
+
 
     /**
      * サンプルユーザーの作成
