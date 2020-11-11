@@ -5,12 +5,14 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use App\Recipe;
+use App\User;
 
 class RecipeTest extends TestCase
 {
 
     /** 
-     * 事前マイグレートとRecipeのレコード作成
+     * 事前マイグレートとサンプルユーザー、サンプルレシピの作成
     */
     protected function setUp(): void
     {
@@ -20,7 +22,9 @@ class RecipeTest extends TestCase
             'migrate --env=testing --database=sqlite_testing --force'
         );
 
-        $recipe = self::newSampleRecipe();
+        $user = self::newSampleUser();
+        $user->save();
+        $recipe = self::newSampleRecipe($user);
         $recipe->save();
     }
 
@@ -52,12 +56,32 @@ class RecipeTest extends TestCase
 
 
     /**
+     * private
+     */
+
+    /**
+     * サンプルユーザーの作成
+     */
+    private static function newSampleUser()
+    {
+        $user = new User();
+        $user->name = "サンプルユーザー";
+        $user->email = "sample@sample.com";
+        $user->password = "samplepassword";
+
+        return $user;
+    }
+
+    /**
      * Recipeのサンプルオブジェクトの生成
      */
-    private static function newSampleRecipe(){
+    private static function newSampleRecipe($user){
         $recipe = new Recipe();
         $recipe->title = "サンプルレシピ";
         $recipe->description = "サンプル説明文";
+        $recipe->user_id = $user->id;
+
         return $recipe;
     }
+
 }

@@ -35,4 +35,15 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
+    /**
+     * Recipeのサンプルオブジェクトの生成
+     */
+    private static function newSampleRecipe(){
+        $recipe = new Recipe();
+        $recipe->title = "サンプルレシピ";
+        $recipe->description = "サンプル説明文";
+
+        return $recipe;
+    }
+
 }
