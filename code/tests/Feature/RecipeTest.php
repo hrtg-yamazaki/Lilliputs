@@ -28,6 +28,7 @@ class RecipeTest extends TestCase
         $recipe->save();
     }
 
+
     /**
      * 指定したidのRecipeレコードがある時、レシピ詳細ページが正常に表示されるかどうかのテスト
      *
@@ -52,6 +53,28 @@ class RecipeTest extends TestCase
         $response = $this->get('/recipes/999');
 
         $response->assertStatus(404);
+    }
+
+    /**
+     * ログイン状態であれば新規投稿ページへアクセスできる
+     */
+    public function testAccessCreateRecipeWithUser(){
+        $user = User::latest()->first();
+
+        $response = $this->actingAs($user)
+                            ->withSession(["user_id" => $user->id])
+                            ->get('/recipes/create');
+
+        $response->assertStatus(200);
+    }
+
+    /**
+     * 非ログイン状態では新規投稿ページへアクセスできず、ログインページへリダイレクトされる
+     */
+    public function testCannotAccessCreateRecipeWithoutUser(){
+        $response = $this->get('/recipes/create');
+
+        $response->assertRedirect("/login");
     }
 
 
