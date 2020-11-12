@@ -37979,11 +37979,7 @@ var render = function() {
                     recipe.image
                       ? _c("div", { staticClass: "panel-image" }, [
                           _c("img", {
-                            attrs: {
-                              src: _vm.getImageUrl(recipe.image),
-                              width: "200px",
-                              height: "200px"
-                            }
+                            attrs: { src: _vm.getImageUrl(recipe.image) }
                           })
                         ])
                       : _c("div", { staticClass: "panel-image" }, [

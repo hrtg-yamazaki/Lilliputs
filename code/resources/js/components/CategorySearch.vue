@@ -34,7 +34,7 @@
                     <a v-bind:href="'/recipes/' + recipe.id" class="recipe-panel__inner">
 
                         <div v-if="recipe.image" class="panel-image">
-                            <img v-bind:src="getImageUrl(recipe.image)" width="200px" height="200px">
+                            <img v-bind:src="getImageUrl(recipe.image)">
                         </div>
                         <div v-else class="panel-image">
                             <p class="no-image">
