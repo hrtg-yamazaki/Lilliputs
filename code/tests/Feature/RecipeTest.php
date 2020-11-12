@@ -77,6 +77,45 @@ class RecipeTest extends TestCase
         $response->assertRedirect("/login");
     }
 
+    /**
+     * ログイン状態であれば、自分で作成したレシピの編集ページへアクセスできる
+     */
+    public function testAccessEditRecipeWithAuthor(){
+        $user = User::latest()->first();
+        $recipe = Recipe::where("id", $user->id)->first();
+
+        $response = $this->actingAs($user)
+                            ->withSession(["user_id" => $user->id])
+                            ->get('/recipes/'.$recipe->id.'/edit');
+
+        $response->assertStatus(200);
+    }
+
+    /**
+     * ログイン状態であっても、自分以外のユーザーが作成したレシピの編集ページへは403でアクセスできない
+     */
+    public function testCannotAccessEditRecipeWithNotAuthor(){
+        $user = User::latest()->first();
+        $recipe = self::createAnotherRecipe();
+
+        $response = $this->actingAs($user)
+                            ->withSession(["user_id" => $user->id])
+                            ->get('/recipes/'.$recipe->id.'/edit');
+
+        $response->assertStatus(403);
+    }
+
+    /**
+     * 非ログイン状態では編集ページへアクセスできず、ログインページへリダイレクトされる
+     */
+    public function testCannotAccessEditRecipeWithoutUser(){
+        $recipe = Recipe::latest()->first();
+
+        $response = $this->get('/recipes/'.$recipe->id.'/edit');
+
+        $response->assertRedirect("/login");
+    }
+
 
     /**
      * private
@@ -104,6 +143,19 @@ class RecipeTest extends TestCase
         $recipe->description = "サンプル説明文";
         $recipe->user_id = $user->id;
 
+        return $recipe;
+    }
+
+    /**
+     * 「別のUserのRecipe」のサンプル「レコード」の生成
+     */
+    private static function createAnotherRecipe(){
+        $recipe = new Recipe();
+        $recipe->title = "サンプルレシピ２";
+        $recipe->description = "サンプル説明文２";
+        $recipe->user_id = 256;
+
+        $recipe->save();
         return $recipe;
     }
 
