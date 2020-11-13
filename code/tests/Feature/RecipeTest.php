@@ -78,6 +78,34 @@ class RecipeTest extends TestCase
     }
 
     /**
+     * ログイン状態であれば新規投稿機能を利用できる
+     */
+    public function testStoreRecipeWithUser(){
+        $user = User::latest()->first();
+        $formData = self::recipeFormData();
+
+        $response = $this->actingAs($user)
+                            ->withSession(["user_id" => $user->id])
+                            ->from("/recipes/create")
+                            ->post('/recipes', $formData);
+
+        $this->assertDatabaseHas("recipes", ["title"=>"サンプルレシピ３"]);
+
+        $response->assertStatus(302);
+    }
+
+    /**
+     * 非ログイン状態では新規投稿機能を利用できず、ログインページへリダイレクトされる
+     */
+    public function testCannotCreateRecipeWithoutUser(){
+        $formData = self::recipeFormData();
+
+        $response = $this->post('/recipes', $formData);
+
+        $response->assertRedirect("/login");
+    }
+
+    /**
      * ログイン状態であれば、自分で作成したレシピの編集ページへアクセスできる
      */
     public function testAccessEditRecipeWithAuthor(){
