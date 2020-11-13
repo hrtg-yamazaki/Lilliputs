@@ -155,6 +155,46 @@ class RecipeTest extends TestCase
         $response->assertRedirect("/login");
     }
 
+    /**
+     * ログイン状態であれば、自分で作成したレシピの削除ページへアクセスできる
+     */
+    public function testAccessDestroyRecipeWithAuthor(){
+        $user = User::latest()->first();
+        $recipe = Recipe::where("id", $user->id)->first();
+        $recipeId = $recipe->id;
+
+        $response = $this->actingAs($user)
+                            ->withSession(["user_id" => $user->id])
+                            ->delete('/recipes/'.$recipe->id);
+
+        $this->assertDeleted("recipes", ["id"=>$recipeId]);
+        $response->assertRedirect("/");
+    }
+
+    /**
+     * ログイン状態であっても、自分以外のユーザーが作成したレシピの削除ページへは403でアクセスできない
+     */
+    public function testCannotAccessDestroyRecipeWithNotAuthor(){
+        $user = User::latest()->first();
+        $recipe = self::createAnotherRecipe();
+
+        $response = $this->actingAs($user)
+                            ->withSession(["user_id" => $user->id])
+                            ->delete('/recipes/'.$recipe->id);
+
+        $response->assertStatus(403);
+    }
+
+    /**
+     * 非ログイン状態では削除確認ページへアクセスできず、ログインページへリダイレクトされる
+     */
+    public function testCannotAccessDestroyRecipeWithoutUser(){
+        $recipe = Recipe::latest()->first();
+
+        $response = $this->delete('/recipes/'.$recipe->id);
+
+        $response->assertRedirect("/login");
+    }
 
     /**
      * private
@@ -199,3 +239,6 @@ class RecipeTest extends TestCase
     }
 
 }
+
+
+
