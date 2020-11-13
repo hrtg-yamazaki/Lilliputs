@@ -229,7 +229,7 @@ class RecipeTest extends TestCase
     }
 
     /**
-     * ログイン状態であれば、自分で作成したレシピの削除ページへアクセスできる
+     * ログイン状態であれば、自分で作成したレシピの削除機能を利用できる
      */
     public function testAccessDestroyRecipeWithAuthor(){
         $user = User::latest()->first();
@@ -245,7 +245,7 @@ class RecipeTest extends TestCase
     }
 
     /**
-     * ログイン状態であっても、自分以外のユーザーが作成したレシピの削除ページへは403でアクセスできない
+     * ログイン状態であっても、自分以外のユーザーが作成したレシピの削除機能は403で利用できない
      */
     public function testCannotAccessDestroyRecipeWithNotAuthor(){
         $user = User::latest()->first();
@@ -259,7 +259,7 @@ class RecipeTest extends TestCase
     }
 
     /**
-     * 非ログイン状態では削除確認ページへアクセスできず、ログインページへリダイレクトされる
+     * 非ログイン状態では削除機能を利用できず、ログインページへリダイレクトされる
      */
     public function testCannotAccessDestroyRecipeWithoutUser(){
         $recipe = Recipe::latest()->first();
