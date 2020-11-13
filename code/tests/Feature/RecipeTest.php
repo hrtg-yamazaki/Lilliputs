@@ -117,6 +117,51 @@ class RecipeTest extends TestCase
     }
 
     /**
+     * ログイン状態であれば、自分で作成したレシピの編集機能を利用できる
+     */
+    public function testUpdateRecipeWithAuthor(){
+        $user = User::latest()->first();
+        $recipe = Recipe::where("id", $user->id)->first();
+        $formData = self::recipeFormData();
+
+        $response = $this->actingAs($user)
+                            ->withSession(["user_id" => $user->id])
+                            ->from('/recipes/'.$recipe->id.'/edit')
+                            ->patch('/recipes/'.$recipe->id, $formData);
+
+        $response->assertRedirect('/recipes/'.$recipe->id);
+
+        $this->assertDatabaseHas("recipes", ["title"=>"サンプルレシピ３"]);
+    }
+
+    /**
+     * ログイン状態であっても、自分以外のユーザーが作成したレシピの編集機能へは403で利用できない
+     */
+    public function testCannotUpdateRecipeWithNotAuthor(){
+        $user = User::latest()->first();
+        $recipe = self::createAnotherRecipe();
+        $formData = self::recipeFormData();
+
+        $response = $this->actingAs($user)
+                            ->withSession(["user_id" => $user->id])
+                            ->patch('/recipes/'.$recipe->id, $formData);
+
+        $response->assertStatus(403);
+    }
+
+    /**
+     * 非ログイン状態では編集機能を利用できず、ログインページへリダイレクトされる
+     */
+    public function testCannotUpdateRecipeWithoutUser(){
+        $recipe = Recipe::latest()->first();
+        $formData = self::recipeFormData();
+
+        $response = $this->patch('/recipes/'.$recipe->id, $formData);
+
+        $response->assertRedirect("/login");
+    }
+
+    /**
      * ログイン状態であれば、自分で作成したレシピの削除確認ページへアクセスできる
      */
     public function testAccessDestroyConfirmWithAuthor(){
@@ -236,6 +281,21 @@ class RecipeTest extends TestCase
 
         $recipe->save();
         return $recipe;
+    }
+
+    /**
+     * Recipeのformのサンプルデータ
+     */
+    private static function recipeFormData(){
+        $formData = [
+            "title"       => "サンプルレシピ３",
+            "description" => "サンプル説明文３",
+            "maingred_id" => 1,
+            "method_id"   => 1,
+            "ingredients" => [],
+            "processes"   => []
+        ];
+        return $formData;
     }
 
 }
