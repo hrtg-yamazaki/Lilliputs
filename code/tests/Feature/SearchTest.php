@@ -30,13 +30,47 @@ class SearchTest extends TestCase
     }
 
     /**
-     * 
+     * 検索TOPページへのアクセステスト
      */
     public function testAccessSearchTop()
     {
         $response = $this->get('/recipes/search/top');
 
         $response->assertStatus(200);
+    }
+
+    /**
+     * タイトル検索ページへのアクセステスト(クエリなし)
+     */
+    public function testAccessSearchTitle()
+    {
+        $response = $this->get('/recipes/search/title');
+
+        $response->assertStatus(200);
+    }
+
+    /**
+     * タイトル検索ページへのアクセステスト(キーワードあり・該当レコードあり)
+     */
+    public function testAccessSearchTitleWithKeyword()
+    {
+        $query = ["title"=>"プルレ"];
+        $response = $this->call("GET", '/recipes/search/title', $query);
+
+        $response->assertStatus(200);
+        $response->assertSeeText("サンプルレシピ");
+    }
+
+    /**
+     * タイトル検索ページへのアクセステスト(キーワードあり・該当レコードなし)
+     */
+    public function testAccessSearchTitleWithKeywordNotRecorded()
+    {
+        $query = ["title"=>"nothings"];
+        $response = $this->call("GET", '/recipes/search/title', $query);
+
+        $response->assertStatus(200);
+        $response->assertSeeText("検索結果 ( 0 件 )");
     }
 
 
