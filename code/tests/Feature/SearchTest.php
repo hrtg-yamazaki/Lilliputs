@@ -73,6 +73,16 @@ class SearchTest extends TestCase
         $response->assertSeeText("検索結果 ( 0 件 )");
     }
 
+    /**
+     * カテゴリ検索ページへのアクセステスト
+     */
+    public function testAccessSearchCategory()
+    {
+        $response = $this->get('/recipes/search/category');
+
+        $response->assertStatus(200);
+    }
+
 
     /**
      * private
