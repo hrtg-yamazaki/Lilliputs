@@ -39,6 +39,46 @@ class RouletteTest extends TestCase
     }
 
     /**
+     * 「ルーレット」結果ページが正常に表示されるかどうかのテスト
+     */
+    public function testRouletteResultPageIsAvailable()
+    {
+        $response = $this->get('/recipes/roulette/result');
+
+        $response->assertStatus(200);
+    }
+
+    /**
+     * 「ルーレット」結果ページへのアクセステスト(クエリあり・該当レコードあり)
+     */
+    public function testRouletteResultWithQuery()
+    {
+        $query = [
+            "maingred_id" => 1,
+            "method_id" => 1
+        ];
+        $response = $this->call("GET", '/recipes/roulette/result', $query);
+
+        $response->assertStatus(200);
+        $response->assertSeeText("サンプルレシピ");
+    }
+
+    /**
+     * 「ルーレット」結果ページへのアクセステスト(クエリあり・該当レコードなし)
+     */
+    public function testRouletteResultWithNotRecorded()
+    {
+        $query = [
+            "maingred_id" => 2,
+            "method_id" => 2
+        ];
+        $response = $this->call("GET", '/recipes/roulette/result', $query);
+
+        $response->assertStatus(200);
+        $response->assertSeeText("現在条件にマッチするレシピはありません");
+    }
+
+    /**
      * private
      */
 
