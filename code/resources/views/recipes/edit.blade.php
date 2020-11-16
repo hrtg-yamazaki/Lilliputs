@@ -75,7 +75,8 @@
                         <p class="half-border">&nbsp;</p>
 
                         <div class="ingredient-form">
-                            <h3 class="ingredient-form__head">
+                            <ingredient-form><ingredient-form>
+                            {{-- <h3 class="ingredient-form__head">
                                 必要なもの
                             </h3>
                             <div class="ingredient-form__secondhead clearfix">
@@ -107,7 +108,7 @@
                                         @endisset
                                     </p>
                                 </div>
-                            @endforeach
+                            @endforeach --}}
                         </div>
 
                         <p class="half-border">&nbsp;</p>

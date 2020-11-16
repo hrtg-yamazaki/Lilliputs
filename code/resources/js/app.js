@@ -34,6 +34,13 @@ if (document.getElementsByClassName("roulette")[0]) {
     });
 }
 
+if (document.getElementsByClassName("ingredient-form")[0]) {
+    Vue.component('ingredient-form', require('./components/IngredientFields.vue').default);
+    const categorySearch = new Vue({
+        el: '.ingredient-form',
+    });
+}
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
