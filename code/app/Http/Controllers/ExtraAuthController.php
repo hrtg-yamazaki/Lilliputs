@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class ExtraAuthController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware("auth")->only(["logout_confirm"]);
+    }
+
     /**
      * logout confirm
      */
