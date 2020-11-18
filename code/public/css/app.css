@@ -1312,6 +1312,11 @@ label {
   color: steelblue;
 }
 
+.auth-field__message {
+  font-size: 12px;
+  padding: 10px 0;
+}
+
 .auth-submit {
   width: 100%;
   border-top: 1px solid whitesmoke;
@@ -1333,6 +1338,15 @@ label {
   background-color: whitesmoke;
   color: crimson;
   font-size: 12px;
+}
+
+.auth-status-message {
+  margin: 10px auto;
+  max-width: 360px;
+  color: #5064b4;
+  background-color: whitesmoke;
+  font-size: 14px;
+  text-align: center;
 }
 
 @media (max-width: 1024px) {

@@ -53,6 +53,10 @@
     &__link:hover{
         color: steelblue;
     }
+    &__message{
+        font-size: 12px;
+        padding: 10px 0;
+    }
 }
 
 .auth-submit{
@@ -75,4 +79,13 @@
     background-color: whitesmoke;
     color: crimson;
     font-size: 12px;
+}
+
+.auth-status-message{
+    margin: 10px auto;
+    max-width: 360px;
+    color: $darkpurple;
+    background-color: whitesmoke;
+    font-size: 14px;
+    text-align: center;
 }
