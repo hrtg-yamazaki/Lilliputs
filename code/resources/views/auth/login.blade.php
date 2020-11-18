@@ -40,10 +40,10 @@
                             {{ __('Remember Me') }}
                         </label>
                     </div>
-                    <div style="display: none;">
+                    <div class="auth-field">
                         @if (Route::has('password.request'))
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
+                            <a class="auth-field__link" href="{{ route('password.request') }}">
+                                パスワードをお忘れの方
                             </a>
                         @endif
                     </div>
