@@ -1303,6 +1303,15 @@ label {
   letter-spacing: 1px;
 }
 
+.auth-field__link {
+  font-size: 14px;
+  color: #788cbe;
+}
+
+.auth-field__link:hover {
+  color: steelblue;
+}
+
 .auth-submit {
   width: 100%;
   border-top: 1px solid whitesmoke;

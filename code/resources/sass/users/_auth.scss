@@ -46,6 +46,13 @@
         font-size: 14px;
         letter-spacing: 1px;
     }
+    &__link{
+        font-size: 14px;
+        color: $lightpurple;
+    }
+    &__link:hover{
+        color: steelblue;
+    }
 }
 
 .auth-submit{
