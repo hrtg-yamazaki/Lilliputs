@@ -2098,6 +2098,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Ingredient form component is here.');
@@ -38072,7 +38090,35 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "ingredient-form__box" }, [
-      _c("h3", [_vm._v("材料フォーム")])
+      _c("h3", { staticClass: "ingredient-form__box__head" }, [
+        _vm._v("\n        必要なもの\n    ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "ingredient-form__box__secondhead clearfix" }, [
+        _c("h4", { staticClass: "secondhead-name" }, [
+          _c("label", [_vm._v("食材の名前")])
+        ]),
+        _vm._v(" "),
+        _c("h4", { staticClass: "secondhead-amount" }, [
+          _c("label", [_vm._v("数量")])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "ingredient-field clearfix" }, [
+        _c("p", { staticClass: "ingredient-field__name" }, [
+          _c("input", {
+            staticClass: "ingredient-field__name__input",
+            attrs: { name: "ingredients[0][name]", type: "text" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "ingredient-field__amount" }, [
+          _c("input", {
+            staticClass: "ingredient-field__amount__input",
+            attrs: { name: "ingredients[0][amount]", type: "text" }
+          })
+        ])
+      ])
     ])
   }
 ]
@@ -50614,15 +50660,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************************!*\
   !*** ./resources/js/components/RecipeRoulette.vue ***!
   \****************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _RecipeRoulette_vue_vue_type_template_id_7c0fd8cd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RecipeRoulette.vue?vue&type=template&id=7c0fd8cd& */ "./resources/js/components/RecipeRoulette.vue?vue&type=template&id=7c0fd8cd&");
 /* harmony import */ var _RecipeRoulette_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RecipeRoulette.vue?vue&type=script&lang=js& */ "./resources/js/components/RecipeRoulette.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _RecipeRoulette_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _RecipeRoulette_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -50652,7 +50697,7 @@ component.options.__file = "resources/js/components/RecipeRoulette.vue"
 /*!*****************************************************************************!*\
   !*** ./resources/js/components/RecipeRoulette.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

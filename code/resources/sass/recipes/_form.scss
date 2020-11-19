@@ -111,24 +111,28 @@
 .ingredient-form{
     width: 100%;
     padding: 28px 20px;
-    &__head{
-        padding-bottom: 20px;
-        font-size: 14px;
-        font-weight: bold;
-    }
-    &__secondhead{
-        font-size: 12px;
-        &__name{
-            width: 60%;
-            padding-left: 6px;
-            float: left;
+    &__box{
+        &__head{
+            padding-bottom: 20px;
+            font-size: 14px;
+            font-weight: bold;
         }
-        &__amount{
-            width: 40%;
-            padding-left: 16px;
-            float: right;
+        &__secondhead{
+            font-size: 12px;
         }
     }
+}
+
+.secondhead-name{
+    width: 60%;
+    padding-left: 6px;
+    float: left;
+}
+
+.secondhead-amount{
+    width: 40%;
+    padding-left: 16px;
+    float: right;
 }
 
 .ingredient-field{
