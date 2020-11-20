@@ -2119,10 +2119,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      formNumber: 1
+      formNumber: 1,
+      addButtonState: "",
+      removeButtonState: "display: none;"
     };
   },
   methods: {
@@ -2131,6 +2138,17 @@ __webpack_require__.r(__webpack_exports__);
         this.formNumber += 1;
       } else {
         alert("材料は20種類以内にまとめてください");
+      }
+
+      if (this.formNumber == 2) {
+        this.removeButtonState = "";
+      }
+    },
+    removeField: function removeField() {
+      this.formNumber -= 1;
+
+      if (this.formNumber == 1) {
+        this.removeButtonState = "display: none";
       }
     }
   }
@@ -38130,7 +38148,17 @@ var render = function() {
         ])
       }),
       _vm._v(" "),
-      _c("p", [_c("a", { on: { click: _vm.addField } }, [_vm._v("追加")])])
+      _c("p", [
+        _c("a", { style: _vm.addButtonState, on: { click: _vm.addField } }, [
+          _vm._v("\n            追加\n        ")
+        ]),
+        _vm._v(" "),
+        _c(
+          "a",
+          { style: _vm.removeButtonState, on: { click: _vm.removeField } },
+          [_vm._v("\n            最後尾を削除\n        ")]
+        )
+      ])
     ],
     2
   )

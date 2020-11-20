@@ -20,7 +20,12 @@
             </p>
         </div>
         <p>
-            <a v-on:click="addField">追加</a>
+            <a v-on:click="addField" v-bind:style="addButtonState">
+                追加
+            </a>
+            <a v-on:click="removeField" v-bind:style="removeButtonState">
+                最後尾を削除
+            </a>
         </p>
     </div>
 </template>
@@ -29,7 +34,9 @@
     export default {
         data: function(){
             return {
-                formNumber: 1
+                formNumber: 1,
+                addButtonState: "",
+                removeButtonState: "display: none;"
             }
         },
         methods: {
@@ -39,8 +46,16 @@
                 } else {
                     alert("材料は20種類以内にまとめてください");
                 }
+                if (this.formNumber == 2) {
+                    this.removeButtonState = "";
+                }
             },
-            
+            removeField: function(){
+                this.formNumber -= 1;
+                if (this.formNumber == 1) {
+                    this.removeButtonState = "display: none";
+                } 
+            }
         }
     }
 </script>
