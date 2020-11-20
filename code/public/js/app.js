@@ -2116,9 +2116,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Ingredient form component is here.');
+  data: function data() {
+    return {
+      formNumber: 1
+    };
+  },
+  methods: {
+    addField: function addField() {
+      if (this.formNumber < 20) {
+        this.formNumber += 1;
+      } else {
+        alert("材料は20種類以内にまとめてください");
+      }
+    }
   }
 });
 
@@ -38082,19 +38096,54 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "ingredient-form__box" },
+    [
+      _c("h3", { staticClass: "ingredient-form__box__head" }, [
+        _vm._v("\n        必要なもの\n    ")
+      ]),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._l(_vm.formNumber, function(i) {
+        return _c("div", { key: i, staticClass: "ingredient-field clearfix" }, [
+          _c("p", { staticClass: "ingredient-field__name" }, [
+            _c("input", {
+              staticClass: "ingredient-field__name__input",
+              attrs: {
+                name: "ingredients[" + (i - 1) + "][name]",
+                type: "text"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "ingredient-field__amount" }, [
+            _c("input", {
+              staticClass: "ingredient-field__amount__input",
+              attrs: {
+                name: "ingredients[" + (i - 1) + "][amount]",
+                type: "text"
+              }
+            })
+          ])
+        ])
+      }),
+      _vm._v(" "),
+      _c("p", [_c("a", { on: { click: _vm.addField } }, [_vm._v("追加")])])
+    ],
+    2
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ingredient-form__box" }, [
-      _c("h3", { staticClass: "ingredient-form__box__head" }, [
-        _vm._v("\n        必要なもの\n    ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "ingredient-form__box__secondhead clearfix" }, [
+    return _c(
+      "div",
+      { staticClass: "ingredient-form__box__secondhead clearfix" },
+      [
         _c("h4", { staticClass: "secondhead-name" }, [
           _c("label", [_vm._v("食材の名前")])
         ]),
@@ -38102,24 +38151,8 @@ var staticRenderFns = [
         _c("h4", { staticClass: "secondhead-amount" }, [
           _c("label", [_vm._v("数量")])
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "ingredient-field clearfix" }, [
-        _c("p", { staticClass: "ingredient-field__name" }, [
-          _c("input", {
-            staticClass: "ingredient-field__name__input",
-            attrs: { name: "ingredients[0][name]", type: "text" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "ingredient-field__amount" }, [
-          _c("input", {
-            staticClass: "ingredient-field__amount__input",
-            attrs: { name: "ingredients[0][amount]", type: "text" }
-          })
-        ])
-      ])
-    ])
+      ]
+    )
   }
 ]
 render._withStripped = true

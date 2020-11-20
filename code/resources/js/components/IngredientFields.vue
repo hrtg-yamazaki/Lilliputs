@@ -11,21 +11,36 @@
                 <label>数量</label>
             </h4>
         </div>
-        <div class="ingredient-field clearfix">
+        <div v-for="i of formNumber" v-bind:key="i" class="ingredient-field clearfix">
             <p class="ingredient-field__name">
-                <input class="ingredient-field__name__input" name="ingredients[0][name]" type="text">
+                <input class="ingredient-field__name__input" v-bind:name="'ingredients['+ (i - 1) + '][name]'" type="text">
             </p>
             <p class="ingredient-field__amount">
-                <input class="ingredient-field__amount__input" name="ingredients[0][amount]" type="text">
+                <input class="ingredient-field__amount__input" v-bind:name="'ingredients['+ (i - 1) + '][amount]'" type="text">
             </p>
         </div>
+        <p>
+            <a v-on:click="addField">追加</a>
+        </p>
     </div>
 </template>
 
 <script>
     export default {
-        mounted() {
-            console.log('Ingredient form component is here.')
+        data: function(){
+            return {
+                formNumber: 1
+            }
+        },
+        methods: {
+            addField: function(){
+                if (this.formNumber < 20) {
+                    this.formNumber += 1;
+                } else {
+                    alert("材料は20種類以内にまとめてください");
+                }
+            },
+            
         }
     }
 </script>
