@@ -38148,15 +38148,25 @@ var render = function() {
         ])
       }),
       _vm._v(" "),
-      _c("p", [
-        _c("a", { style: _vm.addButtonState, on: { click: _vm.addField } }, [
-          _vm._v("\n            追加\n        ")
-        ]),
+      _c("div", { staticClass: "ingredient-button" }, [
+        _c(
+          "a",
+          {
+            staticClass: "ingredient-button__add",
+            style: _vm.addButtonState,
+            on: { click: _vm.addField }
+          },
+          [_vm._v("\n            追加\n        ")]
+        ),
         _vm._v(" "),
         _c(
           "a",
-          { style: _vm.removeButtonState, on: { click: _vm.removeField } },
-          [_vm._v("\n            最後尾を削除\n        ")]
+          {
+            staticClass: "ingredient-button__remove",
+            style: _vm.removeButtonState,
+            on: { click: _vm.removeField }
+          },
+          [_vm._v("\n            最終行を削除\n        ")]
         )
       ])
     ],
