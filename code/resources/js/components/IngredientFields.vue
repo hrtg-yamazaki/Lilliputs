@@ -21,7 +21,7 @@
         </div>
         <div class="ingredient-button">
             <a v-on:click="addField" v-bind:style="addButtonState" class="ingredient-button__add">
-                追加
+                材料を追加
             </a>
             <a v-on:click="removeField" v-bind:style="removeButtonState" class="ingredient-button__remove">
                 最終行を削除

@@ -67,8 +67,8 @@
 
                         <p class="half-border">&nbsp;</p>
 
-                        <div class="ingredient-form">
-                            <ingredient-form><ingredient-form>
+                        <div class="ingredient-form js-create-ingredients">
+                            <create-ingredients></create-ingredients>
                             {{-- <h3 class="ingredient-form__head">
                                 必要なもの
                             </h3>

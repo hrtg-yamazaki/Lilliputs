@@ -25,12 +25,9 @@ class Ingredient extends Model
 
     public static function fieldsForEdit($ingredients){
         $ingredientFields = [];
-        for($i=0; $i<10; $i++){
-            if (isset($ingredients[$i])) {
-                $ingredientFields[] = $ingredients[$i];
-            } else {
-                $ingredientFields[] = [];
-            }
+        foreach($ingredients as $ingredient){
+            $ingredient["displayed"] = true;
+            $ingredientFields[] = $ingredient;
         }
         return $ingredientFields;
     }

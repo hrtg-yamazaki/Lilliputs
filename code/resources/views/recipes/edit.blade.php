@@ -74,8 +74,9 @@
 
                         <p class="half-border">&nbsp;</p>
 
-                        <div class="ingredient-form">
-                            <ingredient-form><ingredient-form>
+                        <div class="ingredient-form js-edit-ingredients">
+                            <edit-ingredients v-bind:ingredient-fields="{{ json_encode($ingredientFields) }}">
+                            </edit-ingredients>
                             {{-- <h3 class="ingredient-form__head">
                                 必要なもの
                             </h3>
