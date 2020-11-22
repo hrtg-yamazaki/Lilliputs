@@ -2097,9 +2097,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["ingredientFields"],
+  props: ["ingredients"],
+  data: function data() {
+    return {
+      ingredientFields: []
+    };
+  },
   mounted: function mounted() {
+    this.ingredientFields = this.ingredients;
     console.log(this.ingredientFields);
   }
 });
