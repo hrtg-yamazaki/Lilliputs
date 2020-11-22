@@ -2098,6 +2098,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["ingredients"],
   data: function data() {
@@ -38144,9 +38166,59 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "ingredient-form__box" })
+  return _c(
+    "div",
+    { staticClass: "ingredient-form__box" },
+    [
+      _c("h3", { staticClass: "ingredient-form__box__head" }, [
+        _vm._v("\n        必要なもの\n    ")
+      ]),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._l(_vm.ingredientFields, function(v, i) {
+        return _c("div", { key: i, staticClass: "ingredient-field clearfix" }, [
+          _c("p", { staticClass: "ingredient-field__name" }, [
+            _c("input", {
+              staticClass: "ingredient-field__name__input",
+              attrs: { name: "ingredients[" + i + "][name]", type: "text" },
+              domProps: { value: _vm.ingredientFields[i]["name"] }
+            })
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "ingredient-field__amount" }, [
+            _c("input", {
+              staticClass: "ingredient-field__amount__input",
+              attrs: { name: "ingredients[" + i + "][amount]", type: "text" },
+              domProps: { value: _vm.ingredientFields[i]["amount"] }
+            })
+          ])
+        ])
+      })
+    ],
+    2
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "ingredient-form__box__secondhead clearfix" },
+      [
+        _c("h4", { staticClass: "secondhead-name" }, [
+          _c("label", [_vm._v("食材の名前")])
+        ]),
+        _vm._v(" "),
+        _c("h4", { staticClass: "secondhead-amount" }, [
+          _c("label", [_vm._v("数量")])
+        ])
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
