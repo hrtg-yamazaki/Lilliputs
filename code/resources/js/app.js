@@ -29,8 +29,22 @@ if (document.getElementsByClassName("category-search")[0]) {
 
 if (document.getElementsByClassName("roulette")[0]) {
     Vue.component('recipe-roulette', require('./components/RecipeRoulette.vue').default);
-    const categorySearch = new Vue({
+    const roulette = new Vue({
         el: '.roulette',
+    });
+}
+
+if (document.getElementsByClassName("js-create-ingredients")[0]) {
+    Vue.component('create-ingredients', require('./components/IngredientFields.vue').default);
+    const createIngredients = new Vue({
+        el: '.js-create-ingredients',
+    });
+}
+
+if (document.getElementsByClassName("js-edit-ingredients")[0]) {
+    Vue.component('edit-ingredients', require('./components/EditIngredients.vue').default);
+    const editIngredients = new Vue({
+        el: '.js-edit-ingredients',
     });
 }
 

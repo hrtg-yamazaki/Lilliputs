@@ -855,23 +855,23 @@ label {
   padding: 28px 20px;
 }
 
-.ingredient-form__head {
+.ingredient-form__box__head {
   padding-bottom: 20px;
   font-size: 14px;
   font-weight: bold;
 }
 
-.ingredient-form__secondhead {
+.ingredient-form__box__secondhead {
   font-size: 12px;
 }
 
-.ingredient-form__secondhead__name {
+.secondhead-name {
   width: 60%;
   padding-left: 6px;
   float: left;
 }
 
-.ingredient-form__secondhead__amount {
+.secondhead-amount {
   width: 40%;
   padding-left: 16px;
   float: right;
@@ -910,6 +910,28 @@ label {
   font-size: 12px;
   border: 1px solid #788cbe;
   border-radius: 4px;
+}
+
+.ingredient-button {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.ingredient-button__add {
+  padding: 8px 16px;
+  color: whitesmoke;
+  font-size: 14px;
+  background-color: #788cbe;
+  -webkit-appearance: none;
+}
+
+.ingredient-button__remove {
+  padding: 8px 16px;
+  color: whitesmoke;
+  font-size: 14px;
+  background-color: #888;
+  margin-left: 10px;
+  -webkit-appearance: none;
 }
 
 .recipe-submit {

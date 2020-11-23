@@ -111,24 +111,28 @@
 .ingredient-form{
     width: 100%;
     padding: 28px 20px;
-    &__head{
-        padding-bottom: 20px;
-        font-size: 14px;
-        font-weight: bold;
-    }
-    &__secondhead{
-        font-size: 12px;
-        &__name{
-            width: 60%;
-            padding-left: 6px;
-            float: left;
+    &__box{
+        &__head{
+            padding-bottom: 20px;
+            font-size: 14px;
+            font-weight: bold;
         }
-        &__amount{
-            width: 40%;
-            padding-left: 16px;
-            float: right;
+        &__secondhead{
+            font-size: 12px;
         }
     }
+}
+
+.secondhead-name{
+    width: 60%;
+    padding-left: 6px;
+    float: left;
+}
+
+.secondhead-amount{
+    width: 40%;
+    padding-left: 16px;
+    float: right;
 }
 
 .ingredient-field{
@@ -158,6 +162,28 @@
             border: 1px solid $lightpurple;
             border-radius: 4px;
         }
+    }
+}
+
+.ingredient-button{
+    padding-top: 10px;
+    text-align: center;
+    &__add{
+        // display: inline-block;
+        padding: 8px 16px;
+        color: whitesmoke;
+        font-size: 14px;
+        background-color: $lightpurple;
+        -webkit-appearance: none;
+    }
+    &__remove{
+        // display: inline-block;
+        padding: 8px 16px;
+        color: whitesmoke;
+        font-size: 14px;
+        background-color: #888;
+        margin-left: 10px;
+        -webkit-appearance: none;
     }
 }
 

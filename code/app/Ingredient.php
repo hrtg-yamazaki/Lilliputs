@@ -23,23 +23,11 @@ class Ingredient extends Model
         }
     }
 
-    public static function fieldsForEdit($ingredients){
-        $ingredientFields = [];
-        for($i=0; $i<10; $i++){
-            if (isset($ingredients[$i])) {
-                $ingredientFields[] = $ingredients[$i];
-            } else {
-                $ingredientFields[] = [];
-            }
-        }
-        return $ingredientFields;
-    }
-
     public static function bulkUpdate($ingredients, $recipe){
         foreach($ingredients as $ingredient_params){
             if (isset($ingredient_params["id"])) {
                 $ingredient = self::find($ingredient_params["id"]);
-                if ($ingredient_params["name"] && $ingredient_params["amount"]) {
+                if (isset($ingredient_params["name"]) && isset($ingredient_params["amount"])) {
                     $ingredient->name = $ingredient_params["name"];
                     $ingredient->amount = $ingredient_params["amount"];
                     $ingredient->update();
@@ -47,7 +35,7 @@ class Ingredient extends Model
                     $ingredient->delete();
                 }
             } else {
-                if ($ingredient_params["name"] && $ingredient_params["amount"]) {
+                if (isset($ingredient_params["name"]) && isset($ingredient_params["amount"])) {
                     $ingredient = new Ingredient();
                     $ingredient->name = $ingredient_params["name"];
                     $ingredient->amount = $ingredient_params["amount"];

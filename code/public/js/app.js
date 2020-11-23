@@ -2083,6 +2083,212 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditIngredients.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EditIngredients.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["ingredients"],
+  data: function data() {
+    return {
+      ingredientFields: [],
+      removeButtonState: "",
+      hiddenFields: []
+    };
+  },
+  methods: {
+    addField: function addField() {
+      /**
+       * Ingredientフィールドの追加。
+       * 20フィールド以上の場合はアラートメッセージを送出。
+       */
+      var nextField = {
+        name: "",
+        amount: ""
+      };
+
+      if (this.ingredientFields.length < 20) {
+        this.ingredientFields.push(nextField);
+
+        if (this.ingredientFields.length >= 2) {
+          this.removeButtonState = "";
+        }
+      } else {
+        alert("材料は20種類以内にまとめて下さい");
+      }
+    },
+    removeField: function removeField() {
+      /**
+       * Ingredientフィールドの削除。
+       * 取り出したオブジェクトは、
+       * this.hideDefaultIngredients()によって選別される(後述)。
+       */
+      var removingField = this.ingredientFields.pop();
+      this.hideDefaultIngredients(removingField);
+
+      if (this.ingredientFields.length <= 1) {
+        this.removeButtonState = "display: none";
+      }
+    },
+    isset: function isset(param) {
+      /**
+       * 汎用の、存在確認のための関数。
+       */
+      if (param === "" || param === null || param == undefined || param == []) {
+        return false;
+      }
+
+      return true;
+    },
+    hideDefaultIngredients: function hideDefaultIngredients(removingField) {
+      /**
+       * 削除ボタンを押下したことによって抽出された、最後尾のフィールドにidがあるか判定。
+       * ある場合は、集合化と再配列化を行うことで重複確認をしたのち、
+       * バックエンド側から削除命令を送るためのhiddenFieldを生成する。
+       */
+      if (this.isset(removingField["id"])) {
+        this.hiddenFields.push(removingField);
+        var setHiddenField = new Set(this.hiddenFields);
+        this.hiddenFields = Array.from(setHiddenField);
+      }
+    }
+  },
+  mounted: function mounted() {
+    this.ingredientFields = this.ingredients;
+
+    if (this.ingredientFields.length <= 1) {
+      this.removeButtonState = "display: none";
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/IngredientFields.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/IngredientFields.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      formNumber: 1,
+      addButtonState: "",
+      removeButtonState: "display: none;"
+    };
+  },
+  methods: {
+    addField: function addField() {
+      if (this.formNumber < 20) {
+        this.formNumber += 1;
+      } else {
+        alert("材料は20種類以内にまとめてください");
+      }
+
+      if (this.formNumber == 2) {
+        this.removeButtonState = "";
+      }
+    },
+    removeField: function removeField() {
+      this.formNumber -= 1;
+
+      if (this.formNumber == 1) {
+        this.removeButtonState = "display: none";
+      }
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecipeRoulette.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RecipeRoulette.vue?vue&type=script&lang=js& ***!
@@ -38026,6 +38232,266 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditIngredients.vue?vue&type=template&id=774dd8bd&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EditIngredients.vue?vue&type=template&id=774dd8bd& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "ingredient-form__box" },
+    [
+      _c("h3", { staticClass: "ingredient-form__box__head" }, [
+        _vm._v("\n        必要なもの\n    ")
+      ]),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._l(_vm.ingredientFields, function(v, i) {
+        return _c("div", { key: i, staticClass: "ingredient-field clearfix" }, [
+          _vm.isset(_vm.ingredientFields[i]["id"])
+            ? _c("input", {
+                attrs: { type: "hidden", name: "ingredients[" + i + "][id]" },
+                domProps: { value: _vm.ingredientFields[i]["id"] }
+              })
+            : _vm._e(),
+          _vm._v(" "),
+          _c("p", { staticClass: "ingredient-field__name" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.ingredientFields[i]["name"],
+                  expression: "ingredientFields[i]['name']"
+                }
+              ],
+              staticClass: "ingredient-field__name__input",
+              attrs: { name: "ingredients[" + i + "][name]", type: "text" },
+              domProps: { value: _vm.ingredientFields[i]["name"] },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.ingredientFields[i], "name", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "ingredient-field__amount" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.ingredientFields[i]["amount"],
+                  expression: "ingredientFields[i]['amount']"
+                }
+              ],
+              staticClass: "ingredient-field__amount__input",
+              attrs: { name: "ingredients[" + i + "][amount]", type: "text" },
+              domProps: { value: _vm.ingredientFields[i]["amount"] },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.ingredientFields[i],
+                    "amount",
+                    $event.target.value
+                  )
+                }
+              }
+            })
+          ])
+        ])
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "ingredient-button" }, [
+        _c(
+          "a",
+          {
+            staticClass: "ingredient-button__add",
+            on: { click: _vm.addField }
+          },
+          [_vm._v("\n            材料を追加\n        ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "ingredient-button__remove",
+            style: _vm.removeButtonState,
+            on: { click: _vm.removeField }
+          },
+          [_vm._v("\n            最終行を削除\n        ")]
+        )
+      ]),
+      _vm._v(" "),
+      _vm.isset(_vm.hiddenFields)
+        ? _c(
+            "ul",
+            {},
+            _vm._l(_vm.hiddenFields, function(v, i) {
+              return _c("li", { key: i }, [
+                _c("input", {
+                  attrs: {
+                    type: "hidden",
+                    name:
+                      "ingredients[" +
+                      (i + _vm.ingredientFields.length) +
+                      "][id]"
+                  },
+                  domProps: { value: v["id"] }
+                })
+              ])
+            }),
+            0
+          )
+        : _vm._e()
+    ],
+    2
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "ingredient-form__box__secondhead clearfix" },
+      [
+        _c("h4", { staticClass: "secondhead-name" }, [
+          _c("label", [_vm._v("食材の名前")])
+        ]),
+        _vm._v(" "),
+        _c("h4", { staticClass: "secondhead-amount" }, [
+          _c("label", [_vm._v("数量")])
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/IngredientFields.vue?vue&type=template&id=4bb9ed56&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/IngredientFields.vue?vue&type=template&id=4bb9ed56& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "ingredient-form__box" },
+    [
+      _c("h3", { staticClass: "ingredient-form__box__head" }, [
+        _vm._v("\n        必要なもの\n    ")
+      ]),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._l(_vm.formNumber, function(i) {
+        return _c("div", { key: i, staticClass: "ingredient-field clearfix" }, [
+          _c("p", { staticClass: "ingredient-field__name" }, [
+            _c("input", {
+              staticClass: "ingredient-field__name__input",
+              attrs: {
+                name: "ingredients[" + (i - 1) + "][name]",
+                type: "text"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "ingredient-field__amount" }, [
+            _c("input", {
+              staticClass: "ingredient-field__amount__input",
+              attrs: {
+                name: "ingredients[" + (i - 1) + "][amount]",
+                type: "text"
+              }
+            })
+          ])
+        ])
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "ingredient-button" }, [
+        _c(
+          "a",
+          {
+            staticClass: "ingredient-button__add",
+            style: _vm.addButtonState,
+            on: { click: _vm.addField }
+          },
+          [_vm._v("\n            材料を追加\n        ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "ingredient-button__remove",
+            style: _vm.removeButtonState,
+            on: { click: _vm.removeField }
+          },
+          [_vm._v("\n            最終行を削除\n        ")]
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "ingredient-form__box__secondhead clearfix" },
+      [
+        _c("h4", { staticClass: "secondhead-name" }, [
+          _c("label", [_vm._v("食材の名前")])
+        ]),
+        _vm._v(" "),
+        _c("h4", { staticClass: "secondhead-amount" }, [
+          _c("label", [_vm._v("数量")])
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecipeRoulette.vue?vue&type=template&id=7c0fd8cd&":
 /*!*****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RecipeRoulette.vue?vue&type=template&id=7c0fd8cd& ***!
@@ -50347,9 +50813,22 @@ if (document.getElementsByClassName("category-search")[0]) {
 
 if (document.getElementsByClassName("roulette")[0]) {
   Vue.component('recipe-roulette', __webpack_require__(/*! ./components/RecipeRoulette.vue */ "./resources/js/components/RecipeRoulette.vue")["default"]);
-
-  var _categorySearch = new Vue({
+  var roulette = new Vue({
     el: '.roulette'
+  });
+}
+
+if (document.getElementsByClassName("js-create-ingredients")[0]) {
+  Vue.component('create-ingredients', __webpack_require__(/*! ./components/IngredientFields.vue */ "./resources/js/components/IngredientFields.vue")["default"]);
+  var createIngredients = new Vue({
+    el: '.js-create-ingredients'
+  });
+}
+
+if (document.getElementsByClassName("js-edit-ingredients")[0]) {
+  Vue.component('edit-ingredients', __webpack_require__(/*! ./components/EditIngredients.vue */ "./resources/js/components/EditIngredients.vue")["default"]);
+  var editIngredients = new Vue({
+    el: '.js-edit-ingredients'
   });
 }
 /**
@@ -50472,6 +50951,144 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CategorySearch_vue_vue_type_template_id_6c6a9f1e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CategorySearch_vue_vue_type_template_id_6c6a9f1e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/EditIngredients.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/EditIngredients.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _EditIngredients_vue_vue_type_template_id_774dd8bd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EditIngredients.vue?vue&type=template&id=774dd8bd& */ "./resources/js/components/EditIngredients.vue?vue&type=template&id=774dd8bd&");
+/* harmony import */ var _EditIngredients_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EditIngredients.vue?vue&type=script&lang=js& */ "./resources/js/components/EditIngredients.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _EditIngredients_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _EditIngredients_vue_vue_type_template_id_774dd8bd___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _EditIngredients_vue_vue_type_template_id_774dd8bd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/EditIngredients.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/EditIngredients.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/EditIngredients.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EditIngredients_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./EditIngredients.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditIngredients.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EditIngredients_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/EditIngredients.vue?vue&type=template&id=774dd8bd&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/EditIngredients.vue?vue&type=template&id=774dd8bd& ***!
+  \************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditIngredients_vue_vue_type_template_id_774dd8bd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./EditIngredients.vue?vue&type=template&id=774dd8bd& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditIngredients.vue?vue&type=template&id=774dd8bd&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditIngredients_vue_vue_type_template_id_774dd8bd___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditIngredients_vue_vue_type_template_id_774dd8bd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/IngredientFields.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/IngredientFields.vue ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _IngredientFields_vue_vue_type_template_id_4bb9ed56___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./IngredientFields.vue?vue&type=template&id=4bb9ed56& */ "./resources/js/components/IngredientFields.vue?vue&type=template&id=4bb9ed56&");
+/* harmony import */ var _IngredientFields_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./IngredientFields.vue?vue&type=script&lang=js& */ "./resources/js/components/IngredientFields.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _IngredientFields_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _IngredientFields_vue_vue_type_template_id_4bb9ed56___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _IngredientFields_vue_vue_type_template_id_4bb9ed56___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/IngredientFields.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/IngredientFields.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/IngredientFields.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_IngredientFields_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./IngredientFields.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/IngredientFields.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_IngredientFields_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/IngredientFields.vue?vue&type=template&id=4bb9ed56&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/IngredientFields.vue?vue&type=template&id=4bb9ed56& ***!
+  \*************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IngredientFields_vue_vue_type_template_id_4bb9ed56___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./IngredientFields.vue?vue&type=template&id=4bb9ed56& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/IngredientFields.vue?vue&type=template&id=4bb9ed56&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IngredientFields_vue_vue_type_template_id_4bb9ed56___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IngredientFields_vue_vue_type_template_id_4bb9ed56___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
