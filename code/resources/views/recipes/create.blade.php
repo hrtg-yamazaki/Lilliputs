@@ -68,28 +68,9 @@
                         <p class="half-border">&nbsp;</p>
 
                         <div class="ingredient-form js-create-ingredients">
+
                             <create-ingredients></create-ingredients>
-                            {{-- <h3 class="ingredient-form__head">
-                                必要なもの
-                            </h3>
-                            <div class="ingredient-form__secondhead clearfix">
-                                <h4 class="ingredient-form__secondhead__name">
-                                    <label>食材の名前</label>
-                                </h4>
-                                <h4 class="ingredient-form__secondhead__amount">
-                                    <label>数量</label>
-                                </h4>
-                            </div>
-                            @for($i = 0; $i < 10; $i ++)
-                                <div class="ingredient-field clearfix">
-                                    <p class="ingredient-field__name">
-                                        {{ Form::text("ingredients[".$i."][name]", null, ["class"=>"ingredient-field__name__input"]) }}
-                                    </p>
-                                    <p class="ingredient-field__amount">
-                                        {{ Form::text("ingredients[".$i."][amount]", null, ["class"=>"ingredient-field__amount__input"]) }}
-                                    </p>
-                                </div>
-                            @endfor --}}
+
                         </div>
 
                         <p class="half-border">&nbsp;</p>
