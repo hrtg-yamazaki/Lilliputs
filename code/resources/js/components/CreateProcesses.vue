@@ -17,7 +17,7 @@
         </div>
         <div class="process-button">
             <a v-on:click="addField" class="process-button__add">
-                材料を追加
+                調理工程を追加
             </a>
             <a v-on:click="removeField" v-bind:style="removeButtonState" class="process-button__remove">
                 最終行を削除
@@ -31,18 +31,30 @@
         data: function(){
             return {
                 processFields: [],
+                removeButtonState: "display: none;"
             }
         },
         methods: {
             addField: function(){
-                console.log("add!");
+                var nextField = {content: ""}
+                if (this.processFields.length < 10){
+                    this.processFields.push(nextField);
+                } else {
+                    alert("「作り方」の項目は10工程以下にまとめて下さい");
+                }
+                if (this.processFields.length >= 2) {
+                    this.removeButtonState = "";
+                }
             },
             removeField: function(){
-                console.log("remove!");
+                var removeField = this.processFields.pop()
+                if (this.processFields.length <= 1){
+                    this.removeButtonState = "display: none;"
+                }
             }
         },
         mounted() {
-            const defaultField = {name: ""}
+            const defaultField = {content: ""}
             this.processFields.push(defaultField);
         }
     }

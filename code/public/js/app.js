@@ -2123,20 +2123,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      processFields: []
+      processFields: [],
+      removeButtonState: "display: none;"
     };
   },
   methods: {
     addField: function addField() {
-      console.log("add!");
+      var nextField = {
+        content: ""
+      };
+
+      if (this.processFields.length < 10) {
+        this.processFields.push(nextField);
+      } else {
+        alert("「作り方」の項目は10工程以下にまとめて下さい");
+      }
+
+      if (this.processFields.length >= 2) {
+        this.removeButtonState = "";
+      }
     },
     removeField: function removeField() {
-      console.log("remove!");
+      var removeField = this.processFields.pop();
+
+      if (this.processFields.length <= 1) {
+        this.removeButtonState = "display: none;";
+      }
     }
   },
   mounted: function mounted() {
     var defaultField = {
-      name: ""
+      content: ""
     };
     this.processFields.push(defaultField);
   }
@@ -38337,7 +38354,7 @@ var render = function() {
       _c(
         "a",
         { staticClass: "process-button__add", on: { click: _vm.addField } },
-        [_vm._v("\n            材料を追加\n        ")]
+        [_vm._v("\n            調理工程を追加\n        ")]
       ),
       _vm._v(" "),
       _c(
