@@ -75,22 +75,27 @@
 
                         <p class="half-border">&nbsp;</p>
 
-                        <div class="process-form">
-                            <h3 class="process-form__head">
-                                作り方
-                            </h3>
-                            <div class="process-form__content">
-                                @for($i = 0; $i < 5; $i ++)
-                                    <div class="process-field clearfix">
-                                        <h4 class="process-field__head">
-                                            {{ $i + 1 }}.
-                                        </h4>
-                                        <p class="process-field__input">
-                                            {{ Form::textarea("processes[".$i."][content]", null, ["class"=>"process-field__input__textarea"]) }}
-                                        </p>
-                                    </div>
-                                @endfor
-                            </div>
+                        <div class="process-form js-create-processes">
+
+                            <create-processes></create-processes>
+                            {{-- <div class="process-form__box">
+                                <h3 class="process-form__box__head">
+                                    作り方
+                                </h3>
+                                <div class="process-form__box__content">
+                                    @for($i = 0; $i < 5; $i ++)
+                                        <div class="process-field clearfix">
+                                            <h4 class="process-field__head">
+                                                {{ $i + 1 }}.
+                                            </h4>
+                                            <p class="process-field__input">
+                                                {{ Form::textarea("processes[".$i."][content]", null, ["class"=>"process-field__input__textarea"]) }}
+                                            </p>
+                                        </div>
+                                    @endfor
+                                </div>
+                            </div> --}}
+
                         </div>
 
                         <p class="half-border">&nbsp;</p>

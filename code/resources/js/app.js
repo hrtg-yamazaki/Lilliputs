@@ -48,6 +48,13 @@ if (document.getElementsByClassName("js-edit-ingredients")[0]) {
     });
 }
 
+if (document.getElementsByClassName("js-create-processes")[0]) {
+    Vue.component('create-processes', require('./components/CreateProcesses.vue').default);
+    const editIngredients = new Vue({
+        el: '.js-create-processes',
+    });
+}
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

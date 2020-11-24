@@ -958,13 +958,17 @@ label {
   padding: 28px 20px;
 }
 
-.process-form__head {
+.process-form__box {
+  width: 100%;
+}
+
+.process-form__box__head {
   padding-bottom: 10px;
   font-size: 14px;
   font-weight: bold;
 }
 
-.process-form__content {
+.process-form__box__content {
   padding-bottom: 20px;
 }
 
