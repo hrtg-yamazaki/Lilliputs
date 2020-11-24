@@ -2098,9 +2098,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      processFields: []
+    };
+  },
+  methods: {
+    addField: function addField() {
+      console.log("add!");
+    },
+    removeField: function removeField() {
+      console.log("remove!");
+    }
+  },
   mounted: function mounted() {
-    console.log('CreateProcesses Component mounted.');
+    var defaultField = {
+      name: ""
+    };
+    this.processFields.push(defaultField);
   }
 });
 
@@ -38270,18 +38308,51 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "process-form__box" }, [
-      _c("p", [_vm._v("調理工程フィールド")])
+  return _c("div", { staticClass: "process-form__box" }, [
+    _c("h3", { staticClass: "process-form__box__head" }, [
+      _vm._v("\n        作り方\n    ")
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "process-form__box__content" },
+      _vm._l(_vm.processFields, function(p, i) {
+        return _c("div", { key: i, staticClass: "process-field clearfix" }, [
+          _c("h4", { staticClass: "process-field__head" }, [
+            _vm._v("\n                " + _vm._s(i + 1) + ".\n            ")
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "process-field__input" }, [
+            _c("textarea", {
+              staticClass: "process-field__input__textarea",
+              attrs: { name: "processes[" + i + "][content]", type: "text" }
+            })
+          ])
+        ])
+      }),
+      0
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "process-button" }, [
+      _c(
+        "a",
+        { staticClass: "process-button__add", on: { click: _vm.addField } },
+        [_vm._v("\n            材料を追加\n        ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "process-button__remove",
+          style: _vm.removeButtonState,
+          on: { click: _vm.removeField }
+        },
+        [_vm._v("\n            最終行を削除\n        ")]
+      )
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
