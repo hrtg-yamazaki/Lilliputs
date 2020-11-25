@@ -85,7 +85,9 @@
 
                         <div class="process-form js-edit-processes">
 
-                            <edit-processes></edit-processes>
+                            <edit-processes v-bind:processes="{{ json_encode($processes) }}">
+                            </edit-processes>
+
                             {{-- <h3 class="process-form__head">
                                 作り方
                             </h3>

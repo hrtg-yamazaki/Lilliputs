@@ -108,14 +108,12 @@ class RecipeController extends Controller
         $maingreds = Maingred::all()->pluck("name", "id");
         $methods = Method::all()->pluck("name", "id");
 
-        $processFields = Process::fieldsForEdit($recipe->processes);
-
         return view("recipes.edit", [
-            "recipe"           => $recipe,
-            "maingreds"        => $maingreds,
-            "methods"          => $methods,
-            "ingredients"      => $recipe->ingredients,
-            "processFields"    => $processFields
+            "recipe"      => $recipe,
+            "maingreds"   => $maingreds,
+            "methods"     => $methods,
+            "ingredients" => $recipe->ingredients,
+            "processes"   => $recipe->processes
         ]);
     }
 

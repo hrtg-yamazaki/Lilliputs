@@ -6,8 +6,9 @@
 
 <script>
     export default {
+        props: ["processes"],
         mounted() {
-            console.log('EditProcesses Component mounted.')
+            console.log(this.processes);
         }
     }
 </script>

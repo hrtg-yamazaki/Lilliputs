@@ -2310,8 +2310,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["processes"],
   mounted: function mounted() {
-    console.log('EditProcesses Component mounted.');
+    console.log(this.processes);
   }
 });
 

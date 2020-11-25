@@ -23,18 +23,6 @@ class Process extends Model
         }
     }
 
-    public static function fieldsForEdit($processes){
-        $processFields = [];
-        for($i=0; $i<5; $i++){
-            if (isset($processes[$i])) {
-                $processFields[] = $processes[$i];
-            } else {
-                $processFields[] = [];
-            }
-        }
-        return $processFields;
-    }
-
     public static function bulkUpdate($processes, $recipe){
         foreach($processes as $process_params){
             if (isset($process_params["id"])) {
