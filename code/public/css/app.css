@@ -1394,6 +1394,10 @@ label {
     height: 300px;
   }
 
+  .show-no-image {
+    line-height: 300px;
+  }
+
   .ingredient__box__amount {
     font-size: 12px;
   }
