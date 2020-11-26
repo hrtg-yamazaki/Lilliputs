@@ -912,12 +912,14 @@ label {
   border-radius: 4px;
 }
 
-.ingredient-button {
+.ingredient-button,
+.process-button {
   padding-top: 10px;
   text-align: center;
 }
 
-.ingredient-button__add {
+.ingredient-button__add,
+.process-button__add {
   padding: 8px 16px;
   color: whitesmoke;
   font-size: 14px;
@@ -925,7 +927,8 @@ label {
   -webkit-appearance: none;
 }
 
-.ingredient-button__remove {
+.ingredient-button__remove,
+.process-button__remove {
   padding: 8px 16px;
   color: whitesmoke;
   font-size: 14px;
@@ -958,13 +961,17 @@ label {
   padding: 28px 20px;
 }
 
-.process-form__head {
+.process-form__box {
+  width: 100%;
+}
+
+.process-form__box__head {
   padding-bottom: 10px;
   font-size: 14px;
   font-weight: bold;
 }
 
-.process-form__content {
+.process-form__box__content {
   padding-bottom: 20px;
 }
 
@@ -1385,6 +1392,10 @@ label {
     min-width: 300px;
     max-width: 100%;
     height: 300px;
+  }
+
+  .show-no-image {
+    line-height: 300px;
   }
 
   .ingredient__box__amount {

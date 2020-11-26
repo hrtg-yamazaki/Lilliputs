@@ -83,8 +83,12 @@
 
                         <p class="half-border">&nbsp;</p>
 
-                        <div class="process-form">
-                            <h3 class="process-form__head">
+                        <div class="process-form js-edit-processes">
+
+                            <edit-processes v-bind:processes="{{ json_encode($processes) }}">
+                            </edit-processes>
+
+                            {{-- <h3 class="process-form__head">
                                 作り方
                             </h3>
                             <div class="process-form__content">
@@ -105,7 +109,7 @@
                                         </p>
                                     </div>
                                 @endforeach
-                            </div>
+                            </div> --}}
                         </div>
 
                         <p class="half-border">&nbsp;</p>
