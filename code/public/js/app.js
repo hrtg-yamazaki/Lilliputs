@@ -2309,10 +2309,111 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["processes"],
+  data: function data() {
+    return {
+      processFields: [],
+      removeButtonState: "",
+      hiddenFields: []
+    };
+  },
+  methods: {
+    addField: function addField() {
+      /**
+       * Processフィールドの追加。
+       * 10フィールド以上の場合はアラートメッセージを送出。
+       */
+      var nextField = {
+        content: ""
+      };
+
+      if (this.processFields.length < 10) {
+        this.processFields.push(nextField);
+
+        if (this.processFields.length >= 2) {
+          this.removeButtonState = "";
+        }
+      } else {
+        alert("調理工程は10項目以内でまとめてください");
+      }
+    },
+    removeField: function removeField() {
+      /**
+       * Processフィールドの削除。
+       * 取り出したオブジェクトは、
+       * this.hideDefaultProcesses()によって選別される(後述)。
+       */
+      var removingField = this.processFields.pop();
+      this.hideDefaultProcesses(removingField);
+
+      if (this.processFields.length <= 1) {
+        this.removeButtonState = "display: none;";
+      }
+    },
+    isset: function isset(param) {
+      /**
+       * 汎用の、存在確認のための関数。
+       */
+      if (param === "" || param === null || param == undefined || param == []) {
+        return false;
+      }
+
+      return true;
+    },
+    hideDefaultProcesses: function hideDefaultProcesses(removingField) {
+      /**
+       * 削除ボタンを押下したことによって抽出された、最後尾のフィールドにidがあるか判定。
+       * ある場合は、集合化と再配列化を行うことで重複確認をしたのち、
+       * バックエンド側から削除命令を送るためのhiddenFieldを生成する。
+       */
+      if (this.isset(removingField["id"])) {
+        this.hiddenFields.push(removingField);
+        var setHiddenField = new Set(this.hiddenFields);
+        this.hiddenFields = Array.from(setHiddenField);
+      }
+    }
+  },
   mounted: function mounted() {
-    console.log(this.processes);
+    this.processFields = this.processes;
+
+    if (this.processFields.length <= 1) {
+      this.removeButtonState = "display: none;";
+    }
   }
 });
 
@@ -38576,7 +38677,90 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "process-form__box" }, [
-    _vm._v("\n    調理工程編集用フォーム\n")
+    _c("h3", { staticClass: "process-form__box__head" }, [
+      _vm._v("\n        作り方\n    ")
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "process-form__box__content" },
+      _vm._l(_vm.processFields, function(p, i) {
+        return _c("div", { key: i, staticClass: "process-field clearfix" }, [
+          _c("h4", { staticClass: "process-field__head" }, [
+            _vm._v("\n                " + _vm._s(i + 1) + ".\n            ")
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "process-field__input" }, [
+            _vm.isset(_vm.processFields[i]["id"])
+              ? _c("input", {
+                  attrs: { type: "hidden", name: "processes[" + i + "][id]" },
+                  domProps: { value: _vm.processFields[i]["id"] }
+                })
+              : _vm._e(),
+            _vm._v(" "),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.processFields[i]["content"],
+                  expression: "processFields[i]['content']"
+                }
+              ],
+              staticClass: "process-field__input__textarea",
+              attrs: { name: "processes[" + i + "][content]", type: "text" },
+              domProps: { value: _vm.processFields[i]["content"] },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.processFields[i], "content", $event.target.value)
+                }
+              }
+            })
+          ])
+        ])
+      }),
+      0
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "process-button" }, [
+      _c(
+        "a",
+        { staticClass: "process-button__add", on: { click: _vm.addField } },
+        [_vm._v("\n            調理工程を追加\n        ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "process-button__remove",
+          style: _vm.removeButtonState,
+          on: { click: _vm.removeField }
+        },
+        [_vm._v("\n            最終行を削除\n        ")]
+      )
+    ]),
+    _vm._v(" "),
+    _vm.isset(_vm.hiddenFields)
+      ? _c(
+          "ul",
+          { staticStyle: { display: "none" } },
+          _vm._l(_vm.hiddenFields, function(v, i) {
+            return _c("li", { key: i }, [
+              _c("input", {
+                attrs: {
+                  type: "hidden",
+                  name: "processes[" + (i + _vm.processFields.length) + "][id]"
+                },
+                domProps: { value: v["id"] }
+              })
+            ])
+          }),
+          0
+        )
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
