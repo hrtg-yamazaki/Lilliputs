@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use IntervenedImage;
 use Storage;
 
 class Recipe extends Model
@@ -40,12 +41,20 @@ class Recipe extends Model
 
     public static function saveImage($requestFile)
     {
-        if(\App::environment("local")){
-            $fileName = $requestFile->store("public");
-            $imagePath = str_replace("public/", "", $fileName);
+        $resizedFile = IntervenedImage::make($requestFile)
+                            ->resize(1080, null, function($constraint) {
+                                    $constraint->aspectRatio();
+                                }
+                            );
+        if (\App::environment("local")) {
+            $imagePath = $requestFile->getClientOriginalName();
+            $resizedFile->save(storage_path("app/public/".$imagePath));
         } else {
-            $fileName = Storage::disk('s3')->put('', $requestFile, "public");
-            $imagePath = Storage::disk('s3')->url($fileName);
+            $hashName = $requestFile->hashName();
+            Storage::disk('s3')->put(
+                $hashName, (string)$resizedFile->encode(), "public"
+            );
+            $imagePath = Storage::disk('s3')->url($hashName);
         }
         return $imagePath;
     }

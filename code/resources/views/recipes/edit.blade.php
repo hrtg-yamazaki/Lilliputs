@@ -88,28 +88,6 @@
                             <edit-processes v-bind:processes="{{ json_encode($processes) }}">
                             </edit-processes>
 
-                            {{-- <h3 class="process-form__head">
-                                作り方
-                            </h3>
-                            <div class="process-form__content">
-                                @foreach($processFields as $i => $processField)
-                                    <div class="process-field clearfix">
-                                        <h4 class="process-field__head">
-                                            {{ $i + 1 }}.
-                                        </h4>
-                                        @isset($processField->id)
-                                            {{ Form::hidden("processes[".$i."][id]", $processField->id) }}
-                                        @endisset
-                                        <p class="process-field__input">
-                                            @isset($processField->content)
-                                                {{ Form::textarea("processes[".$i."][content]", $processField->content, ["class"=>"process-field__input__textarea"]) }}
-                                            @else
-                                                {{ Form::textarea("processes[".$i."][content]", null, ["class"=>"process-field__input__textarea"]) }}
-                                            @endisset
-                                        </p>
-                                    </div>
-                                @endforeach
-                            </div> --}}
                         </div>
 
                         <p class="half-border">&nbsp;</p>
